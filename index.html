@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij4KICA8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNkNmU0ZWEiLz4KICA8ZyB0cmFuc2Zvcm09InJvdGF0ZSg0NSAzMiAzMikiPgogICAgPHJlY3QgeD0iMjkiIHk9IjQiIHdpZHRoPSI2IiBoZWlnaHQ9IjM2IiBmaWxsPSIjYzdjYmQxIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMS42Ii8+CiAgICA8cmVjdCB4PSIzMC41IiB5PSI0IiB3aWR0aD0iMyIgaGVpZ2h0PSIzNiIgZmlsbD0iI2VlZjBmMiIvPgogICAgPHBvbHlnb24gcG9pbnRzPSIyOSw0IDM1LDQgMzIsLTIiIGZpbGw9IiNjN2NiZDEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjYiLz4KICAgIDxyZWN0IHg9IjIyIiB5PSI0MCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjYiIGZpbGw9IiM5YTllYTQiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjYiLz4KICAgIDxyZWN0IHg9IjI3IiB5PSI0NiIgd2lkdGg9IjEwIiBoZWlnaHQ9IjQiIGZpbGw9IiM1NTU4NWQiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjYiLz4KICAgIDxyZWN0IHg9IjI0IiB5PSI1MCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjEyIiByeD0iMiIgZmlsbD0iIzNhM2Q0MiIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjEuNiIvPgogICAgPGNpcmNsZSBjeD0iMzIiIGN5PSI1NiIgcj0iMi40IiBmaWxsPSIjYzAzOTJiIi8+CiAgPC9nPgo8L3N2Zz4K">
 <title>SupervivencIA · Supervivencia en tiempos de IA</title>
 <meta name="description" content="Guía práctica de supervivencia y preparación ante emergencias: agua y comida, clima, energía, comunicaciones, primeros auxilios y más, con los mejores productos de cada área.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,6 +107,9 @@ button{font:inherit}
 .card{background:var(--gray);box-shadow:3px 3px 0 rgba(0,0,0,.3);display:flex;flex-direction:column;scroll-margin-top:20px}
 .card h3{margin:0;background:linear-gradient(90deg,var(--ol-dark),var(--ol-light));color:#fff;font-family:var(--f-cond);font-weight:700;font-size:17px;letter-spacing:.8px;text-transform:uppercase;padding:6px 10px}
 .card .in{background:#fff;margin:10px;padding:12px 14px;border:1px solid var(--shade);font-size:15px;line-height:1.6;flex:1}
+.card .in h4{margin:18px -14px 10px;background:linear-gradient(90deg,var(--ol-dark),var(--ol-light));color:#fff;display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-weight:400;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:5px 10px;box-shadow:1px 1px 0 rgba(0,0,0,.3)}
+.card .in h4::before{content:"";width:10px;height:10px;background:var(--amber);border:1px solid #000;flex-shrink:0}
+.card .in h4:first-child{margin-top:-12px}
 .card .in p{margin:0 0 8px}
 .card .in p:last-child{margin-bottom:0}
 .card ul{margin:6px 0 0;padding:0;list-style:none}
@@ -123,6 +127,8 @@ table.mini th{background:var(--term);color:var(--lime);font-family:var(--f-mono)
 table.mini td{padding:6px 8px;border-bottom:1px solid #deded2;vertical-align:top}
 table.mini tr:nth-child(even) td{background:#f5f5ee}
 table.mini tr.tot td{font-weight:700;background:#e6ecd9;border-top:2px solid var(--ol)}
+table.mini.danger tr:nth-child(even) td{background:#f7d9d4}
+table.mini.danger td{background:#fbeae7}
 .card ul.cols{columns:4 170px;column-gap:18px}
 .card ul.cols li{break-inside:avoid}
 
@@ -199,7 +205,18 @@ table.top tr:nth-child(even) td{background:#f3f3ea}
 <aside class="side" id="side">
   <div class="side-head">
     <div class="logo">
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#a4d65e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
+      <svg width="34" height="34" viewBox="0 0 64 64" role="img" aria-label="Logo SupervivencIA">
+        <rect width="64" height="64" fill="#d6e4ea"/>
+        <g transform="rotate(45 32 32)">
+          <rect x="29" y="4" width="6" height="36" fill="#c7cbd1" stroke="#111" stroke-width="1.6"/>
+          <rect x="30.5" y="4" width="3" height="36" fill="#eef0f2"/>
+          <polygon points="29,4 35,4 32,-2" fill="#c7cbd1" stroke="#111" stroke-width="1.6"/>
+          <rect x="22" y="40" width="20" height="6" fill="#9a9ea4" stroke="#111" stroke-width="1.6"/>
+          <rect x="27" y="46" width="10" height="4" fill="#55585d" stroke="#111" stroke-width="1.6"/>
+          <rect x="24" y="50" width="16" height="12" rx="2" fill="#3a3d42" stroke="#111" stroke-width="1.6"/>
+          <circle cx="32" cy="56" r="2.4" fill="#c0392b"/>
+        </g>
+      </svg>
     </div>
     <span>ÍNDICE COMPLETO</span>
   </div>
@@ -257,10 +274,204 @@ const AREAS = [
 { id:"agua-comida", titulo:"Agua y Comida",
   intro:"Sin agua, los problemas empiezan en horas; sin comida, en días. Una reserva que vayas rotando y saber potabilizar te cubren lo esencial.",
   subs:[
-    {id:"almacenar-agua", t:"Almacenar agua", h:`<p>Calcula <strong>al menos 3 litros por persona y día</strong> para beber y cocinar, más algo extra para higiene. Para 72 h y 2 personas: unos 20 litros.</p><ul><li>Agua embotellada en lugar fresco y oscuro</li><li>Rota la reserva antes de que caduque</li><li>Bidones con grifo para agua de uso general</li></ul>`},
-    {id:"potabilizar", t:"Potabilizar agua", h:`<p>Si tienes que usar agua de origen dudoso, fíltrala primero para quitar partículas y después desinféctala.</p><ul><li><strong>Hervir</strong>: el método más fiable. Un minuto a borbotones.</li><li><strong>Pastillas potabilizadoras</strong>: sigue las instrucciones del fabricante.</li><li><strong>Filtros portátiles</strong>: eliminan bacterias y protozoos; no todos eliminan virus.</li></ul><div class="warn">Solo lejía apta para desinfección de agua de bebida (lo indica la etiqueta), nunca lejías perfumadas.</div>`},
-    {id:"despensa", t:"Despensa de emergencia", h:`<p>Lo ideal es una despensa de cosas que ya coméis y vais rotando: lo primero que entra es lo primero que sale.</p><ul><li>Conservas de pescado, legumbres y verdura</li><li>Arroz, pasta y copos de avena</li><li>Frutos secos, barritas y chocolate</li><li>Leche UHT o en polvo</li><li>Abrelatas manual</li></ul>`},
-    {id:"cocinar-sin-luz", t:"Cocinar sin luz", h:`<p>Un hornillo de camping y un par de cartuchos te permiten hervir agua y calentar comida durante días.</p><div class="warn">Úsalo siempre con ventilación: nunca en espacios cerrados, por riesgo de monóxido de carbono.</div>`}
+    {id:"agua", w:true, t:"Agua", h:`<h4>El cuerpo humano sin agua</h4><p>La deshidratación no avanza en horas concretas iguales para todos: depende del calor, la actividad física y la edad. Esta es una progresión orientativa en un adulto sano, en condiciones templadas:</p>
+    <div class="mini-wrap"><table class="mini danger"><thead><tr><th>Tiempo sin beber</th><th>Qué le pasa al cuerpo</th></tr></thead><tbody>
+    <tr><td>0–6 horas</td><td>Sensación de sed, boca seca. El cuerpo empieza a concentrar la orina para ahorrar agua.</td></tr>
+    <tr><td>6–12 horas</td><td>Sed más intensa, orina oscura y en poca cantidad, algo de fatiga.</td></tr>
+    <tr><td>12–24 horas</td><td>Dolor de cabeza, mareo leve, boca y piel muy secas, dificultad para concentrarse.</td></tr>
+    <tr><td>24–48 horas</td><td>Deshidratación moderada: mareo al levantarse, calambres, taquicardia, orina mínima y muy oscura.</td></tr>
+    <tr><td>48–72 horas</td><td>Deshidratación grave: confusión, habla dificultosa, piel que no recupera su forma al pellizcarla, dejar de orinar.</td></tr>
+    <tr><td>Más de 72 horas</td><td>Riesgo de fallo renal, pérdida de conciencia y muerte. El límite exacto varía mucho según el calor y el esfuerzo físico.</td></tr>
+    </tbody></table></div>
+    <div class="warn">Con calor fuerte o haciendo ejercicio, estos plazos pueden reducirse a la mitad o menos. Si alguien muestra confusión, deja de orinar o pierde el conocimiento, es una urgencia: llama al 112.</div>
+    <h4>Cuánta agua necesitas</h4><p>Calcula <strong>al menos 3 litros por persona y día</strong> para beber y cocinar, más algo extra para higiene. Para 72 h y 2 personas: unos 20 litros.</p><ul><li>Agua embotellada en lugar fresco y oscuro</li><li>Rota la reserva antes de que caduque</li><li>Bidones con grifo para agua de uso general</li></ul>
+    <h4>Obtener agua en la naturaleza</h4><p>Cuando no hay grifo ni reserva, la naturaleza sigue teniendo agua si sabes dónde mirar. Los ríos, arroyos y manantiales son la fuente más evidente, y cuanto más arriba en la corriente la recojas, menos contaminada suele estar. La vegetación densa y verde en un valle, o la convergencia de sendas de animales, suelen señalar un punto de agua cercano incluso sin verlo. El rocío de la mañana se puede recoger pasando un trapo limpio por hierba o hojas y escurriéndolo en un recipiente, y en zonas frías la nieve y el hielo se pueden fundir con calor corporal o fuego, nunca comerse directamente. La lluvia es la fuente más limpia: basta con extender una lona o un plástico inclinado hacia un recipiente. Algunas plantas, como ciertas vides o el interior de bambús verdes, almacenan agua aprovechable, aunque conviene conocer bien la especie antes de confiar en ella. Cavar en el lecho seco de un río o en la base de una duna también puede sacar agua a la superficie tras un rato de espera.</p>
+    <p>Estas son las 10 formas principales de conseguir agua cuando no hay grifo ni reserva, ordenadas por lo fácil que es encontrarlas:</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Método</th><th>Cómo funciona</th><th>Tipo de agua / Calidad</th><th>Herramientas necesarias</th></tr></thead><tbody>
+    <tr><td><strong>1. Recolección de lluvia</strong></td><td>Canalizar el agua de las precipitaciones usando lonas, chubasqueros o recipientes limpios.</td><td>Potable (evitar las primeras gotas si la lona está sucia).</td><td>Lona, plástico o recipiente.</td></tr>
+    <tr><td><strong>2. Rocío matutino</strong></td><td>Envolver las piernas con ropa absorbente y caminar por hierba alta al amanecer; luego escurrir el agua.</td><td>Generalmente limpia, pero puede contener bacterias del suelo.</td><td>Ropa de algodón o paño absorbente.</td></tr>
+    <tr><td><strong>3. Transpiración vegetal</strong></td><td>Atar una bolsa de plástico transparente alrededor de una rama con hojas verdes expuesta al sol; la planta transpira y el vapor se condensa en las paredes de la bolsa, acumulándose en el fondo.</td><td>Dulce, pura y segura para beber directamente.</td><td>Bolsa de plástico transparente y cuerda.</td></tr>
+    <tr><td><strong>4. Destilador solar</strong></td><td>Cavar un hoyo, colocar un recipiente en el centro, cubrir con plástico y poner una piedra en el medio para que se forme un cono hacia el recipiente; el calor del sol evapora la humedad del suelo (y de vegetación que se añada), que condensa en el plástico y gotea hacia abajo.</td><td>Destilada y totalmente pura (elimina bacterias y sal).</td><td>Plástico transparente, recipiente y una piedra.</td></tr>
+    <tr><td><strong>5. Excavación en lechos secos</strong></td><td>Cavar en la curva exterior de un río seco o donde la vegetación esté más verde hasta encontrar la capa freática.</td><td>Turbia; requiere filtrado y purificación obligatoria.</td><td>Pala o palo afilado para cavar.</td></tr>
+    <tr><td><strong>6. Derretir nieve o hielo</strong></td><td>Calentar la nieve o el hielo, nunca comerlos directamente (bajan la temperatura corporal). Es mejor buscar hielo azulado: contiene menos aire y produce más agua.</td><td>Muy pura, pero carece de minerales (puede deshidratar a largo plazo si no se complementa).</td><td>Recipiente y fuente de calor (fuego).</td></tr>
+    <tr><td><strong>7. Agua de ríos y arroyos</strong></td><td>Recoger agua en movimiento de fuentes de alta montaña. Siempre es mejor buscar corrientes rápidas que aguas estancadas.</td><td>Riesgo alto de parásitos; requiere hervirse o pastillas potabilizadoras.</td><td>Recipiente.</td></tr>
+    <tr><td><strong>8. Plantas de almacenamiento</strong></td><td>Extraer agua acumulada en el interior de cañas de bambú (sacudiendo o cortando), cactus (con precaución) o lianas.</td><td>Variable; el bambú suele ser muy seguro, algunos cactus pueden ser tóxicos.</td><td>Cuchillo, machete o navaja.</td></tr>
+    <tr><td><strong>9. Condensación en rocas</strong></td><td>Aprovechar cuevas o grietas profundas donde el aire húmedo choca con la roca fría y genera gotas.</td><td>Limpia, pero la recolección suele ser muy lenta.</td><td>Trapo absorbente o pajita/tubo.</td></tr>
+    <tr><td><strong>10. Pozas de marea / agua de mar (costa)</strong></td><td>Un hoyo junto a la orilla o un destilador con agua de mar separan la sal por evaporación y posterior condensación, igual que el destilador solar pero con agua salada.</td><td>Potable tras la destilación (nunca beber agua de mar directa).</td><td>Kit de destilación o plásticos y recipientes.</td></tr>
+    </tbody></table></div>
+    <p><strong>Kit de agua de mochila:</strong> botella de 1,5 L/día, cantimplora metálica (sirve para hervir), 30 pastillas potabilizadoras, filtro pajita y botella flexible de 0,7 L.</p>
+    <h4>Potabilizar</h4><p>Sea cual sea el origen, trata siempre el agua dudosa. Estas son las 5 técnicas principales:</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Método</th><th>Cómo funciona</th><th>Eficacia</th><th>Ventajas / Desventajas</th></tr></thead><tbody>
+    <tr><td><strong>1. Ebullición (hervir)</strong></td><td>Llevar el agua a un punto de ebullición completo durante al menos 1 minuto (3 minutos en alta montaña) para destruir todos los microorganismos.</td><td>Alta (elimina virus, bacterias y parásitos).</td><td>El método más fiable, pero requiere fuego, un recipiente resistente y consume combustible.</td></tr>
+    <tr><td><strong>2. Método SODIS (desinfección solar)</strong></td><td>Llenar botellas de plástico transparentes (PET) y exponerlas al sol directo sobre una superficie oscura durante 6 horas (o 2 días si está nublado).</td><td>Media-alta (los rayos UV y el calor matan la mayoría de los patógenos).</td><td>Muy económico y sencillo, pero no elimina la turbiedad ni los contaminantes químicos.</td></tr>
+    <tr><td><strong>3. Pastillas potabilizadoras</strong></td><td>Añadir tabletas de cloro o dióxido de cloro (o gotas de yodo) al agua y esperar entre 30 minutos y 4 horas según las instrucciones del fabricante.</td><td>Alta (excelente para bacterias y virus; el dióxido de cloro también elimina quistes resistentes).</td><td>Ligero y fácil de transportar en cualquier kit, pero deja un sabor químico desagradable.</td></tr>
+    <tr><td><strong>4. Filtro natural por gravedad</strong></td><td>Crear un filtro vertical usando una botella invertida rellena por capas: carbón activado o triturado (elimina químicos y mal olor), arena fina, arena gruesa y piedras.</td><td>Media (limpia los sedimentos y mejora el aspecto, pero no elimina virus).</td><td>Excelente para clarificar agua turbia, pero requiere hervir el agua después de filtrarla para que sea 100% segura.</td></tr>
+    <tr><td><strong>5. Destilación por evaporación</strong></td><td>Hervir agua y capturar el vapor con una lona o tubo, canalizándolo hacia otro recipiente donde se enfríe y se convierta de nuevo en líquido.</td><td>Máxima (elimina metales pesados, sal, químicos, bacterias y virus).</td><td>Produce el agua más pura posible (incluso a partir de agua de mar), pero el proceso es lento y requiere mucha energía.</td></tr>
+    </tbody></table></div>
+    <p><strong>Pastillas potabilizadoras: cómo funcionan por dentro</strong></p><p>Liberan en el agua una sustancia desinfectante (cloro en forma de dicloroisocianurato sódico, o dióxido de cloro/plata coloidal en las variantes más suaves) que destruye bacterias, virus y protozoos al alterar sus membranas o su ADN. Se disuelven en el bidón o cantimplora, se agita y hay que esperar un tiempo de contacto antes de beber; cuanto más fría o turbia esté el agua, más tiempo de espera hace falta.</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Marca / tipo</th><th>Principio activo</th><th>Tiempo de espera</th><th>Precio aprox.</th></tr></thead><tbody>
+    <tr><td>Micropur Forte (Katadyn)</td><td>Cloro (DCCNa)</td><td>30 min (bacterias/virus); 2 h para protozoos como Giardia</td><td>~10–12 € / 100 pastillas</td></tr>
+    <tr><td>Certisil / Certisan</td><td>Dióxido de cloro</td><td>30 min–2 h según el patógeno</td><td>~8–10 € / caja de 20</td></tr>
+    <tr><td>Aquatabs</td><td>Cloro (DCCNa)</td><td>30 min; hasta 4 h en agua muy fría o turbia</td><td>~6–8 € / 50 pastillas</td></tr>
+    <tr><td>Potable Aqua</td><td>Yodo</td><td>30–35 min</td><td>~9–11 € / 50 pastillas</td></tr>
+    </tbody></table></div>
+    <div class="warn">Solo lejía apta para desinfección de agua de bebida (lo indica la etiqueta), nunca lejías perfumadas.</div>`},
+
+    {id:"comida", w:true, t:"Comida", h:`<h4>Despensa: qué comprar y cómo almacenarla</h4><p>Lo ideal es una despensa de cosas que ya coméis y vais rotando: lo primero que entra es lo primero que sale.</p><ul><li>Conservas de pescado, legumbres y verdura</li><li>Arroz, pasta y copos de avena</li><li>Frutos secos, barritas y chocolate</li><li>Leche UHT o en polvo</li><li>Abrelatas manual</li></ul>
+    <ul><li><strong>Latas de plato 420 g</strong> (~1,5 €): fabada, cocido, lentejas, albóndigas, garbanzos con espinacas, callos</li><li><strong>Comida deshidratada</strong> (5–10 €, Decathlon): arroz con lentejas, muesli, sopa de pollo</li></ul>
+    <p><strong>Los 12 básicos para 1 mes</strong> (1 persona), para ir comprando poco a poco:</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Producto</th><th>Cantidad</th></tr></thead><tbody>
+    <tr><td>Arroz</td><td>4 kg</td></tr>
+    <tr><td>Pasta</td><td>4 kg</td></tr>
+    <tr><td>Puré de patata</td><td>2 kg</td></tr>
+    <tr><td>Atún en lata</td><td>×20</td></tr>
+    <tr><td>Latas de plato (fabada, lentejas, etc.)</td><td>×20</td></tr>
+    <tr><td>Fruta en lata</td><td>×10</td></tr>
+    <tr><td>Galletas</td><td>2 × 800 g</td></tr>
+    <tr><td>Leche en polvo</td><td>2 kg (≈20 L)</td></tr>
+    <tr><td>Chocolate</td><td>×5 tabletas</td></tr>
+    </tbody></table></div>
+    <p><strong>Almacenamiento duradero (legumbres y grano):</strong> recipiente de cristal o plástico duro hermético. Para quitar el oxígeno, antes de cerrar se puede meter una pequeña llama que lo consuma (o usar absorbedores de oxígeno o envasado al vacío). Problemas típicos: roedores, gorgojos e insectos que ponen huevos — menos oxígeno, menos plagas.</p>
+    <h4>Cocina de emergencia</h4><p>Un hornillo de camping y un par de cartuchos te permiten hervir agua y calentar comida durante días.</p><div class="warn">Úsalo siempre con ventilación: nunca en espacios cerrados, por riesgo de monóxido de carbono.</div>
+    <p><strong>Recetas de supervivencia:</strong></p><div class="mini-wrap"><table class="mini"><thead><tr><th>Nombre</th><th>Ingredientes</th><th>Cómo se hace</th></tr></thead><tbody>
+    <tr><td><strong>Galletas hardtack</strong></td><td>400 g de harina, 250 ml de agua, sal.</td><td>Amasar hasta conseguir una masa uniforme, hornear a 200 ºC 30 min, dar la vuelta y hornear otros 30 min. Sin aceite, grasa ni miel para que dure años. (≈400 kcal/100 g)</td></tr>
+    <tr><td><strong>Caldo sólido</strong></td><td>Huesos con carne (colágeno), agua.</td><td>Cocer un guiso con hueso, colar el caldo sin grasa, reducir en sartén hasta conseguir una gelatina dura y secar 5–7 días. Se corta en cubos y se disuelve en agua caliente. (Meses al ambiente, años al vacío)</td></tr>
+    <tr><td><strong>Vinagre de sidra</strong></td><td>Manzana troceada sin cera, agua pura, azúcar o miel, levadura.</td><td>En un tarro de cristal, 1 cucharada de azúcar/miel y 1 de levadura por manzana. Tapar 1–2 semanas, colar y dejar reposar 2–3 semanas más. (Conservante, antiséptico, repelente)</td></tr>
+    <tr><td><strong>Sampa (9 ingredientes)</strong></td><td>Harina tostada de cacahuete, maíz, trigo, judía, garbanzo, soja y lenteja, plátano y miel.</td><td>Tostar y molturar los cereales y legumbres hasta obtener una harina fina, y mezclar con plátano triturado y miel hasta homogeneizar. (≈350 kcal · 13 g proteína)</td></tr>
+    <tr><td><strong>Jerky (carne seca)</strong></td><td>Carne magra en tiras finas, sal (y especias al gusto).</td><td>Cortar la carne en tiras muy finas, marinar con sal unas horas y secar a baja temperatura (horno a 60–70 ºC con la puerta entreabierta, deshidratadora o al sol/aire seco) 4–8 horas, hasta que quede rígida y sin humedad. (≈250 kcal/100 g, larga duración sin nevera)</td></tr>
+    <tr><td><strong>Pemmican</strong></td><td>Carne seca en polvo (o jerky triturado), grasa animal, fruta seca (opcional).</td><td>Triturar la carne seca, mezclar con grasa derretida (y fruta seca troceada) hasta formar una pasta compacta y dejar enfriar en bloques o bolas. (600–800 kcal/100 g)</td></tr>
+    <tr><td><strong>Barritas energéticas</strong></td><td>Miel, crema de cacahuete, avena, cacao, almendras.</td><td>Mezclar todos los ingredientes, prensar en un molde o bandeja y dejar enfriar hasta que cuaje. (Ideal para la mochila)</td></tr>
+    </tbody></table></div><p>Otros básicos a tener: cacao en polvo, maicena (espesante), avena, sal, azúcar, miel, leche en polvo y bicarbonato.</p>
+    <p><strong>Cocina en ascuas</strong> (sin hornillo):</p><ul><li>Patata envuelta en papel de aluminio: 30–50 min</li><li>Carne en filete o brocheta: 5 min</li><li>Huevos fritos: 5–10 min</li><li>Lentejas / garbanzos / judías en olla de barro junto a las ascuas: 40 / 40 / 100 min</li></ul>`},
+
+    {id:"extras", w:true, t:"Extras", h:`<h4>Raciones de emergencia</h4><p><strong>Comida liofilizada</strong>: años de caducidad, solo necesita agua caliente. <strong>Raciones NRG-5</strong> y similares: barritas de emergencia compactas y de larga caducidad. Liofilizado básico: raciones de 5–7 € (~600 kcal) o MRE militares de ~17 € (~3.000 kcal).</p>
+    <h4>Suplementos</h4><p>Pueden sustituir una comida completa cuando no hay tiempo, agua caliente o ganas de cocinar. Son fáciles de digerir y valen tanto para niños como para adultos en caso de necesidad:</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Producto</th><th>Kcal aprox.</th><th>Proteína</th><th>Carbohidratos</th><th>Grasas</th></tr></thead><tbody>
+    <tr><td>Papilla de cereales (250 ml preparada)</td><td>~120 kcal</td><td>3 g</td><td>20 g</td><td>2 g</td></tr>
+    <tr><td>Potito de fruta o verdura (200 g)</td><td>~90 kcal</td><td>1 g</td><td>18 g</td><td>0,5 g</td></tr>
+    <tr><td>Batido sustitutivo de comida (tipo Ensure/Nutridrink, 200 ml)</td><td>~300 kcal</td><td>12 g</td><td>40 g</td><td>10 g</td></tr>
+    <tr><td>Batido proteico en polvo (1 dosis + agua)</td><td>~120 kcal</td><td>24 g</td><td>3 g</td><td>1 g</td></tr>
+    </tbody></table></div>
+    <h4>Complementos</h4><p>No sustituyen una comida, pero ayudan a que la dieta de emergencia esté más completa cuando pierde variedad durante semanas:</p><ul><li><strong>Multivitamínico</strong>: cubre carencias generales si la dieta se repite mucho</li><li><strong>Magnesio</strong>: previene calambres y fatiga muscular, útil con sudoración o esfuerzo físico</li><li><strong>Sales de rehidratación / electrolitos</strong>: útiles con calor, esfuerzo físico o diarrea</li><li><strong>Vitamina C</strong>: refuerzo si escasea la fruta y verdura fresca</li><li><strong>Omega 3</strong>: refuerzo si escasea el pescado fresco</li></ul>
+    <h4>Energía</h4><p><strong>Cafeína</strong>: alcaloide y estimulante del sistema nervioso central. Bloquea los receptores de adenosina en el cerebro, lo que reduce la sensación de cansancio y somnolencia, y aumenta la liberación de neurotransmisores excitatorios como la dopamina y la norepinefrina. Esto se traduce en más estado de alerta, concentración y, en algunos casos, rendimiento físico — también puede subir la frecuencia cardíaca y la presión arterial. Máximo recomendado: <strong>400 mg al día</strong> en adultos sanos.</p>
+    <p><strong>Taurina</strong>: aminoácido que el cuerpo produce de forma natural y que también está en algunos alimentos (sobre todo carnes). Participa en varias funciones metabólicas: ayuda a estabilizar las membranas celulares, actúa como antioxidante, interviene en la neurotransmisión (aunque no es un neurotransmisor clásico) y tiene un papel en la función muscular y cardíaca. A diferencia de la cafeína, no tiene un efecto estimulante directo sobre el sistema nervioso central.</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Fuente</th><th>Precio aprox.</th><th>Cafeína (mg)</th><th>Taurina (mg)</th></tr></thead><tbody>
+    <tr><td>Café / café con leche (200 ml)</td><td>1,50 €</td><td>80 / 40</td><td>—</td></tr>
+    <tr><td>Té negro / verde</td><td>1,00 €</td><td>50 / 40</td><td>—</td></tr>
+    <tr><td>Té matcha</td><td>1,00 €</td><td>60</td><td>—</td></tr>
+    <tr><td>Red Bull / Monster</td><td>1,80 €</td><td>80 / 180</td><td>1.000 / 2.000</td></tr>
+    <tr><td>Coca-Cola / Pepsi</td><td>1,00 €</td><td>35 / 40</td><td>—</td></tr>
+    <tr><td>Scho-ka-kola (100 g)</td><td>3,00 €</td><td>200</td><td>—</td></tr>
+    <tr><td>Chocolate negro (100 g)</td><td>2,00 €</td><td>50</td><td>—</td></tr>
+    <tr><td>Cafeína gummies Vitaldin</td><td>0,40 €</td><td>25</td><td>12</td></tr>
+    <tr><td>Gel energético</td><td>1,00 €</td><td>78</td><td>—</td></tr>
+    <tr><td>Pastilla de cafeína anhidra (HSN)</td><td>9,00 €</td><td>200</td><td>—</td></tr>
+    </tbody></table></div>
+    <h4>Tabaco</h4><p>No es un producto de primera necesidad, pero conviene conocer su papel en un escenario de escasez prolongada: es un bien de trueque muy valorado y, para quien ya es fumador habitual, su ausencia repentina añade estrés a una situación ya difícil. No es recomendación de consumo — fumar tiene riesgos conocidos para la salud — sino una nota realista sobre por qué aparece en muchas listas de preparación.</p>`},
+
+    {id:"survival-point", w:true, t:"Survival Point", h:`<p>Referencia: <strong>1.500 kcal y 50–60 g de proteína por persona y día</strong>. Esta tabla reúne en una sola lista lo básico de los tres puntos anteriores (Agua, Comida y Extras) y da para <strong>1 mes (30 días) a 1 persona</strong> (≈45.000 kcal y 1,5–1,8 kg de proteína) por unos <strong>150 €</strong> de supermercado.</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Cantidad</th><th>Producto</th><th>Por qué</th></tr></thead><tbody>
+    <tr><td>60 L</td><td>Agua en garrafas de 5 L y botellas de 1,5 L + pastillas potabilizadoras</td><td>Base de todo</td></tr>
+    <tr><td>20 latas</td><td>Fabada (≈700 kcal/lata)</td><td>Plato completo y calórico</td></tr>
+    <tr><td>10 latas</td><td>Carne (albóndigas 420 g)</td><td>Proteína lista para comer</td></tr>
+    <tr><td>10 + 10</td><td>Atún y sardinas en lata</td><td>Proteína y grasa, larga caducidad</td></tr>
+    <tr><td>2 kg + 2 kg</td><td>Arroz y pasta</td><td>Energía barata (≈3.500 kcal/kg)</td></tr>
+    <tr><td>1 kg</td><td>Puré de patata</td><td>Solo necesita agua caliente</td></tr>
+    <tr><td>1 bolsa (1 kg)</td><td>Leche en polvo desnatada — 1 kg da para ≈20 L reconstituida</td><td>Muy rica en proteína</td></tr>
+    <tr><td>4 cajas + 4 tabletas</td><td>Galletas María y chocolate con leche</td><td>Calorías rápidas y moral</td></tr>
+    <tr><td>4 bolsas</td><td>Frutos secos (nueces, almendras, pistachos)</td><td>Grasa y proteína concentradas</td></tr>
+    <tr><td>15 + 1</td><td>Barritas tipo Mars + raciones NRG‑5 / Trek'n Eat</td><td>Energía compacta para la mochila</td></tr>
+    <tr><td>4 latas + 4 tarros</td><td>Fruta y verdura, tarro o lata grande</td><td>Vitaminas</td></tr>
+    <tr><td>1 bote (500 g)</td><td>Café — da para ≈1 mes (unos 60 cafés)</td><td>Estimulante y rutina</td></tr>
+    </tbody></table></div>`},
+
+    {id:"agricultura-emergencia", w:true, t:"Agricultura de emergencia", h:`<h4>Huerto de emergencia (regadío)</h4><p>Para autoabastecerse a medio plazo. Calendario orientativo para clima de interior de España:</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Cultivo</th><th>Siembra</th><th>Cosecha</th><th>Cuidados</th><th>Rendimiento</th><th>Problemas y clima</th></tr></thead><tbody>
+    <tr><td><strong>Patata</strong></td><td>Mar–Abr</td><td>Oct</td><td>Aporcado, siembra de tubérculo-semilla, abonado rico en potasio, cosechar cuando la planta se seca.</td><td>3 kg/planta</td><td>Mildiu, escarabajo de la patata, nematodos; sequía, encharcamiento.</td></tr>
+    <tr><td><strong>Batata</strong></td><td>Mar–Jun</td><td>Sept–Nov</td><td>Plantar brotes en caballones, riego moderado, desherbar, cosechar al marchitarse.</td><td>3 kg/planta</td><td>Podredumbre, nematodos.</td></tr>
+    <tr><td><strong>Tomate</strong></td><td>Mayo (semillero antes)</td><td>Ago–Sep</td><td>Semillero y trasplante, NPK equilibrado (potasio en fructificación), entutorado.</td><td>3 kg/planta</td><td>Mosca blanca, mildiu, araña roja, tuta absoluta; golpe de calor, falta de riego.</td></tr>
+    <tr><td><strong>Calabaza</strong></td><td>Abr–Jun</td><td>Sept–Nov</td><td>Siembra directa o semillero, NPK equilibrado, riego regular, cosechar cuando el pedúnculo se endurece.</td><td>3 ud/planta</td><td>Oídio, pulgón, mosca blanca; sequía, exceso de humedad.</td></tr>
+    <tr><td><strong>Calabacín</strong></td><td>Abr–Jun</td><td>Jun–Sep</td><td>Semillero o directo, trasplantar, riego regular, entutorar, cosechar jóvenes.</td><td>5 kg/planta</td><td>Oídio, mosca blanca.</td></tr>
+    <tr><td><strong>Habas</strong></td><td>Oct–Dic</td><td>Mar–May</td><td>Siembra directa, entutorar si hace falta, cosechar cuando las vainas estén llenas.</td><td>2 kg/planta</td><td>Pulgones, mildiu.</td></tr>
+    <tr><td><strong>Judía verde</strong></td><td>Mayo</td><td>Agosto</td><td>Siembra directa en hileras, poco nitrógeno, entutorado en variedades trepadoras, cosechar vainas tiernas.</td><td>1–3 kg/m²</td><td>Pulgón, roya, mosca blanca; sequía, exceso de humedad.</td></tr>
+    <tr><td><strong>Lechugas</strong></td><td>Todo el año (ideal feb–oct)</td><td>30–90 días tras siembra</td><td>Semillero o directo, riego constante, evitar calor extremo, cosechar antes de floración.</td><td>1–2 kg/m²</td><td>Caracoles, pulgón, mildiu.</td></tr>
+    <tr><td><strong>Acelgas</strong></td><td>Todo el año (escalonada)</td><td>Continuada</td><td>Siembra directa o semillero, NPK equilibrado, riego regular, cosechar las hojas exteriores.</td><td>Variable</td><td>Pulgón, minador de la hoja, caracoles; falta de riego.</td></tr>
+    <tr><td><strong>Espinaca</strong></td><td>Sept–Mayo (escalonada)</td><td>Oct–Jun</td><td>Siembra directa, nitrogenado moderado, riego regular, cosechar hojas.</td><td>Variable</td><td>Pulgón, mildiu, caracoles; falta de riego.</td></tr>
+    <tr><td><strong>Pepino</strong></td><td>Abr–Jul</td><td>Jul–Sep</td><td>Semillero/trasplante o directa, NPK equilibrado, entutorado en trepadoras, cosechar frutos jóvenes.</td><td>5–10/planta</td><td>Mosca blanca, mildiu, araña roja; falta de riego, golpe de calor.</td></tr>
+    <tr><td><strong>Pimientos</strong></td><td>Mar–May (semillero), May–Jun (trasplante)</td><td>Jul–Oct</td><td>Semillero y trasplante, NPK equilibrado (potasio en fructificación), entutorado, cosechar maduros.</td><td>1–3 kg/planta</td><td>Pulgón, mosca blanca, oídio; golpe de calor, falta de riego.</td></tr>
+    <tr><td><strong>Puerro</strong></td><td>Ene–Mar</td><td>Ago–Dic</td><td>Semillero, trasplante a 10 cm, riegos frecuentes, aporcado, cosechar al grosor deseado.</td><td>2–3 kg/m²</td><td>Trips, roya, mildiu.</td></tr>
+    <tr><td><strong>Cebolla</strong></td><td>Ene–Abr (bulbos oct–ene)</td><td>Jun–Ago</td><td>Semillero, trasplante, escardar, poca agua al final, cosechar cuando las hojas se secan.</td><td>2–3 kg/m²</td><td>Mosca de la cebolla, mildiu.</td></tr>
+    <tr><td><strong>Ajo</strong></td><td>Nov–Ene</td><td>Jun–Jul</td><td>Dientes enterrados, poco riego, eliminar hierbas, cosechar cuando las hojas amarillean.</td><td>2 kg/m²</td><td>Mosca del ajo, roya.</td></tr>
+    <tr><td><strong>Berenjenas</strong></td><td>Feb–May</td><td>Jul–Oct</td><td>Semillero con calor, trasplante, buena luz, riego regular, cosechar brillantes.</td><td>4 kg/planta</td><td>Araña roja, mosca blanca, oídio.</td></tr>
+    <tr><td><strong>Zanahorias</strong></td><td>Feb–Jul</td><td>Jun–Nov</td><td>Siembra directa, aclarar, riego regular, evitar compactación, cosechar al tamaño deseado.</td><td>3 kg/m²</td><td>Mosca de la zanahoria.</td></tr>
+    <tr><td><strong>Rábanos</strong></td><td>Feb–Oct</td><td>Abr–Nov</td><td>Siembra directa, riego frecuente, cosechar jóvenes (20–40 días).</td><td>2 kg/m²</td><td>Pulgón, caracoles.</td></tr>
+    <tr><td><strong>Nabo</strong></td><td>Feb–May / Ago–Oct</td><td>May–Jul / Oct–Dic</td><td>Siembra directa, riego regular, cosechar cuando las raíces alcancen tamaño.</td><td>2–3 kg/m²</td><td>Altica, pulgón, mosca del nabo.</td></tr>
+    <tr><td><strong>Coliflor</strong></td><td>Jul–Sep</td><td>Nov–Mar</td><td>Semillero, trasplante, riego moderado, cubrir la pella, cosechar compacta.</td><td>2–3 kg/m²</td><td>Mosca de la col, orugas.</td></tr>
+    <tr><td><strong>Espárragos</strong></td><td>Ene–Mar (raíces)</td><td>Mar–Jun (años siguientes)</td><td>Plantar garras, esperar 2 años, luego cosechar brotes, mantener el suelo limpio.</td><td>0–1 kg/planta</td><td>Pulgón, roya, nematodos.</td></tr>
+    <tr><td><strong>Remolacha</strong></td><td>Feb–Jun</td><td>Jun–Nov</td><td>Siembra directa, riego regular, cosechar cuando alcance 6–10 cm de diámetro.</td><td>2–4 kg/m²</td><td>Pulgones, cercospora.</td></tr>
+    </tbody></table></div>
+
+    <h4>Cereales y legumbres de secano</h4><p>Necesitan más terreno y menos cuidado diario que el huerto de regadío; pensados a escala algo mayor (por hectárea):</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Cultivo</th><th>Siembra</th><th>Recolección</th><th>Proceso de cultivo</th><th>Kcal/100g</th><th>Problemas</th><th>Kg/ha</th></tr></thead><tbody>
+    <tr><td><strong>Trigo</strong></td><td>Oct–Nov</td><td>Jul–Ago</td><td>Labrado y abonado de fondo, siembra mecanizada, abonado nitrogenado en cobertera, control de malas hierbas, maduración y secado en la espiga, siega y trilla, almacenamiento limpio y seco.</td><td>350</td><td>Roya, oídio, septoria; pulgones, trips; sequía, golpe de calor, encamado, granizo.</td><td>~3.000</td></tr>
+    <tr><td><strong>Cebada</strong></td><td>Oct–Nov</td><td>Jun–Jul</td><td>Similar al trigo, algo menos exigente en abonado; cosecha más temprana.</td><td>350</td><td>Helmintosporiosis, rincosporiosis; pulgones; sequía, encamado, granizo.</td><td>~4.000</td></tr>
+    <tr><td><strong>Avena</strong></td><td>Oct–Nov</td><td>Jun–Jul</td><td>Preparación del terreno menos exigente, siembra y abonado moderado, maduración y cosecha similares al trigo/cebada.</td><td>380</td><td>Roya, mildiu; pulgones; sequía, encamado, granizo.</td><td>~3.500</td></tr>
+    <tr><td><strong>Centeno</strong></td><td>Sept–Oct</td><td>Jun–Jul</td><td>Preparación y siembra similares al trigo, abonado moderado.</td><td>340</td><td>Cornezuelo; pulgones; sequía, encamado, granizo.</td><td>~4.000</td></tr>
+    <tr><td><strong>Girasol</strong></td><td>Abr–May</td><td>Sept–Oct</td><td>Labrado, siembra de precisión, NPK según análisis de suelo, control de malas hierbas y plagas, secado de los capítulos, recolección y limpieza de semillas.</td><td>550</td><td>Mildiu, verticillium; gusano del alambre, mosca del girasol; sequía, golpe de calor, granizo.</td><td>~2.000</td></tr>
+    <tr><td><strong>Maíz</strong></td><td>Abr–May</td><td>Sept–Oct</td><td>Labrado y abonado nitrogenado, siembra de precisión, riego fundamental, control de malas hierbas y plagas, secado y desgrane de la mazorca.</td><td>350</td><td>Roya, helmintosporiosis; gusano del maíz, taladro; sequía, golpe de calor, granizo.</td><td>~10.000</td></tr>
+    <tr><td><strong>Lenteja</strong></td><td>Nov–Mar</td><td>Jun–Ago</td><td>Labrado superficial, siembra en hileras, poco nitrógeno (fija el suyo), control de pulgones/trips y ascochyta, secado de vainas, siega y trilla directa.</td><td>350</td><td>Ascochyta, antracnosis; pulgones, trips; sequía, encharcamiento.</td><td>~1.000</td></tr>
+    <tr><td><strong>Garbanzo</strong></td><td>Feb–Abr</td><td>Jul–Sep</td><td>Similar a la lenteja; control de gusano verde y ascochyta/fusarium.</td><td>360</td><td>Ascochyta, fusarium; gusano verde, heliotis; sequía, encharcamiento.</td><td>~1.500</td></tr>
+    <tr><td><strong>Yeros</strong></td><td>Oct–Dic</td><td>Jun–Jul</td><td>Labrado, siembra en hileras o a voleo, poco nitrógeno, control de pulgones y ascochyta.</td><td>330</td><td>Ascochyta, roya; pulgones; sequía, encamado.</td><td>~1.000</td></tr>
+    <tr><td><strong>Habas (secano)</strong></td><td>Oct–Dic</td><td>May–Jul</td><td>Labrado, siembra en hileras, poco nitrógeno, control de pulgón negro y mildiu, siega y trilla o recolección manual.</td><td>340</td><td>Pulgón negro, mildiu, roya; sequía, encharcamiento.</td><td>~1.500</td></tr>
+    <tr><td><strong>Guisantes</strong></td><td>Nov–Mar</td><td>Jun–Ago</td><td>Similar a la lenteja, control de mildiu, ascochyta y pulgones.</td><td>350</td><td>Mildiu, ascochyta, roya; pulgones, sitona; sequía.</td><td>~1.300</td></tr>
+    <tr><td><strong>Alubias</strong></td><td>Abr–May</td><td>Sept–Oct</td><td>Labrado, siembra en hileras, control de pulgones, mosca blanca y antracnosis, arrancado y trilla o recolección manual.</td><td>340</td><td>Antracnosis, bacteriosis; pulgones, mosca blanca; heladas tempranas, sequía.</td><td>~1.500</td></tr>
+    </tbody></table></div>
+    <p>Las legumbres fijan nitrógeno: necesitan poco abono y mejoran el suelo.</p>
+
+    <h4>Frutales, frutos secos y otros</h4>
+    <p><strong>Frutas de temporada</strong></p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Cultivo</th><th>Plantación</th><th>Cosecha</th><th>Cuidados</th><th>Rendimiento</th><th>Problemas</th></tr></thead><tbody>
+    <tr><td><strong>Fresas</strong></td><td>Oct–Dic (plantón)</td><td>Mar–Jun</td><td>Plantón en suelo rico, acolchado, riego por goteo, eliminar estolones, cosechar maduras.</td><td>1 kg/planta</td><td>Botritis, pulgón, caracoles.</td></tr>
+    <tr><td><strong>Melones</strong></td><td>Abr–May</td><td>Jul–Sep</td><td>Semillero o directa, riego moderado, entutorar o dejar arrastrar, polinización manual, cosechar con aroma fuerte.</td><td>2–5 kg/planta</td><td>Oídio, pulgón, araña roja.</td></tr>
+    <tr><td><strong>Sandías</strong></td><td>Abr–May</td><td>Jul–Sep</td><td>Igual que el melón, más calor y espacio, polinización importante, cosechar con sonido hueco.</td><td>3–6 kg/planta</td><td>Trips, araña roja, oídio.</td></tr>
+    <tr><td><strong>Moras</strong></td><td>Dic–Feb (plantón)</td><td>Jun–Sep</td><td>Plantar en lugar soleado, podar cada año, cosechar maduras y brillantes.</td><td>2–5 kg/planta</td><td>Pulgón, hongos, pájaros.</td></tr>
+    <tr><td><strong>Frambuesa</strong></td><td>Oct–Dic</td><td>Jun–Sep</td><td>Preparación del terreno, entutorado, riego, abonado y poda anuales.</td><td>1–2 kg/planta</td><td>Pulgones, araña roja, gusano de la frambuesa; botritis, roya.</td></tr>
+    </tbody></table></div>
+    <p><strong>Árboles frutales</strong></p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Cultivo</th><th>Plantación</th><th>Cosecha</th><th>Cuidados</th><th>Rendimiento</th><th>Problemas</th></tr></thead><tbody>
+    <tr><td><strong>Manzano</strong></td><td>Dic–Feb</td><td>Ago–Oct</td><td>Injertado, podas anuales, aclareo de frutos, buena ventilación.</td><td>20–50 kg/árbol</td><td>Moteado, carpocapsa, pulgón.</td></tr>
+    <tr><td><strong>Peral</strong></td><td>Dic–Feb</td><td>Jul–Sep</td><td>Igual que el manzano; necesita polinizadores cruzados.</td><td>15–40 kg/árbol</td><td>Fuego bacteriano, psila, carpocapsa.</td></tr>
+    <tr><td><strong>Ciruelo</strong></td><td>Dic–Feb</td><td>Jun–Sep</td><td>Poda ligera, cuidados contra hongos, buena ventilación.</td><td>20–40 kg/árbol</td><td>Monilia, pulgón, avispilla del ciruelo.</td></tr>
+    <tr><td><strong>Higuera</strong></td><td>Dic–Feb (plantón)</td><td>Jul–Sep</td><td>Podas mínimas, resiste sequía, proteger de heladas fuertes.</td><td>20–60 kg/árbol</td><td>Mosca del higo, nematodos, roya.</td></tr>
+    <tr><td><strong>Membrillo</strong></td><td>Dic–Feb</td><td>Sep–Nov</td><td>Pocas necesidades, tolera suelos pobres, buen control de humedad.</td><td>25–50 kg/árbol</td><td>Mosca de la fruta, monilia.</td></tr>
+    <tr><td><strong>Granada</strong></td><td>Dic–Feb</td><td>Sep–Nov</td><td>Resiste sequía, poda para aireación; el fruto se raja con exceso de agua.</td><td>20–60 kg/árbol</td><td>Mosca del Mediterráneo, rajado de fruto.</td></tr>
+    <tr><td><strong>Cerezo</strong></td><td>Dic–Feb</td><td>May–Jul</td><td>Polinización cruzada, poda para aireación, proteger de pájaros.</td><td>15–40 kg/árbol</td><td>Monilia, pulgón, mosca del cerezo.</td></tr>
+    <tr><td><strong>Parra (uva)</strong></td><td>Ene–Mar</td><td>Ago–Oct</td><td>Zona soleada, guiar en espaldera o pérgola, podar cada invierno, controlar humedad.</td><td>4–10 kg/parra</td><td>Mildiu, oídio, polilla del racimo.</td></tr>
+    <tr><td><strong>Naranjo</strong></td><td>Nov–Feb (injerto)</td><td>Nov–Mar</td><td>Pleno sol, proteger de heladas, riego regular, fertilización equilibrada, poda suave anual.</td><td>30–80 kg/árbol</td><td>Mosca del Mediterráneo, clorosis, cochinilla.</td></tr>
+    <tr><td><strong>Limonero</strong></td><td>Nov–Feb (injerto)</td><td>Todo el año (picos nov–feb y may–jul)</td><td>Sol y riego regular, podas ligeras, abono orgánico, proteger del frío.</td><td>30–100 kg/árbol</td><td>Minador de hoja, pulgones, hongos.</td></tr>
+    <tr><td><strong>Melocotonero</strong></td><td>Nov–Feb (injerto o raíz desnuda)</td><td>Jun–Sep</td><td>Suelo fértil y bien drenado, poda anual de formación, riego frecuente, aclareo de frutos.</td><td>25–60 kg/árbol</td><td>Mosca de la fruta, pulgón, cribado, monilia.</td></tr>
+    <tr><td><strong>Nectarino</strong></td><td>Nov–Feb (injerto)</td><td>Jul–Sep</td><td>Igual que el melocotonero, pero más sol y cuidado con hongos.</td><td>20–50 kg/árbol</td><td>Oídio, monilia, pulgones, mosca del Mediterráneo.</td></tr>
+    <tr><td><strong>Albaricoquero</strong></td><td>Nov–Feb (injerto o raíz desnuda)</td><td>May–Jul</td><td>Lugar soleado y seco, poda ligera, riego moderado, controlar heladas tardías.</td><td>20–40 kg/árbol</td><td>Monilia, cribado, pulgón, heladas tardías.</td></tr>
+    </tbody></table></div>
+    <p><strong>Frutos secos</strong></p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Cultivo</th><th>Plantación</th><th>Cosecha</th><th>Cuidados</th><th>Rendimiento</th><th>Problemas</th></tr></thead><tbody>
+    <tr><td><strong>Nogal (nueces)</strong></td><td>Dic–Feb</td><td>Sept–Oct</td><td>Árbol grande, exige espacio y paciencia (fructifica tras 5–8 años).</td><td>30–100 kg/árbol</td><td>Botritis, pulgón, caracoles, bacteriosis, antracnosis, carpocapsa.</td></tr>
+    <tr><td><strong>Encina (bellotas)</strong></td><td>Ene–Mar (planta joven)</td><td>Oct–Nov</td><td>Cultivo a largo plazo, muy resistente, ideal como árbol forestal.</td><td>20–50 kg/árbol</td><td>Gorgojo del roble, sequía prolongada.</td></tr>
+    <tr><td><strong>Castaño</strong></td><td>Dic–Feb</td><td>Oct–Nov</td><td>Clima húmedo, terreno ácido, poda inicial de formación.</td><td>30–60 kg/árbol</td><td>Chinche, avispilla del castaño, mildiu.</td></tr>
+    <tr><td><strong>Olivo</strong></td><td>Dic–Feb</td><td>Oct–Dic</td><td>Riego moderado, poda cada 2 años, recolección manual o mecánica.</td><td>20–50 kg/árbol</td><td>Mosca del olivo, repilo.</td></tr>
+    <tr><td><strong>Almendro</strong></td><td>Dic–Feb</td><td>Ago–Sep</td><td>Suelo bien drenado y soleado, riego escaso, poda ligera anual.</td><td>10–30 kg/árbol (desde 3–5 años)</td><td>Mosca del almendro, monilia, pulgón, hongos.</td></tr>
+    <tr><td><strong>Avellano</strong></td><td>Dic–Feb</td><td>Sep–Oct</td><td>En grupo, zona húmeda y fresca, suelo limpio, riego regular, poda de formación.</td><td>8–15 kg/arbusto</td><td>Barrenador, roya, mildiu, antracnosis.</td></tr>
+    <tr><td><strong>Pistacho</strong></td><td>Ene–Mar (injerto o maceta)</td><td>Sep–Oct</td><td>Suelo bien drenado y muy soleado, poca agua, poda de formación; requiere macho y hembra.</td><td>5–15 kg/árbol (desde 7 años)</td><td>Alternaria, verticilosis, psílido.</td></tr>
+    <tr><td><strong>Piñón (pino)</strong></td><td>—</td><td>Oct–Dic</td><td>Recolección de piñas maduras y extracción de piñones.</td><td>5–20 kg/árbol</td><td>Procesionaria, perforadores del pino.</td></tr>
+    </tbody></table></div>
+    <p><strong>Otros: miel, setas y azafrán</strong></p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Producto</th><th>Temporada</th><th>Proceso</th><th>Rendimiento</th><th>Problemas</th></tr></thead><tbody>
+    <tr><td><strong>Miel</strong></td><td>Floración de primavera (romero, acacia, espliego), verano (girasol, tomillo) y otoño (lavanda, milflores); cosecha todo el año según floración</td><td>Colmena → recolección de néctar → transformación en miel → cosecha.</td><td>10–30 kg por colmena</td><td>Enfermedades de la colmena (varroa, loque americana).</td></tr>
+    <tr><td><strong>Seta de cardo</strong> (cultivada)</td><td>Siembra de micelio en otoño</td><td>Siembra de micelio en sustrato → incubación → cosecha en 30–45 días.</td><td>2–4 kg por ciclo</td><td>Moho, insectos, competidores de hongos.</td></tr>
+    <tr><td><strong>Níscalo</strong> (silvestre)</td><td>Sept–Nov</td><td>Fructificación natural en bosques → recolección → limpieza → consumo. No se cultiva.</td><td>Variable, según el bosque</td><td>Competencia fúngica, insectos.</td></tr>
+    <tr><td><strong>Boletus edulis</strong> (silvestre)</td><td>Jul–Oct</td><td>Fructificación natural → recolección → limpieza → consumo. No se cultiva.</td><td>Variable, hasta 10 kg/árbol cercano</td><td>Competencia fúngica, plagas naturales.</td></tr>
+    <tr><td><strong>Azafrán</strong></td><td>Cormos en verano, cosecha jul–sep</td><td>Planta bulbosa muy resistente a sequía y calor. Los cormos se plantan a 15–20 cm de profundidad y 8–10 cm entre ellos, en tierra propia y bien drenada. Tras la floración de otoño se cosechan los pistilos a mano para extraer la especia. Cada cormo produce unos 5 nuevos en 3 años.</td><td>Muy bajo en peso, pero de alto valor (se vende a 0,35–1 €/g en tienda; su precio de mercado ronda los 5.000 €/kg)</td><td>Resistente a plagas, pero no debe plantarse tras patata, zanahoria o nabo (comparten problemas de raíz).</td></tr>
+    </tbody></table></div>`}
   ]},
 
 { id:"climatologia", titulo:"Climatología",
@@ -534,57 +745,6 @@ AREAS.forEach(a=>{ if(TOP[a.id]) a.top = TOP[a.id].map(([n,why,lvl,s,q])=> q.sta
 /* ================= CONTENIDO AMPLIADO (fuente: Excel SV · pestaña SV TEORIA) =================
    Se añade como tarjetas nuevas al final de cada área. w:true = tarjeta a ancho completo. */
 const EXTRA = {
-"agua-comida":[
-  {id:"sv-point-casa", w:true, t:"SV Point casa: despensa para ~40 días", h:`<p>Referencia: <strong>1.500 kcal y 50–60 g de proteína por persona y día</strong>. Esta lista da para unos <strong>40 días a 1 persona</strong> (≈64.000 kcal y 2,4 kg de proteína) por unos <strong>150 €</strong> de supermercado.</p>
-  <div class="mini-wrap"><table class="mini"><thead><tr><th>Cantidad</th><th>Producto</th><th>Por qué</th></tr></thead><tbody>
-  <tr><td>60 L</td><td>Agua en garrafas de 5 L y botellas de 1,5 L + pastillas potabilizadoras</td><td>Base de todo</td></tr>
-  <tr><td>20 latas</td><td>Fabada (≈700 kcal/lata)</td><td>Plato completo y calórico</td></tr>
-  <tr><td>10 latas</td><td>Carne (albóndigas 420 g)</td><td>Proteína lista para comer</td></tr>
-  <tr><td>10 + 10</td><td>Atún y sardinas en lata</td><td>Proteína y grasa, larga caducidad</td></tr>
-  <tr><td>2 kg + 2 kg</td><td>Arroz y pasta</td><td>Energía barata (≈3.500 kcal/kg)</td></tr>
-  <tr><td>1 kg</td><td>Puré de patata</td><td>Solo necesita agua caliente</td></tr>
-  <tr><td>1 bolsa</td><td>Leche en polvo desnatada</td><td>Muy rica en proteína</td></tr>
-  <tr><td>4 + 4</td><td>Galletas María y chocolate con leche</td><td>Calorías rápidas y moral</td></tr>
-  <tr><td>4 bolsas</td><td>Frutos secos (nueces, almendras, pistachos)</td><td>Grasa y proteína concentradas</td></tr>
-  <tr><td>15 + 1</td><td>Barritas tipo Mars + raciones NRG‑5 / Trek'n Eat</td><td>Energía compacta para la mochila</td></tr>
-  <tr><td>4 + 4</td><td>Fruta y verdura en tarro o lata</td><td>Vitaminas</td></tr>
-  <tr><td>1</td><td>Café</td><td>Estimulante y rutina</td></tr>
-  </tbody></table></div>`},
-  {id:"12-basicos", t:"Los 12 básicos para un año", h:`<p>Versión ampliada para ir comprando mes a mes:</p><ul><li>Agua 50 L</li><li>Arroz 4 kg y pasta 4 kg</li><li>Puré de patata 2 kg</li><li>Atún ×20 y latas de plato ×20</li><li>Fruta en lata ×10</li><li>Galletas 2 × 800 g</li><li>Leche en polvo 2 kg (≈20 L)</li><li>Chocolate ×5 tabletas</li><li>Café 200 g y frutos secos 200 g</li></ul>`},
-  {id:"que-comprar", t:"Qué comprar y dónde", h:`<ul><li><strong>Latas de plato 420 g</strong> (~1,5 €): fabada, cocido, lentejas, albóndigas, garbanzos con espinacas, callos</li><li><strong>Comida deshidratada</strong> (5–10 €, Decathlon): arroz con lentejas, muesli, sopa de pollo</li><li><strong>Liofilizado</strong>: raciones básicas de 5–7 € (~600 kcal) o MRE militares de ~17 € (~3.000 kcal)</li></ul>`},
-  {id:"obtener-agua", t:"Obtener agua", h:`<ul><li><strong>Condensación en suelo</strong>: agujero, recipiente en el centro y plástico encima con una piedra</li><li><strong>Bolsa en plantas</strong>: bolsa transparente cerrada sobre una rama al sol</li><li><strong>Filtros</strong> y <strong>evaporación de agua de mar</strong></li><li><strong>Hervir</strong>: el método más seguro (al menos 1 minuto a borbotones; mejor 5)</li><li>Limón: elimina algunos microbios, <strong>no todos</strong></li></ul><p><strong>Kit de agua de mochila:</strong> botella de 1,5 L/día, cantimplora metálica (sirve para hervir), 30 pastillas potabilizadoras, filtro pajita y botella flexible de 0,7 L.</p>`},
-  {id:"recetas-sv", w:true, t:"Recetas de supervivencia", h:`<div class="mini-wrap"><table class="mini"><thead><tr><th>Receta</th><th>Cómo se hace</th><th>Dato</th></tr></thead><tbody>
-  <tr><td><strong>Galletas hardtack</strong></td><td>400 g de harina + 250 ml de agua + sal. Masa uniforme, hornear a 200 ºC 30 min, dar la vuelta y otros 30 min. Sin aceite, grasa ni miel para que duren años.</td><td>≈400 kcal/100 g</td></tr>
-  <tr><td><strong>Caldo sólido</strong></td><td>Guiso con hueso (colágeno), colar el caldo sin grasa, reducir en sartén hasta gelatina dura y secar 5–7 días. Se corta en cubos y se disuelve en agua caliente.</td><td>Meses al ambiente, años al vacío</td></tr>
-  <tr><td><strong>Vinagre de sidra</strong></td><td>Manzana troceada sin cera en tarro de cristal con agua pura, 1 cucharada de azúcar o miel por manzana y 1 de levadura. Tapar 1–2 semanas, colar y reposar 2–3 semanas.</td><td>Conservante, antiséptico, repelente</td></tr>
-  <tr><td><strong>Pemmican</strong></td><td>Carne seca en polvo mezclada con grasa (y fruta seca). Receta clásica de alta energía.</td><td>600–800 kcal/100 g</td></tr>
-  <tr><td><strong>Sampa (9 ingredientes)</strong></td><td>Harina tostada de cacahuete, maíz, trigo, judía, garbanzo, soja y lenteja con plátano y miel.</td><td>≈350 kcal · 13 g proteína</td></tr>
-  <tr><td><strong>Barritas energéticas</strong></td><td>Miel + crema de cacahuete + avena + cacao + almendras. Prensar y dejar enfriar.</td><td>Ideal para la mochila</td></tr>
-  </tbody></table></div><p>Otros básicos a tener: cacao en polvo, maicena (espesante), avena, café liofilizado, sal, azúcar, miel, leche en polvo, multivitamínico y bicarbonato.</p>`},
-  {id:"almacenar-legumbres", t:"Almacenar legumbres y grano", h:`<p>Recipiente de cristal o plástico duro hermético. Para quitar el oxígeno, antes de cerrar se puede meter una pequeña llama que lo consuma (o usar absorbedores de oxígeno o envasado al vacío).</p><p><strong>Problemas:</strong> roedores, gorgojos e insectos que ponen huevos. Menos oxígeno = menos plagas.</p>`},
-  {id:"cocina-ascuas", t:"Cocina en ascuas", h:`<ul><li>Patata envuelta en papel de aluminio: 30–50 min</li><li>Carne en filete o brocheta: 5 min</li><li>Huevos fritos: 5–10 min</li><li>Lentejas / garbanzos / judías en olla de barro junto a las ascuas: 40 / 40 / 100 min</li></ul>`},
-  {id:"energia-extra", t:"Energía extra: cafeína", h:`<p>Máximo recomendado: <strong>400 mg de cafeína al día</strong> en adultos sanos.</p><div class="mini-wrap"><table class="mini"><thead><tr><th>Fuente</th><th>Cafeína aprox.</th></tr></thead><tbody>
-  <tr><td>Café / café con leche (200 ml)</td><td>80 / 40 mg</td></tr><tr><td>Té negro / verde</td><td>50 / 40 mg</td></tr><tr><td>Té matcha</td><td>60 mg</td></tr><tr><td>Bebida energética (lata)</td><td>80–180 mg</td></tr><tr><td>Refresco de cola</td><td>35–40 mg</td></tr><tr><td>Scho‑ka‑kola (100 g)</td><td>200 mg</td></tr><tr><td>Chocolate negro (100 g)</td><td>50 mg</td></tr><tr><td>Gel energético</td><td>~78 mg</td></tr>
-  </tbody></table></div>`},
-  {id:"huerto", w:true, t:"Huerto de supervivencia", h:`<p>Para autoabastecerse a medio plazo. Calendario orientativo para clima de interior de España:</p><div class="mini-wrap"><table class="mini"><thead><tr><th>Cultivo</th><th>Siembra</th><th>Cosecha</th><th>Rendimiento</th><th>Problemas típicos</th></tr></thead><tbody>
-  <tr><td>Patata</td><td>Mar–Abr</td><td>Oct</td><td>~3 kg/m²</td><td>Mildiu, escarabajo</td></tr>
-  <tr><td>Tomate</td><td>May (semillero antes)</td><td>Ago–Sep</td><td>~3 kg/planta</td><td>Mosca blanca, mildiu, tuta</td></tr>
-  <tr><td>Calabacín</td><td>Abr–Jun</td><td>Jun–Sep</td><td>~5 kg/planta</td><td>Oídio, mosca blanca</td></tr>
-  <tr><td>Calabaza</td><td>Abr–Jun</td><td>Sep–Nov</td><td>~3 ud/planta</td><td>Oídio, pulgón</td></tr>
-  <tr><td>Judía verde</td><td>May</td><td>Ago</td><td>1–3 kg/m²</td><td>Pulgón, roya</td></tr>
-  <tr><td>Lechuga</td><td>Todo el año</td><td>30–90 días</td><td>1–2 kg/m²</td><td>Caracoles, pulgón</td></tr>
-  <tr><td>Cebolla</td><td>Ene–Abr</td><td>Jun–Ago</td><td>2–3 kg/m²</td><td>Mosca de la cebolla</td></tr>
-  <tr><td>Ajo</td><td>Nov–Ene</td><td>Jun–Jul</td><td>~2 kg/m²</td><td>Mosca del ajo, roya</td></tr>
-  <tr><td>Habas</td><td>Oct–Dic</td><td>Mar–May</td><td>~2 kg/m²</td><td>Pulgón negro</td></tr>
-  <tr><td>Pimiento</td><td>Mar–May</td><td>Jul–Oct</td><td>1–3 kg/planta</td><td>Pulgón, oídio</td></tr>
-  <tr><td>Zanahoria</td><td>Feb–Jul</td><td>Jun–Nov</td><td>~3 kg/m²</td><td>Mosca de la zanahoria</td></tr>
-  <tr><td>Fresas</td><td>Oct–Dic (plantón)</td><td>Mar–Jun</td><td>~1 kg/planta</td><td>Botritis, caracoles</td></tr>
-  </tbody></table></div>`},
-  {id:"cereales-legumbres", t:"Cereales y legumbres de secano", h:`<div class="mini-wrap"><table class="mini"><thead><tr><th>Cultivo</th><th>Siembra → cosecha</th><th>kg/ha</th></tr></thead><tbody>
-  <tr><td>Trigo</td><td>Oct–Nov → Jul–Ago</td><td>~3.000</td></tr><tr><td>Cebada</td><td>Oct–Nov → Jun–Jul</td><td>~4.000</td></tr><tr><td>Avena</td><td>Oct–Nov → Jun–Jul</td><td>~3.500</td></tr><tr><td>Maíz (regadío)</td><td>Abr–May → Sep–Oct</td><td>~10.000</td></tr><tr><td>Girasol</td><td>Abr–May → Sep–Oct</td><td>~2.000</td></tr><tr><td>Lenteja</td><td>Nov–Mar → Jun–Ago</td><td>~1.000</td></tr><tr><td>Garbanzo</td><td>Feb–Abr → Jul–Sep</td><td>~1.500</td></tr><tr><td>Alubia</td><td>Abr–May → Sep–Oct</td><td>~1.500</td></tr>
-  </tbody></table></div><p>Las legumbres fijan nitrógeno: necesitan poco abono y mejoran el suelo.</p>`},
-  {id:"frutales", t:"Frutales, frutos secos y otros", h:`<ul><li><strong>Higuera</strong>: resiste sequía, 20–60 kg/árbol</li><li><strong>Manzano / peral</strong>: 15–50 kg/árbol</li><li><strong>Olivo</strong>: 20–50 kg/árbol, riego moderado</li><li><strong>Almendro</strong>: poco riego, 10–30 kg/árbol desde el 3.<sup>er</sup>–5.º año</li><li><strong>Nogal</strong>: 30–100 kg, fructifica tras 5–8 años</li><li><strong>Castaño</strong>: 30–60 kg, suelo ácido y húmedo</li><li><strong>Parra</strong>: 4–10 kg/parra</li><li><strong>Miel</strong>: 10–30 kg por colmena</li><li><strong>Setas</strong>: cardo cultivable (2–4 kg por ciclo); níscalo y boletus silvestres (solo si sabes identificarlos)</li></ul>`}
-],
 climatologia:[
   {id:"limites-cuerpo", w:true, t:"Límites del cuerpo humano", h:`<div class="mini-wrap"><table class="mini"><thead><tr><th>Situación</th><th>Rango</th><th>Qué pasa</th></tr></thead><tbody>
   <tr><td><strong>Calor extremo</strong></td><td>50–60 ºC</td><td>Golpe de calor en minutos y deshidratación rápida. Con humedad alta, peligro desde 40 ºC en unos 30 min. La actividad física reduce mucho la tolerancia.</td></tr>
@@ -652,6 +812,44 @@ otros:[
   {id:"plagas", t:"Control de plagas", h:`<p><strong>Trampa de cubo para ratones:</strong> un cubo con un globo grande hinchado encima y comida sobre él. Cuando hay ratones en el cubo, se pincha el globo y caen dentro.</p><p>Guarda la comida en recipientes herméticos: es la mejor prevención.</p>`}
 ]
 };
+(EXTRA.defensa = EXTRA.defensa || []).push(
+  {id:"cerraduras", w:true, t:"Cerraduras: qué comprar", h:`<p>El bombín (el cilindro donde entra la llave) es el punto más débil de la mayoría de puertas. Los grados de seguridad, de menor a mayor protección:</p>
+  <div class="mini-wrap"><table class="mini"><thead><tr><th>Nivel</th><th>Ejemplo</th><th>Qué ofrece</th></tr></thead><tbody>
+  <tr><td>Básico</td><td>Serreta clásica (Tesa TE5)</td><td>Llave dentada de toda la vida. Copia libre y barata, pero sin protecciones.</td></tr>
+  <tr><td>Medio</td><td>Llave plana reversible (Tesa T70, FAC 946)</td><td>Copia controlada, refuerzo anti‑rotura y primeras protecciones.</td></tr>
+  <tr><td>Alto</td><td>Tesa TX80, Lince 7930‑R</td><td>Pitones activos, protección frontal reforzada y copia solo con tarjeta.</td></tr>
+  <tr><td>Muy alto</td><td>Tesa TK100, Keso 8000, Evva</td><td>Llave con elemento móvil o electrónico, prácticamente incopiable sin autorización.</td></tr>
+  </tbody></table></div>
+  <p><strong>Marcas de referencia:</strong> Tesa Assa Abloy y Lince en España; Keso (Suiza) y Evva (Austria) en el segmento más alto.</p>
+  <p>También existen <strong>cerrojos electrónicos</strong> sin bombín expuesto por fuera (tipo Remock o Nuki), que evitan directamente los ataques al cilindro.</p>`},
+  {id:"vision-nocturna", t:"Visión nocturna", h:`<p>Amplifican la poca luz disponible mediante un tubo intensificador de imagen: convierte la luz en electrones, los amplifica y los vuelve a convertir en una imagen visible.</p>
+  <ul><li><strong>Generación 1</strong> (años 60): imagen granulada, la más económica</li><li><strong>Generación 2</strong> (años 70): más claridad, contraste y alcance</li><li><strong>Generación 3</strong>: uso militar y táctico, la mejor calidad de imagen</li></ul>
+  <p>Alternativa: la <strong>visión térmica</strong>, que detecta calor en vez de luz, útil también de día con niebla o humo.</p>`},
+  {id:"licencias-armas", t:"Licencias de armas en España", h:`<p>Marco legal, a nivel informativo. En España las armas se agrupan en categorías con licencias distintas:</p>
+  <ul><li><strong>Licencia F</strong>: armas cortas y largas de tiro deportivo. Requiere federarse, curso, examen ante la Guardia Civil, psicotécnico y tasas.</li><li><strong>Licencias D/E</strong>: caza mayor y menor, escopetas.</li><li><strong>Categoría de armas antiguas y de aire/gas de baja potencia</strong>: régimen más flexible.</li><li><strong>Armas blancas</strong> (navajas, machetes): la tenencia y el transporte están regulados; llevarlas sin causa justificada en la vía pública puede ser sancionable.</li></ul>
+  <div class="warn">Esto es solo un resumen orientativo. Antes de comprar o tramitar cualquier licencia, consulta la normativa vigente y a la Guardia Civil (Intervención de Armas).</div>`}
+);
+
+(EXTRA.herramientas = EXTRA.herramientas || []).push(
+  {id:"niveles-equipo", w:true, t:"Herramientas por presupuesto", h:`<div class="mini-wrap"><table class="mini"><thead><tr><th>Nivel</th><th>Qué incluye</th><th>Presupuesto aprox.</th></tr></thead><tbody>
+  <tr><td>Básico</td><td>Multiherramienta, navaja, cinta americana, bridas, guantes</td><td>30–50 €</td></tr>
+  <tr><td>Medio</td><td>+ Llave inglesa, destornilladores, sierra plegable, hacha pequeña, pala plegable</td><td>80–150 €</td></tr>
+  <tr><td>Avanzado</td><td>+ Caja de herramientas completa, palanca, lona, mosquetones, kit de reparación</td><td>200 €+</td></tr>
+  </tbody></table></div>`},
+  {id:"kit-hogar", t:"Kit para cortar suministros", h:`<p>Antes de una emergencia, localiza y marca:</p><ul><li>La <strong>llave de paso del agua</strong> (suele estar cerca del contador)</li><li>La <strong>llave de paso del gas</strong></li><li>El <strong>cuadro eléctrico</strong> (ICP y diferencial)</li></ul><p>Ten a mano una llave inglesa ajustable y un destornillador plano: muchas llaves de paso se cierran con ellos.</p>`},
+  {id:"mantenimiento", t:"Mantenimiento básico", h:`<p>Revisa cada 6 meses: pilas de linternas, fecha de los botiquines, presión de las ruedas de bici, filo de las herramientas de corte y estado de las cuerdas.</p>`}
+);
+(EXTRA.transporte = EXTRA.transporte || []).push(
+  {id:"niveles-coche", w:true, t:"Preparar el coche por niveles", h:`<div class="mini-wrap"><table class="mini"><thead><tr><th>Nivel</th><th>Qué llevar</th></tr></thead><tbody>
+  <tr><td>Básico</td><td>Baliza V16, cables de arranque, chaleco reflectante, agua y manta</td></tr>
+  <tr><td>Medio</td><td>+ Arrancador de batería, compresor, kit de reparación de pinchazos, mapa en papel</td></tr>
+  <tr><td>Avanzado</td><td>+ Bidón de combustible homologado, cadenas para nieve, cuerda de remolque, kit de emergencia completo</td></tr>
+  </tbody></table></div>`},
+  {id:"baliza-v16", t:"Baliza V16", h:`<p>Desde el 1 de enero de 2026 es <strong>obligatoria</strong> en toda España para señalizar una avería o accidente, sustituyendo a los triángulos. Debe estar <strong>homologada y conectada</strong> (Bluetooth/GPS) para ser válida.</p>`},
+  {id:"rutas-alternativas", t:"Rutas alternativas", h:`<p>Antes de que haga falta: identifica dos formas distintas de salir de tu ciudad o barrio (no solo la autovía principal) y guarda un mapa de carreteras en papel en el coche, por si el GPS del móvil no funciona.</p>`},
+  {id:"camper-basico", t:"Vida en el coche", h:`<p>Si necesitas pasar tiempo o dormir en el coche: parasoles/cortinillas para intimidad y frío, saco de dormir, powerbank y algo de comida no perecedera en la guantera.</p>`}
+);
+
 AREAS.forEach(a=>{ if(EXTRA[a.id]) a.subs.push(...EXTRA[a.id]); });
 
 /* ================= UTILIDADES ================= */
@@ -769,8 +967,6 @@ function viewPortada(a){
   </div>
   <p class="intro">${a.intro}</p>
   <div class="term sunken">
-    <div><span class="p">C:\\&gt;</span> supervivencia.exe --iniciar</div>
-    <div>Cargando protocolo de preparación... <span class="p">OK</span></div>
     <h3>&gt; REGLA DE ORO · AUTONOMÍA 72 H</h3>
     <div class="rule"><div><strong>AGUA</strong>3 L/persona/día</div><div><strong>LUZ</strong>sin red eléctrica</div><div><strong>INFO</strong>radio a pilas</div><div><strong>CALOR</strong>abrigo y capas</div></div>
     <h3>&gt; ÁREAS DISPONIBLES</h3>
