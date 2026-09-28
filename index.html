@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SupervivencIA · Supervivencia en tiempos de IA</title>
+<meta name="description" content="Guía práctica de supervivencia y preparación ante emergencias: agua y comida, clima, energía, comunicaciones, primeros auxilios y más, con los mejores productos de cada área.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Share+Tech+Mono&family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gray:#c3c3b8; --gray-2:#d6d6cc; --shade:#7d7d70; --hi:#f4f4ea; --ink:#15170f;
+  --ol-dark:#2b3d1c; --ol:#4a6231; --ol-light:#6b8a45; --lime:#a4d65e; --khaki:#c9b77a; --amber:#f2b632;
+  --term:#0d120a; --term-txt:#c4d8b0;
+  --f-stencil:"Black Ops One","Stencil",Impact,sans-serif;
+  --f-mono:"Share Tech Mono","Courier New",monospace;
+  --f-body:"Barlow",Tahoma,sans-serif;
+  --f-cond:"Barlow Condensed","Arial Narrow",sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--f-body);color:var(--ink);min-height:100vh;
+  background-color:#3a4a2c;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480' viewBox='0 0 480 480'%3E%3Crect width='480' height='480' fill='%233a4a2c'/%3E%3Cpath fill='%23525c36' d='M-30 50c50-40 110-10 140 20s80 20 100 70-40 80-95 70-70 35-115 10S-75 85-30 50z'/%3E%3Cpath fill='%23263320' d='M250-15c60 0 95 35 130 25s70 35 45 80-80 25-115 45-80-10-95-60 0-90 35-90z'/%3E%3Cpath fill='%235e5a3c' d='M340 190c45-25 115 0 125 45s-25 90-80 90-55 45-100 25-25-70 0-100 25-45 55-60z'/%3E%3Cpath fill='%23304226' d='M40 260c35-35 100-25 125 10s70 45 45 90-90 35-125 55-90-10-90-70 10-55 45-85z'/%3E%3Cpath fill='%23263320' d='M180 165c25-25 70-10 80 12s0 55-35 55-70-12-70-35 0-22 25-32z'/%3E%3Cpath fill='%235e5a3c' d='M225 385c35-25 90-10 115 22s0 70-45 70h-100c-25 0-10-55 30-92z'/%3E%3Cpath fill='%23263320' d='M375 375c25-12 70 0 80 35s-25 55-55 45-45-55-25-80z'/%3E%3Cpath fill='%23525c36' d='M-10 150c25-12 55 0 55 22s-22 45-45 45-35-55-10-67z'/%3E%3Cpath fill='%23304226' d='M420 20c20-10 50 5 50 25s-25 35-45 30-25-45-5-55z'/%3E%3C/svg%3E");
+  background-size:24px 24px,24px 24px,480px 480px;
+}
+button{font:inherit}
+.raised{border:2px solid;border-color:var(--hi) var(--shade) var(--shade) var(--hi);box-shadow:inset -1px -1px 0 #55554a}
+.sunken{border:2px solid;border-color:var(--shade) var(--hi) var(--hi) var(--shade);box-shadow:inset 1px 1px 0 #55554a}
+
+/* ================= ÍNDICE LATERAL ================= */
+.side{position:fixed;left:0;top:0;bottom:0;width:290px;background:var(--gray);border-right:2px solid var(--shade);box-shadow:2px 0 0 var(--hi);
+  display:flex;flex-direction:column;overflow-y:auto;z-index:20;transition:transform .2s}
+.side-head{background:linear-gradient(90deg,var(--ol-dark),var(--ol-light));color:#fff;display:flex;align-items:center;gap:10px;padding:6px 10px;min-height:60px}
+.logo{width:48px;height:48px;background:var(--term);border:1px solid #000;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.side-head span{font-family:var(--f-stencil);font-size:15px;letter-spacing:1.5px}
+.search-row{display:flex;gap:6px;align-items:center;margin:8px 10px}
+.home{background:var(--gray);width:32px;height:30px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;flex-shrink:0}
+.home:active{border-color:var(--shade) var(--hi) var(--hi) var(--shade)}
+.search{flex:1;min-width:0;background:#fff;display:flex;align-items:center;gap:6px;padding:3px 6px}
+.search input{flex:1;min-width:0;border:none;outline:none;background:transparent;font-family:var(--f-mono);font-size:13px;padding:3px 0}
+.search-empty{display:none;margin:0 12px 6px;font-family:var(--f-mono);font-size:12px;color:#6b2a1a}
+.nav{display:flex;flex-direction:column;padding:4px 10px 8px;gap:6px}
+.nav-area{border-top:1px solid var(--shade);padding-top:4px}
+.nav-area:first-child{border-top:none;padding-top:0}
+.nav-area summary{display:flex;align-items:center;justify-content:space-between;gap:6px;cursor:pointer;list-style:none}
+.nav-area summary::-webkit-details-marker{display:none}
+.nav-area summary::marker{content:""}
+.area-link{background:none;border:none;padding:2px 4px;text-align:left;cursor:pointer;color:var(--ink);font-family:var(--f-mono);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+.area-link:hover{color:var(--ol)}
+.chev{background:none;border:none;color:var(--ol-dark);font-size:17px;font-weight:700;cursor:pointer;padding:0 4px;transition:transform .15s}
+.nav-area[open] .chev{transform:rotate(90deg)}
+.sub-list{display:flex;flex-direction:column;margin:4px 0 2px;padding-left:4px}
+.sub-link{background:none;border:none;border-left:2px solid var(--shade);text-align:left;cursor:pointer;color:#26281e;font-family:var(--f-mono);font-size:12px;line-height:1.9;padding:0 0 0 8px}
+.sub-link:hover,.sub-link.is-current,.area-link.is-current{color:#fff;background:var(--ol-dark);border-left-color:var(--lime)}
+.hide{display:none!important}
+.side-foot{margin-top:auto;padding:14px 14px 18px;text-align:center}
+.badge{background:var(--term);padding:14px 8px}
+.badge .big{font-family:var(--f-stencil);font-size:24px;color:var(--lime);letter-spacing:1px}
+.badge .big b{color:var(--amber);font-weight:400}
+.badge small{display:block;font-family:var(--f-mono);color:var(--term-txt);font-size:12px;margin-top:4px}
+.ver{font-family:var(--f-mono);font-size:11px;margin-top:8px;color:#3a3a30}
+
+/* ================= VENTANA ================= */
+.window{margin:22px 22px 22px 314px;background:var(--gray);box-shadow:4px 4px 0 rgba(0,0,0,.55);min-height:calc(100vh - 44px);display:flex;flex-direction:column}
+.titlebar{background:linear-gradient(90deg,var(--ol-dark),var(--ol-light));color:#fff;display:flex;align-items:center;gap:8px;padding:4px 6px;font-family:var(--f-mono);font-size:15px;letter-spacing:1px}
+.tb-ico{width:14px;height:14px;background:var(--amber);border:1px solid #000}
+.tb-btns{margin-left:auto;display:flex;gap:3px}
+.tb-btns b{width:22px;height:19px;background:var(--gray);color:#000;font-size:11px;display:flex;align-items:center;justify-content:center;font-family:var(--f-mono)}
+.body{padding:24px 26px 30px}
+
+/* hero (portada) */
+.hero h1{font-family:var(--f-stencil);font-weight:400;font-size:52px;line-height:1;color:var(--ol-dark);margin:0 0 8px;letter-spacing:1px}
+.hero h1 b{color:var(--ol-light);font-weight:400}
+.hero .sub{font-family:var(--f-cond);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:1px;margin:0 0 12px}
+
+/* cabecera de área */
+.back{display:inline-block;background:var(--gray);color:#000;font-family:var(--f-mono);font-size:13px;font-weight:700;padding:5px 12px;cursor:pointer;margin-bottom:16px}
+.back:active{border-color:var(--shade) var(--hi) var(--hi) var(--shade)}
+.area-head{display:flex;align-items:center;gap:14px;margin:0 0 14px}
+.area-num{font-family:var(--f-mono);font-size:22px;color:var(--lime);background:#000;padding:4px 12px;min-width:44px;text-align:center;border:2px solid;border-color:#000 var(--hi) var(--hi) #000;box-shadow:inset 0 0 8px rgba(164,214,94,.55)}
+.area-head h2{font-family:var(--f-stencil);font-weight:400;font-size:32px;margin:0;color:var(--ol-dark);letter-spacing:1px;text-transform:uppercase;line-height:1.1}
+.intro{background:#fff;border:1px solid var(--shade);padding:14px 18px;font-size:16px;line-height:1.65;margin:0 0 22px;max-width:1100px}
+
+/* terminal */
+.term{background:var(--term);color:var(--term-txt);font-family:var(--f-mono);padding:20px 22px;font-size:15px;line-height:1.6;margin-bottom:22px}
+.term .p{color:var(--lime)}
+.term h3{font-family:var(--f-mono);color:var(--lime);font-size:15px;letter-spacing:1.5px;margin:18px 0 10px;font-weight:400}
+.term h3:first-child{margin-top:0}
+.rule{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.rule div{border:1px solid #3b5a26;padding:12px;text-align:center;color:#eaf5dc;font-size:14px}
+.rule div strong{display:block;font-family:var(--f-stencil);font-weight:400;font-size:26px;color:var(--amber)}
+.tline{display:flex;align-items:baseline;gap:8px;color:var(--term-txt);text-decoration:none;padding:2px 0;cursor:pointer;background:none;border:none;width:100%;font:inherit;text-align:left}
+.tline .dots{flex:1;border-bottom:1px dotted #3b5a26;transform:translateY(-4px)}
+.tline .go{color:var(--lime)}
+.tline:hover{color:var(--lime)}
+
+/* tarjetas de información */
+.sub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-bottom:28px}
+.card{background:var(--gray);box-shadow:3px 3px 0 rgba(0,0,0,.3);display:flex;flex-direction:column;scroll-margin-top:20px}
+.card h3{margin:0;background:linear-gradient(90deg,var(--ol-dark),var(--ol-light));color:#fff;font-family:var(--f-cond);font-weight:700;font-size:17px;letter-spacing:.8px;text-transform:uppercase;padding:6px 10px}
+.card .in{background:#fff;margin:10px;padding:12px 14px;border:1px solid var(--shade);font-size:15px;line-height:1.6;flex:1}
+.card .in p{margin:0 0 8px}
+.card .in p:last-child{margin-bottom:0}
+.card ul{margin:6px 0 0;padding:0;list-style:none}
+.card li{padding-left:22px;position:relative;margin-bottom:3px}
+.card li::before{content:"■";position:absolute;left:4px;top:1px;color:var(--ol-light);font-size:11px}
+.card.flash{animation:flash 1.4s ease}
+@keyframes flash{0%,40%{box-shadow:0 0 0 4px var(--amber),3px 3px 0 rgba(0,0,0,.3)}100%{box-shadow:3px 3px 0 rgba(0,0,0,.3)}}
+.warn{background:#fff6d8;border:1px solid #b89a3a;padding:8px 10px;margin-top:8px;font-size:14px}
+
+.card{min-width:0}
+.card.wide{grid-column:1/-1}
+.mini-wrap{overflow-x:auto;margin:8px 0}
+table.mini{width:100%;border-collapse:collapse;font-size:14px;min-width:480px}
+table.mini th{background:var(--term);color:var(--lime);font-family:var(--f-mono);font-weight:400;text-align:left;padding:6px 8px;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+table.mini td{padding:6px 8px;border-bottom:1px solid #deded2;vertical-align:top}
+table.mini tr:nth-child(even) td{background:#f5f5ee}
+table.mini tr.tot td{font-weight:700;background:#e6ecd9;border-top:2px solid var(--ol)}
+.card ul.cols{columns:4 170px;column-gap:18px}
+.card ul.cols li{break-inside:avoid}
+
+/* tabla top productos */
+.top-win{background:var(--gray);box-shadow:3px 3px 0 rgba(0,0,0,.3);scroll-margin-top:20px}
+.top-win .titlebar{font-size:14px}
+.table-wrap{overflow-x:auto;margin:10px;background:#fff}
+table.top{width:100%;border-collapse:collapse;font-size:15px;min-width:640px}
+table.top th{background:var(--term);color:var(--lime);font-family:var(--f-mono);font-weight:400;text-align:left;padding:8px 10px;letter-spacing:1px;font-size:13px;text-transform:uppercase}
+table.top td{padding:9px 10px;border-bottom:1px solid #d8d8cc;vertical-align:middle}
+table.top tr:nth-child(even) td{background:#f3f3ea}
+.rank{font-family:var(--f-stencil);font-size:22px;color:var(--ol);text-align:center;width:48px}
+.pname{font-weight:700}
+.lvl{display:inline-block;font-family:var(--f-mono);font-size:12px;padding:2px 7px;border:1px solid}
+.lvl.b{color:#2b5a14;border-color:#2b5a14;background:#eef6e2}
+.lvl.m{color:#7a5a00;border-color:#7a5a00;background:#fbf2d6}
+.lvl.a{color:#7a2a14;border-color:#7a2a14;background:#f8e6de}
+.amz{display:inline-block;white-space:nowrap;background:var(--ol);color:#fff;text-decoration:none;font-family:var(--f-mono);font-size:13px;padding:6px 10px;border:2px solid;border-color:#8fb466 #1a2710 #1a2710 #8fb466}
+.amz:hover{background:var(--ol-dark)}
+.amz:active{border-color:#1a2710 #8fb466 #8fb466 #1a2710}
+.top-note{font-size:12px;color:#3a3a30;margin:0 12px 10px}
+
+.filters{display:flex;flex-wrap:wrap;gap:10px 22px;margin:10px 10px 0;font-family:var(--f-mono);font-size:13px}
+.fgroup{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.fgroup span{margin-right:4px}
+.fbtn{background:var(--gray);font-family:var(--f-mono);font-size:12px;padding:3px 9px;cursor:pointer}
+.fbtn.on{background:var(--ol-dark);color:#fff;border-color:#1a2710 #8fb466 #8fb466 #1a2710}
+.store{display:inline-block;font-family:var(--f-mono);font-size:12px;padding:2px 7px;color:#fff;white-space:nowrap}
+.store.st-amz,.amz.st-amz{background:#4a6231}
+.store.st-dec,.amz.st-dec{background:#0b5f94}
+.store.st-lm,.amz.st-lm{background:#3d6b12}
+.amz.st-dec{border-color:#6fb4e0 #062f4a #062f4a #6fb4e0}
+.amz.st-lm{border-color:#9cc86a #1d3608 #1d3608 #9cc86a}
+
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:24px;flex-wrap:wrap}
+.pbtn{background:var(--gray);color:#000;font-family:var(--f-mono);font-size:13px;padding:6px 12px;cursor:pointer}
+.pbtn.off{visibility:hidden}
+
+/* contacto */
+.form{background:var(--gray);padding:16px;display:grid;gap:12px;max-width:560px}
+.form label{display:grid;gap:4px;font-family:var(--f-mono);font-size:14px}
+.form input,.form textarea{background:#fff;padding:7px 8px;font:15px var(--f-body);outline:none;resize:vertical}
+.form .amz{cursor:pointer;width:170px;font-size:14px}
+
+/* barra de estado */
+.status{margin-top:auto;border-top:2px solid var(--shade);display:flex;gap:4px;padding:4px;font-size:12px;flex-wrap:wrap}
+.status span{padding:2px 8px}
+.status .grow{flex:1}
+.status .mono{font-family:var(--f-mono)}
+
+/* ================= MÓVIL ================= */
+.menu-btn{display:none;position:fixed;top:10px;left:10px;z-index:30;background:var(--gray);width:42px;height:38px;font-size:18px;cursor:pointer}
+.overlay{display:none}
+@media (max-width:900px){
+  .side{transform:translateX(-100%);width:84vw;max-width:300px}
+  .side.open{transform:translateX(0)}
+  .overlay.show{display:block;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:15}
+  .menu-btn{display:block}
+  .window{margin:58px 8px 8px}
+  .body{padding:18px 14px 24px}
+  .hero h1{font-size:36px}
+  .area-head h2{font-size:24px}
+  .rule{grid-template-columns:repeat(2,1fr)}
+  .sub-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<button class="menu-btn raised" id="menuBtn" aria-label="Abrir índice">☰</button>
+<div class="overlay" id="overlay"></div>
+
+<!-- ================= ÍNDICE ================= -->
+<aside class="side" id="side">
+  <div class="side-head">
+    <div class="logo">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#a4d65e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
+    </div>
+    <span>ÍNDICE COMPLETO</span>
+  </div>
+  <div class="search-row">
+    <button class="home raised" id="homeBtn" aria-label="Ir al inicio">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#15170f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+    </button>
+    <label class="search sunken">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="search" type="text" placeholder="Buscar apartado..." aria-label="Buscar apartado">
+    </label>
+  </div>
+  <p class="search-empty" id="searchEmpty">Sin resultados</p>
+  <nav class="nav" id="nav"></nav>
+  <div class="side-foot">
+    <div class="badge sunken">
+      <div class="big">SUPERVIVENC<b>IA</b></div>
+      <small>Supervivencia en tiempos de IA</small>
+    </div>
+    <div class="ver">v1.0 (28.09.2026)</div>
+  </div>
+</aside>
+
+<!-- ================= VENTANA ================= -->
+<main class="window raised">
+  <div class="titlebar"><span class="tb-ico"></span><span id="winTitle">SUPERVIVENCIA.EXE</span>
+    <div class="tb-btns"><b class="raised">_</b><b class="raised">□</b><b class="raised">×</b></div>
+  </div>
+  <div class="body" id="body"></div>
+  <div class="status">
+    <span class="sunken grow">Como afiliado de Amazon, esta web obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables. También participa en programas de afiliación de otras tiendas (Awin). Contenido informativo: en una emergencia, llama al 112.</span>
+    <span class="sunken mono" id="statusArea">ÁREA 00/10</span>
+  </div>
+</main>
+
+<script>
+/* ================= CONFIGURACIÓN ================= */
+const AMAZON_TAG    = "TU-TAG-21";        // ← tu ID de afiliado de Amazon
+const CONTACT_EMAIL = "tu@email.com";     // ← tu email de contacto
+
+/* ================= CONTENIDO =================
+   Cada área: subs = tarjetas de información (aparecen en el índice como X.1, X.2…)
+              top  = tabla de productos top (n = nombre, why = por qué, lvl = b/m/a, q = búsqueda Amazon o url = enlace directo)
+*/
+const AREAS = [
+{ id:"supervivencia", titulo:"Supervivencia", portada:true,
+  intro:"Un apagón, una tormenta, un corte de agua o una salida de emergencia: la mayoría de situaciones difíciles se resuelven mejor si tienes cuatro cosas bien pensadas antes de que ocurran. SupervivencIA recorre cada área con información práctica y los productos que de verdad merecen la pena.",
+  subs:[
+    {id:"que-es", t:"Qué es prepararse", h:`<p>Prepararse no es vivir con miedo ni llenar un búnker: es tener lo mínimo para que tú y los tuyos aguantéis unos días sin depender de nadie mientras los servicios se recuperan.</p><p>La mayoría de emergencias reales son cortas y locales: un apagón, una nevada, una DANA, un corte de agua. Ahí es donde la preparación marca la diferencia.</p>`},
+    {id:"regla-72h", t:"La regla de las 72 horas", h:`<p>Las autoridades europeas recomiendan que cada hogar pueda ser autosuficiente al menos <strong>72 horas</strong>. Es el tiempo que suelen tardar los servicios de emergencia en llegar a todo el mundo en una crisis grande.</p><ul><li>Agua para beber y cocinar</li><li>Comida que no necesite nevera</li><li>Luz y energía sin red eléctrica</li><li>Información: radio a pilas o de dinamo</li><li>Calor y abrigo</li></ul>`},
+    {id:"por-que-ahora", t:"Por qué ahora", h:`<p>El apagón de abril de 2025 dejó a toda la península sin luz durante horas: sin móvil, sin datos, sin pago con tarjeta y sin información. Quien tenía una radio, linternas y algo de efectivo lo vivió con mucha más tranquilidad.</p><p>Y en tiempos de IA, nuestra dependencia de la tecnología es mayor que nunca. Saber funcionar sin ella es una ventaja.</p>`},
+    {id:"como-usar", t:"Cómo usar esta web", h:`<p>Cada área tiene tarjetas de información y, al final, una <strong>tabla con los productos top</strong> ordenados por prioridad.</p><ul><li>Empieza por <strong>1. Agua y Comida</strong> y <strong>5. Energía y Fuego</strong></li><li>Compra primero lo de nivel Básico</li><li>Revisa tu kit cada 6 meses</li></ul>`}
+  ]},
+
+{ id:"agua-comida", titulo:"Agua y Comida",
+  intro:"Sin agua, los problemas empiezan en horas; sin comida, en días. Una reserva que vayas rotando y saber potabilizar te cubren lo esencial.",
+  subs:[
+    {id:"almacenar-agua", t:"Almacenar agua", h:`<p>Calcula <strong>al menos 3 litros por persona y día</strong> para beber y cocinar, más algo extra para higiene. Para 72 h y 2 personas: unos 20 litros.</p><ul><li>Agua embotellada en lugar fresco y oscuro</li><li>Rota la reserva antes de que caduque</li><li>Bidones con grifo para agua de uso general</li></ul>`},
+    {id:"potabilizar", t:"Potabilizar agua", h:`<p>Si tienes que usar agua de origen dudoso, fíltrala primero para quitar partículas y después desinféctala.</p><ul><li><strong>Hervir</strong>: el método más fiable. Un minuto a borbotones.</li><li><strong>Pastillas potabilizadoras</strong>: sigue las instrucciones del fabricante.</li><li><strong>Filtros portátiles</strong>: eliminan bacterias y protozoos; no todos eliminan virus.</li></ul><div class="warn">Solo lejía apta para desinfección de agua de bebida (lo indica la etiqueta), nunca lejías perfumadas.</div>`},
+    {id:"despensa", t:"Despensa de emergencia", h:`<p>Lo ideal es una despensa de cosas que ya coméis y vais rotando: lo primero que entra es lo primero que sale.</p><ul><li>Conservas de pescado, legumbres y verdura</li><li>Arroz, pasta y copos de avena</li><li>Frutos secos, barritas y chocolate</li><li>Leche UHT o en polvo</li><li>Abrelatas manual</li></ul>`},
+    {id:"cocinar-sin-luz", t:"Cocinar sin luz", h:`<p>Un hornillo de camping y un par de cartuchos te permiten hervir agua y calentar comida durante días.</p><div class="warn">Úsalo siempre con ventilación: nunca en espacios cerrados, por riesgo de monóxido de carbono.</div>`}
+  ]},
+
+{ id:"climatologia", titulo:"Climatología",
+  intro:"Frío, calor extremo, tormentas e inundaciones: saber leer los avisos oficiales y cómo protegerte de cada fenómeno.",
+  subs:[
+    {id:"avisos", t:"Avisos oficiales", h:`<p>AEMET emite avisos por colores: <strong>amarillo</strong> (atención), <strong>naranja</strong> (riesgo importante) y <strong>rojo</strong> (riesgo extraordinario). Con naranja o rojo, sigue las indicaciones de Protección Civil y del 112.</p><ul><li>Activa las alertas de tu comunidad autónoma</li><li>Ten una radio para cuando no haya datos</li></ul>`},
+    {id:"inundaciones", t:"Inundaciones y DANA", h:`<ul><li>Busca zonas altas; nunca bajes a garajes ni sótanos</li><li>No cruces calles inundadas a pie ni en coche: poca agua en movimiento puede arrastrar un vehículo</li><li>Corta la luz si el agua entra en casa</li><li>Ten documentos y móvil en una bolsa estanca</li></ul>`},
+    {id:"frio", t:"Frío extremo", h:`<p>En casa sin calefacción, concéntrate en una sola habitación, tapa rendijas y abrígate por capas.</p><ul><li>Capa base térmica, capa intermedia y capa exterior</li><li>Gorro y guantes: se pierde mucho calor por la cabeza y las manos</li><li>Saco de dormir o mantas para la noche</li></ul><div class="warn">Nunca uses braseros, barbacoas ni generadores dentro de casa.</div>`},
+    {id:"calor", t:"Calor extremo", h:`<ul><li>Bebe agua aunque no tengas sed</li><li>Evita salir entre las 12 y las 18 h</li><li>Persianas bajadas de día y ventilación de noche</li><li>Vigila a mayores, niños y mascotas</li></ul><p>Mareo, confusión o piel muy caliente y seca pueden ser un golpe de calor: llama al 112.</p>`}
+  ]},
+
+{ id:"herramientas", titulo:"Herramientas y Accesorios",
+  intro:"Pocas y buenas: resuelven el 90 % de los imprevistos, en casa o fuera.",
+  subs:[
+    {id:"imprescindibles", t:"Las imprescindibles", h:`<ul><li><strong>Multiherramienta</strong>: alicates, destornilladores y cuchilla en una</li><li><strong>Navaja</strong> de uso general</li><li><strong>Cinta americana</strong>: arregla casi todo de forma temporal</li><li><strong>Bridas</strong> y <strong>paracord</strong></li><li><strong>Guantes de trabajo</strong></li></ul>`},
+    {id:"kit-casa", t:"Kit para casa", h:`<p>Saber cortar el agua, la luz y el gas de tu casa es tan importante como tener herramientas. Localiza las llaves de paso y ten a mano:</p><ul><li>Llave inglesa ajustable</li><li>Martillo y juego de destornilladores</li><li>Lona y plásticos para tapar ventanas rotas</li></ul>`},
+    {id:"kit-mochila", t:"Kit para la mochila", h:`<p>En la mochila, prioriza el peso: una multiherramienta, un rollo pequeño de cinta americana, 10 m de paracord y un mechero ya cubren casi todo.</p>`}
+  ]},
+
+{ id:"transporte", titulo:"Transporte y Logística",
+  intro:"Cómo moverse y cómo evacuar: coche preparado, rutas alternativas y un plan claro si hay que salir.",
+  subs:[
+    {id:"coche", t:"Coche preparado", h:`<ul><li>Depósito siempre por encima de la mitad</li><li>Kit de emergencia fijo en el maletero</li><li>Baliza V16 conectada (obligatoria en España desde 2026)</li><li>Arrancador de batería y compresor</li><li>Agua, manta y algo de comida</li></ul>`},
+    {id:"evacuacion", t:"Plan de evacuación", h:`<p>Decide antes, no durante:</p><ul><li><strong>Punto de encuentro</strong> familiar cerca de casa y otro fuera del barrio</li><li><strong>Dos rutas</strong> para salir de tu ciudad</li><li><strong>Destino</strong>: casa de un familiar o amigo</li><li>Mochila lista junto a la puerta</li></ul>`},
+    {id:"sin-coche", t:"Sin coche", h:`<p>Si las carreteras se colapsan, una bici o ir a pie puede ser más rápido. Ten calzado cómodo en la mochila y un mapa en papel de tu zona.</p>`}
+  ]},
+
+{ id:"energia-fuego", titulo:"Energía y Fuego",
+  intro:"Luz, calor y cocina cuando falla la red: qué tener para un apagón y varias formas seguras de hacer fuego.",
+  subs:[
+    {id:"apagon", t:"Qué hacer en un apagón", h:`<ul><li>Desenchufa los aparatos sensibles para evitar picos al volver la luz</li><li>Abre la nevera lo mínimo: aguanta unas 4 horas fría</li><li>Ahorra batería del móvil: modo avión y brillo bajo</li><li>Escucha la radio para recibir información oficial</li></ul>`},
+    {id:"luz", t:"Luz", h:`<p>Una linterna frontal por persona, un farol LED para la habitación y pilas de repuesto. Mejor LED que velas: menos riesgo de incendio.</p>`},
+    {id:"baterias", t:"Baterías y energía", h:`<ul><li><strong>Powerbank</strong> de 20.000 mAh: varias cargas de móvil</li><li><strong>Estación de energía portátil</strong>: para router, luces o un portátil</li><li><strong>Panel solar plegable</strong>: recarga durante apagones largos</li></ul>`},
+    {id:"fuego", t:"Fuego seguro", h:`<p>Ten al menos tres formas de encender fuego: mechero, cerillas de tormenta y varilla de ferrocerio.</p><div class="warn">Extintor en casa y nunca fuego, braseros ni generadores en interiores sin ventilación.</div>`}
+  ]},
+
+{ id:"tecnologia", titulo:"Tecnología y Comunicaciones",
+  intro:"Sin red móvil ni internet, la radio es tu fuente de información oficial. Y la IA sin conexión en el móvil puede ser un manual de bolsillo.",
+  subs:[
+    {id:"radio", t:"Radio", h:`<p>En el apagón de 2025, la radio fue para muchos la única fuente de información. Una radio AM/FM de dinamo o solar funciona sin pilas y sin red.</p>`},
+    {id:"walkies", t:"Walkies y redes mesh", h:`<ul><li><strong>Walkies PMR446</strong>: uso libre en Europa, sin licencia. Útiles para familia y vecinos a corta distancia.</li><li><strong>Redes mesh</strong> (tipo Meshtastic): pequeños dispositivos que envían mensajes de texto entre sí sin cobertura.</li></ul>`},
+    {id:"ia-offline", t:"IA sin conexión", h:`<p>Hay aplicaciones de IA que funcionan en el móvil o el portátil sin internet. Descárgalas antes de necesitarlas y úsalas como consulta rápida.</p><div class="warn">No sustituyen a los servicios de emergencia ni a un médico: pueden equivocarse.</div>`},
+    {id:"offline", t:"Todo offline", h:`<ul><li>Mapas de tu zona descargados en el móvil</li><li>Guías de primeros auxilios en PDF</li><li>Teléfonos importantes apuntados en papel</li><li>Copia de documentos en un USB cifrado</li></ul>`}
+  ]},
+
+{ id:"salud", titulo:"Salud y Primeros Auxilios",
+  intro:"Un botiquín bien montado y saber usarlo. Lo segundo importa más que lo primero: haz un curso básico.",
+  subs:[
+    {id:"pas", t:"Conducta PAS", h:`<p>Ante cualquier accidente, recuerda <strong>PAS</strong>:</p><ul><li><strong>Proteger</strong>: a ti y a la víctima del peligro</li><li><strong>Avisar</strong>: al 112, con dónde y qué ha pasado</li><li><strong>Socorrer</strong>: solo lo que sepas hacer</li></ul>`},
+    {id:"botiquin", t:"Botiquín básico", h:`<ul><li>Gasas, vendas y esparadrapo</li><li>Tiritas de varios tamaños</li><li>Antiséptico y suero fisiológico</li><li>Guantes desechables</li><li>Tijeras y pinzas</li><li>Manta térmica</li><li>Tu medicación habitual de reserva</li></ul>`},
+    {id:"formacion", t:"Fórmate", h:`<p>Un curso de primeros auxilios y RCP de unas horas vale más que el mejor botiquín. Cruz Roja y muchos ayuntamientos los organizan con regularidad.</p>`}
+  ]},
+
+{ id:"defensa", titulo:"Técnicas de Defensa y Ataque",
+  intro:"Seguridad personal: evitar el conflicto es la primera técnica. Después, saber protegerte a ti y a tu casa dentro de la ley.",
+  subs:[
+    {id:"evitar", t:"Evitar y alejarse", h:`<p>La mejor pelea es la que no ocurre. Presta atención a tu entorno, evita zonas y horas de riesgo y, ante una amenaza, aléjate y pide ayuda.</p>`},
+    {id:"casa", t:"Seguridad en casa", h:`<ul><li>Refuerza puertas y ventanas: cerrojos y topes</li><li>Mirilla digital o cámara</li><li>Iluminación exterior con sensor</li><li>No publiques en redes que estás de viaje</li></ul>`},
+    {id:"defensa-personal", t:"Defensa personal", h:`<p>Un curso de defensa personal enseña a zafarse, proteger zonas vitales y ganar tiempo para escapar. También mejora la confianza, que es disuasoria por sí misma.</p>`},
+    {id:"ley", t:"Lo que dice la ley", h:`<p>El Código Penal (art. 20.4) exime por <strong>legítima defensa</strong> si hay una agresión ilegítima, la respuesta es racionalmente necesaria y no hubo provocación suficiente.</p><div class="warn">La proporcionalidad es clave. Ante la duda, consulta con un abogado.</div>`}
+  ]},
+
+{ id:"otros", titulo:"Otros",
+  intro:"Lo que no encaja en otra área pero marca la diferencia: documentos, dinero, higiene, niños y mascotas.",
+  subs:[
+    {id:"documentos", t:"Documentos y dinero", h:`<ul><li>Fotocopias de DNI, pasaportes, seguros y escrituras</li><li>Todo en una bolsa estanca</li><li>Efectivo en billetes pequeños: sin luz no hay pago con tarjeta</li><li>Llaves de repuesto</li></ul>`},
+    {id:"higiene", t:"Higiene", h:`<p>Toallitas húmedas, gel hidroalcohólico, papel higiénico y bolsas de basura. Sin agua corriente, la higiene evita enfermedades.</p>`},
+    {id:"ninos-mascotas", t:"Niños y mascotas", h:`<ul><li>Comida y pañales para varios días</li><li>Algo para entretener: cartas, libros</li><li>Pienso, agua y correa para la mascota</li><li>Transportín si hay que evacuar</li></ul>`}
+  ]},
+
+{ id:"contacto", titulo:"Contacto", contacto:true,
+  intro:"¿Tienes una duda, una propuesta de colaboración o quieres que analicemos un producto? Escríbenos.",
+  subs:[] }
+];
+
+/* ================= TIENDAS Y AFILIADOS =================
+   Amazon: tu tag de Amazon Afiliados.
+   Decathlon y Leroy Merlin: vía Awin. Pon tu ID de afiliado Awin y el ID de cada anunciante (lo ves en tu panel Awin).
+   Si un ID está vacío, el botón enlaza a la tienda sin comisión (así no queda roto). */
+const AWIN_AFFID = "";                      // ← tu ID de afiliado en Awin
+const STORES = {
+  amazon:    {name:"Amazon",       cls:"st-amz", url:q=>`https://www.amazon.es/s?k=${encodeURIComponent(q)}&tag=${AMAZON_TAG}`},
+  decathlon: {name:"Decathlon",    cls:"st-dec", mid:"", url:q=>`https://www.decathlon.es/es/search?Ntt=${encodeURIComponent(q)}`},
+  leroy:     {name:"Leroy Merlin", cls:"st-lm",  mid:"", url:q=>`https://www.leroymerlin.es/search?q=${encodeURIComponent(q)}`}
+};
+const storeLink = p => {
+  const s = STORES[p.s];
+  const dest = p.url || s.url(p.q);
+  if(p.s!=="amazon" && AWIN_AFFID && s.mid)
+    return `https://www.awin1.com/cread.php?awinmid=${s.mid}&awinaffid=${AWIN_AFFID}&ued=${encodeURIComponent(dest)}`;
+  return dest;
+};
+
+/* ================= PRODUCTOS TOP (15 por área) =================
+   Formato: [nombre, por qué, nivel b/m/a, tienda amazon/decathlon/leroy, búsqueda]
+   Para enlazar un producto concreto, sustituye la búsqueda por la URL completa (empezando por https://). */
+const TOP = {
+supervivencia:[
+  ["Mochila de emergencia 30–40 L","La base para montar tu kit de 72 h y tenerlo listo para salir.","b","amazon","mochila emergencia 72 horas"],
+  ["Kit de supervivencia completo","Lo básico en una sola compra para empezar sin complicarte.","b","amazon","kit supervivencia emergencia"],
+  ["Radio de emergencia dinamo/solar","Información oficial cuando no hay luz ni cobertura.","b","amazon","radio emergencia dinamo solar"],
+  ["Linterna frontal recargable","Manos libres: la luz más útil en cualquier emergencia.","b","decathlon","linterna frontal"],
+  ["Mantas térmicas (pack)","Pesan nada y protegen del frío y del shock.","b","amazon","manta termica emergencia pack"],
+  ["Powerbank 20.000 mAh","Varios días de móvil sin enchufe.","b","amazon","powerbank 20000 mah"],
+  ["Filtro de agua portátil","Agua dudosa convertida en bebible.","b","amazon","filtro agua portatil supervivencia"],
+  ["Botiquín de primeros auxilios","Imprescindible en casa y en la mochila.","b","amazon","botiquin primeros auxilios completo"],
+  ["Multiherramienta","Resuelve casi cualquier imprevisto.","b","amazon","multiherramienta"],
+  ["Bolsa estanca para documentos","Documentos, efectivo y móvil a salvo del agua.","b","decathlon","bolsa estanca"],
+  ["Bidón plegable con grifo","Reserva de agua que ocupa poco vacío.","b","decathlon","bidon agua plegable"],
+  ["Hornillo de camping","Hervir agua y cocinar sin electricidad.","m","decathlon","hornillo gas camping"],
+  ["Comida liofilizada","Años de caducidad; solo necesita agua caliente.","m","amazon","comida liofilizada"],
+  ["Estación de energía portátil","Energía para días de apagón.","a","amazon","estacion energia portatil"],
+  ["Manual de supervivencia en papel","Consulta sin batería ni internet.","b","amazon","manual supervivencia libro"]
+],
+"agua-comida":[
+  ["Filtro de agua tipo pajita","Ligero y fiable para agua de origen dudoso.","b","amazon","filtro agua pajita"],
+  ["Botella filtrante","Filtra mientras bebes; ideal para la mochila.","b","decathlon","botella filtrante"],
+  ["Pastillas potabilizadoras","Respaldo ligero para desinfectar agua.","b","amazon","pastillas potabilizadoras agua"],
+  ["Bidón de agua 20 L con grifo","Reserva de agua para 72 h en casa.","b","leroy","bidon agua 20 litros grifo"],
+  ["Bidón plegable","Recoge agua cuando haga falta y ocupa poco vacío.","b","decathlon","bidon agua plegable"],
+  ["Filtro de gravedad familiar","Filtra grandes cantidades sin esfuerzo.","a","amazon","filtro agua gravedad"],
+  ["Comida liofilizada (pack)","Larga caducidad, solo necesita agua caliente.","m","amazon","comida liofilizada pack"],
+  ["Raciones NRG-5","Barritas de emergencia compactas y de larga caducidad.","m","amazon","nrg-5 racion emergencia"],
+  ["Hornillo de gas de camping","Hervir agua y cocinar sin luz.","b","decathlon","hornillo gas camping"],
+  ["Cartuchos de gas","Combustible para varios días.","b","decathlon","cartucho gas camping"],
+  ["Hornillo de alcohol / sólido","Alternativa sin cartuchos, muy compacta.","m","amazon","hornillo alcohol camping"],
+  ["Olla de camping","Ligera, para hervir y cocinar.","b","decathlon","olla camping"],
+  ["Abrelatas manual","El detalle que todos olvidan.","b","amazon","abrelatas manual"],
+  ["Recipientes herméticos","Despensa protegida de humedad y plagas.","b","leroy","recipiente hermetico alimentos"],
+  ["Absorbedores de oxígeno","Grano y legumbres sin gorgojos durante años.","m","amazon","absorbedores de oxigeno alimentos"]
+],
+climatologia:[
+  ["Poncho impermeable","Cubre persona y mochila; ocupa muy poco.","b","decathlon","poncho lluvia"],
+  ["Chaqueta impermeable","Protección seria contra lluvia y viento.","m","decathlon","chaqueta impermeable"],
+  ["Camiseta térmica (capa base)","Retiene el calor cuando falla la calefacción.","b","decathlon","camiseta termica"],
+  ["Forro polar","Capa intermedia ligera y cálida.","b","decathlon","forro polar"],
+  ["Gorro y guantes térmicos","Por cabeza y manos se escapa mucho calor.","b","decathlon","gorro guantes termicos"],
+  ["Saco de dormir","Útil en casa sin calefacción y fuera.","m","decathlon","saco de dormir"],
+  ["Manta térmica reutilizable","Más resistente que las desechables.","b","amazon","manta termica reutilizable"],
+  ["Botas impermeables","Pies secos en lluvia e inundaciones.","m","decathlon","botas impermeables"],
+  ["Estación meteorológica con barómetro","Anticipa cambios de tiempo sin internet.","m","amazon","estacion meteorologica barometro"],
+  ["Ventilador recargable","Alivio en olas de calor durante un apagón.","b","amazon","ventilador portatil recargable"],
+  ["Toalla de refrigeración","Baja la temperatura corporal con agua.","b","decathlon","toalla refrigerante"],
+  ["Burlete para puertas y ventanas","Tapa rendijas y conserva el calor.","b","leroy","burlete puerta"],
+  ["Sacos terreros","Frenan la entrada de agua en inundaciones.","m","leroy","sacos terreros"],
+  ["Bomba de achique","Saca agua de bajos y garajes.","a","leroy","bomba achique sumergible"],
+  ["Guantes tácticos tipo Mechanix","Protección y agarre con pantalla táctil.","b","amazon","guantes mechanix"]
+],
+herramientas:[
+  ["Multiherramienta","Alicates, destornilladores y cuchilla en una.","b","amazon","multiherramienta"],
+  ["Navaja de supervivencia","Robusta y de uso general.","m","amazon","navaja supervivencia"],
+  ["Paracord 550","Cuerda resistente para mil usos.","b","amazon","paracord 550"],
+  ["Cinta americana resistente","Reparaciones rápidas de casi todo.","b","leroy","cinta americana"],
+  ["Bridas surtidas","Sujetar, fijar y reparar en segundos.","b","leroy","bridas nylon"],
+  ["Guantes de trabajo","Protegen las manos con escombros o leña.","b","leroy","guantes de trabajo"],
+  ["Llave inglesa ajustable","Para cerrar llaves de paso de agua y gas.","b","leroy","llave inglesa ajustable"],
+  ["Juego de destornilladores","Básico en cualquier casa.","b","leroy","juego destornilladores"],
+  ["Hacha pequeña","Leña y trabajos de campo.","m","decathlon","hacha"],
+  ["Sierra plegable","Corta ramas y madera sin esfuerzo.","m","decathlon","sierra plegable"],
+  ["Pala plegable","Cavar, despejar nieve o barro.","m","amazon","pala plegable militar"],
+  ["Lona impermeable","Tapar ventanas rotas o improvisar refugio.","b","leroy","lona impermeable"],
+  ["Mosquetones","Colgar, sujetar y organizar el equipo.","b","decathlon","mosqueton"],
+  ["Palanca / pata de cabra","Abrir, levantar y desmontar en emergencias.","m","leroy","palanca pata de cabra"],
+  ["Caja de herramientas básica","Todo lo esencial ordenado.","m","leroy","caja herramientas completa"]
+],
+transporte:[
+  ["Baliza V16 conectada","Obligatoria en España desde 2026.","b","amazon","baliza v16 conectada dgt"],
+  ["Arrancador de batería portátil","Arranca el coche sin otro vehículo.","b","amazon","arrancador bateria coche portatil"],
+  ["Compresor de aire portátil","Para un pinchazo lento.","m","amazon","compresor aire portatil coche"],
+  ["Kit de emergencia para coche","Cables, chaleco y básicos en una bolsa.","b","amazon","kit emergencia coche"],
+  ["Cables de arranque","El clásico que nunca falla.","b","leroy","cables arranque coche"],
+  ["Cuerda de remolque","Para sacar o remolcar un vehículo.","b","amazon","cuerda remolque coche"],
+  ["Bidón de combustible homologado","Reserva de combustible segura.","m","leroy","bidon gasolina homologado"],
+  ["Cadenas / fundas de nieve","Moverte con nieve en carretera.","m","amazon","cadenas nieve textiles"],
+  ["Pala de nieve para coche","Desenterrar ruedas y despejar.","m","amazon","pala nieve coche"],
+  ["Mapa de carreteras de España","Rutas alternativas sin GPS.","b","amazon","mapa carreteras españa"],
+  ["Brújula de orientación","Orientarse sin cobertura.","b","decathlon","brujula"],
+  ["Cargador de coche USB","Carga el móvil mientras te mueves.","b","amazon","cargador coche usb c"],
+  ["Mochila de evacuación","Todo listo para salir a pie.","m","decathlon","mochila trekking 40 litros"],
+  ["Bicicleta plegable","Plan B cuando las carreteras colapsan.","a","decathlon","bicicleta plegable"],
+  ["Kit de reparación de pinchazos","Arregla la rueda y sigue.","b","decathlon","kit reparacion pinchazos"]
+],
+"energia-fuego":[
+  ["Linterna frontal recargable","Manos libres: imprescindible en un apagón.","b","decathlon","linterna frontal"],
+  ["Powerbank 20.000 mAh","Varios días de móvil sin enchufe.","b","amazon","powerbank 20000 mah"],
+  ["Farol LED de camping","Ilumina una habitación sin riesgo de incendio.","b","decathlon","farol camping"],
+  ["Estación de energía portátil","Router, luces o portátil durante días.","a","amazon","estacion energia portatil"],
+  ["Panel solar plegable","Recarga la estación o el powerbank con sol.","a","amazon","panel solar plegable"],
+  ["Pilas recargables + cargador","Pilas siempre listas y sin gasto extra.","b","amazon","pilas recargables cargador"],
+  ["Generador de manivela","Energía manual para el móvil sin sol ni combustible.","m","amazon","generador manivela usb"],
+  ["Hornillo generador de leña (BioLite)","Cocina con leña y carga el móvil por USB.","a","amazon","biolite campstove 2"],
+  ["Generador inverter","Energía seria para una casa (siempre en exterior).","a","leroy","generador inverter"],
+  ["Mecheros tormenta","Encienden con viento.","b","amazon","mechero tormenta"],
+  ["Cerillas impermeables","Aguantan humedad y viento.","b","decathlon","cerillas impermeables"],
+  ["Varilla de ferrocerio","Enciende fuego mojada; miles de usos.","m","amazon","ferrocerio pedernal"],
+  ["Pastillas de encendido","Prenden rápido aunque la leña esté húmeda.","b","leroy","pastillas encendido"],
+  ["Extintor doméstico","La otra cara del fuego: controlarlo.","b","leroy","extintor polvo 6 kg"],
+  ["Detector de monóxido de carbono","Vital si usas estufas o generadores.","b","leroy","detector monoxido carbono"]
+],
+tecnologia:[
+  ["Radio de emergencia dinamo/solar","Funciona sin pilas; muchas llevan linterna y USB.","b","amazon","radio emergencia dinamo solar"],
+  ["Radio AM/FM a pilas","Sencilla y fiable, con mucha autonomía.","b","amazon","radio portatil pilas am fm"],
+  ["Walkie-talkies PMR446","Comunicación familiar sin licencia.","b","amazon","walkie talkie pmr446"],
+  ["Walkie Retevis RT24 (PMR446)","≈1 km en ciudad y 3 km en campo, sin licencia.","b","amazon","retevis rt24"],
+  ["Nodo Meshtastic (LoRa)","Mensajes de texto sin red móvil.","a","amazon","meshtastic lora"],
+  ["Cargador solar plegable","Recarga el móvil con el sol.","m","decathlon","cargador solar"],
+  ["Powerbank solar","Batería y placa en uno.","b","amazon","powerbank solar"],
+  ["Memoria USB cifrada","Tus documentos siempre contigo y seguros.","m","amazon","memoria usb cifrada"],
+  ["Funda estanca para móvil","Protege el teléfono del agua.","b","decathlon","funda estanca movil"],
+  ["Cable multi-conector","Carga cualquier dispositivo.","b","amazon","cable carga multiple usb c lightning"],
+  ["Teléfono resistente (rugged)","Batería enorme y aguanta golpes.","a","amazon","movil rugerizado"],
+  ["Tarjeta microSD grande","Mapas y guías offline en el móvil.","b","amazon","tarjeta microsd 256gb"],
+  ["Silbato de emergencia","Se oye mucho más lejos que la voz.","b","decathlon","silbato"],
+  ["Espejo de señales","Llama la atención a kilómetros con sol.","b","amazon","espejo señales emergencia"],
+  ["Baofeng UV-5R","Hasta ~10 km. Para transmitir fuera de PMR hace falta licencia.","a","amazon","baofeng uv-5r"]
+],
+salud:[
+  ["Botiquín completo","Bien surtido y organizado.","b","amazon","botiquin primeros auxilios completo"],
+  ["Mini botiquín de mochila","Lo esencial para llevar siempre.","b","decathlon","botiquin"],
+  ["Manual de primeros auxilios","En papel, para cuando no hay internet.","b","amazon","manual primeros auxilios libro"],
+  ["Guantes de nitrilo","Protección básica al atender a alguien.","b","amazon","guantes nitrilo"],
+  ["Vendas y gasas estériles","Reponer el botiquín tras usarlo.","b","amazon","gasas esteriles vendas"],
+  ["Apósitos para ampollas","Pies en buen estado si hay que caminar.","b","decathlon","aposito ampollas"],
+  ["Suero fisiológico monodosis","Limpiar heridas y ojos.","b","amazon","suero fisiologico monodosis"],
+  ["Termómetro digital","Controlar fiebre sin depender de nadie.","b","amazon","termometro digital"],
+  ["Pastillero semanal","Organiza la medicación habitual.","b","amazon","pastillero semanal"],
+  ["Tijeras de trauma","Cortan ropa y vendas con seguridad.","m","amazon","tijeras trauma"],
+  ["Vendaje israelí","Controla hemorragias con una sola mano.","m","amazon","venda israeli"],
+  ["Torniquete homologado","Solo si sabes usarlo.","a","amazon","torniquete primeros auxilios"],
+  ["Mascarillas FFP2","Protección ante humo, polvo o contagios.","b","leroy","mascarilla ffp2"],
+  ["Gafas de protección","Protege los ojos en escombros o humo.","b","leroy","gafas proteccion"],
+  ["Gasas hemostáticas (tipo Celox)","Ayudan a coagular heridas graves. Requiere formación.","a","amazon","gasa hemostatica celox"]
+],
+defensa:[
+  ["Alarma personal","Sonido potente para disuadir y pedir ayuda.","b","amazon","alarma personal defensa"],
+  ["Linterna táctica","Ver y deslumbrar en la oscuridad.","b","amazon","linterna tactica led"],
+  ["Tope de seguridad para puerta","Refuerzo sencillo, sin obras.","b","amazon","tope seguridad puerta"],
+  ["Barra de seguridad para puerta","Bloquea la puerta desde dentro.","m","amazon","barra seguridad puerta"],
+  ["Cerrojo de seguridad","Refuerza puertas de entrada.","m","leroy","cerrojo seguridad"],
+  ["Mirilla digital","Ves quién llama sin abrir.","m","leroy","mirilla digital"],
+  ["Cámara de seguridad WiFi","Vigila tu casa desde el móvil.","m","amazon","camara seguridad wifi exterior"],
+  ["Foco LED con sensor","Disuade y avisa de movimientos.","b","leroy","foco led sensor movimiento"],
+  ["Alarma para puertas y ventanas","Sensores que avisan si alguien entra.","b","amazon","alarma puerta ventana sensor"],
+  ["Caja fuerte","Protege documentos y objetos de valor.","m","leroy","caja fuerte"],
+  ["Temporizador de luces","Simula presencia cuando no estás.","b","leroy","temporizador enchufe"],
+  ["Rejas o cierres para ventanas","Refuerzo físico en bajos.","a","leroy","cierre seguridad ventana"],
+  ["Silbato de alta potencia","Pedir ayuda sin agotarte gritando.","b","decathlon","silbato"],
+  ["Libro de defensa personal","Base teórica antes de un curso.","b","amazon","libro defensa personal"],
+  ["Guantes de entrenamiento","Para practicar en clases de defensa personal.","m","decathlon","guantes boxeo"]
+],
+otros:[
+  ["Bolsa estanca para documentos","Papeles y móvil a salvo del agua.","b","decathlon","bolsa estanca"],
+  ["Caja ignífuga para documentos","Protege del fuego y del agua.","m","amazon","caja ignifuga documentos"],
+  ["Riñonera o cartera oculta","Efectivo y documentos pegados al cuerpo.","b","decathlon","riñonera"],
+  ["Kit de higiene de viaje","Lo básico en poco espacio.","b","decathlon","neceser viaje"],
+  ["Toallitas húmedas y gel","Higiene sin agua corriente.","b","amazon","toallitas humedas gel hidroalcoholico"],
+  ["Toalla de microfibra","Seca rápido y ocupa nada.","b","decathlon","toalla microfibra"],
+  ["Inodoro portátil de emergencia","Sin agua, la higiene evita enfermedades.","m","amazon","inodoro portatil camping"],
+  ["Bolsas de basura resistentes","Mil usos: basura, lluvia, aislamiento.","b","leroy","bolsas basura resistentes"],
+  ["Kit de emergencia para mascotas","Bebedero plegable, bolsas y botiquín.","b","amazon","kit emergencia mascotas"],
+  ["Transportín plegable","Evacuar con tu mascota.","m","amazon","transportin plegable"],
+  ["Juegos de mesa de viaje","Entretener a niños sin pantallas.","b","amazon","juegos de mesa viaje"],
+  ["Bolsas de compresión","Más ropa en menos espacio.","b","decathlon","bolsa compresion"],
+  ["Cinta reflectante","Hacerte visible de noche.","b","leroy","cinta reflectante"],
+  ["Libreta impermeable y lápiz","Notas que no se borran con agua.","b","amazon","libreta impermeable"],
+  ["Mochila infantil de emergencia","Cada niño con su propio pequeño kit.","m","decathlon","mochila niño"]
+]
+};
+AREAS.forEach(a=>{ if(TOP[a.id]) a.top = TOP[a.id].map(([n,why,lvl,s,q])=> q.startsWith("http") ? {n,why,lvl,s,url:q} : {n,why,lvl,s,q}); });
+
+/* ================= CONTENIDO AMPLIADO (fuente: Excel SV · pestaña SV TEORIA) =================
+   Se añade como tarjetas nuevas al final de cada área. w:true = tarjeta a ancho completo. */
+const EXTRA = {
+"agua-comida":[
+  {id:"sv-point-casa", w:true, t:"SV Point casa: despensa para ~40 días", h:`<p>Referencia: <strong>1.500 kcal y 50–60 g de proteína por persona y día</strong>. Esta lista da para unos <strong>40 días a 1 persona</strong> (≈64.000 kcal y 2,4 kg de proteína) por unos <strong>150 €</strong> de supermercado.</p>
+  <div class="mini-wrap"><table class="mini"><thead><tr><th>Cantidad</th><th>Producto</th><th>Por qué</th></tr></thead><tbody>
+  <tr><td>60 L</td><td>Agua en garrafas de 5 L y botellas de 1,5 L + pastillas potabilizadoras</td><td>Base de todo</td></tr>
+  <tr><td>20 latas</td><td>Fabada (≈700 kcal/lata)</td><td>Plato completo y calórico</td></tr>
+  <tr><td>10 latas</td><td>Carne (albóndigas 420 g)</td><td>Proteína lista para comer</td></tr>
+  <tr><td>10 + 10</td><td>Atún y sardinas en lata</td><td>Proteína y grasa, larga caducidad</td></tr>
+  <tr><td>2 kg + 2 kg</td><td>Arroz y pasta</td><td>Energía barata (≈3.500 kcal/kg)</td></tr>
+  <tr><td>1 kg</td><td>Puré de patata</td><td>Solo necesita agua caliente</td></tr>
+  <tr><td>1 bolsa</td><td>Leche en polvo desnatada</td><td>Muy rica en proteína</td></tr>
+  <tr><td>4 + 4</td><td>Galletas María y chocolate con leche</td><td>Calorías rápidas y moral</td></tr>
+  <tr><td>4 bolsas</td><td>Frutos secos (nueces, almendras, pistachos)</td><td>Grasa y proteína concentradas</td></tr>
+  <tr><td>15 + 1</td><td>Barritas tipo Mars + raciones NRG‑5 / Trek'n Eat</td><td>Energía compacta para la mochila</td></tr>
+  <tr><td>4 + 4</td><td>Fruta y verdura en tarro o lata</td><td>Vitaminas</td></tr>
+  <tr><td>1</td><td>Café</td><td>Estimulante y rutina</td></tr>
+  </tbody></table></div>`},
+  {id:"12-basicos", t:"Los 12 básicos para un año", h:`<p>Versión ampliada para ir comprando mes a mes:</p><ul><li>Agua 50 L</li><li>Arroz 4 kg y pasta 4 kg</li><li>Puré de patata 2 kg</li><li>Atún ×20 y latas de plato ×20</li><li>Fruta en lata ×10</li><li>Galletas 2 × 800 g</li><li>Leche en polvo 2 kg (≈20 L)</li><li>Chocolate ×5 tabletas</li><li>Café 200 g y frutos secos 200 g</li></ul>`},
+  {id:"que-comprar", t:"Qué comprar y dónde", h:`<ul><li><strong>Latas de plato 420 g</strong> (~1,5 €): fabada, cocido, lentejas, albóndigas, garbanzos con espinacas, callos</li><li><strong>Comida deshidratada</strong> (5–10 €, Decathlon): arroz con lentejas, muesli, sopa de pollo</li><li><strong>Liofilizado</strong>: raciones básicas de 5–7 € (~600 kcal) o MRE militares de ~17 € (~3.000 kcal)</li></ul>`},
+  {id:"obtener-agua", t:"Obtener agua", h:`<ul><li><strong>Condensación en suelo</strong>: agujero, recipiente en el centro y plástico encima con una piedra</li><li><strong>Bolsa en plantas</strong>: bolsa transparente cerrada sobre una rama al sol</li><li><strong>Filtros</strong> y <strong>evaporación de agua de mar</strong></li><li><strong>Hervir</strong>: el método más seguro (al menos 1 minuto a borbotones; mejor 5)</li><li>Limón: elimina algunos microbios, <strong>no todos</strong></li></ul><p><strong>Kit de agua de mochila:</strong> botella de 1,5 L/día, cantimplora metálica (sirve para hervir), 30 pastillas potabilizadoras, filtro pajita y botella flexible de 0,7 L.</p>`},
+  {id:"recetas-sv", w:true, t:"Recetas de supervivencia", h:`<div class="mini-wrap"><table class="mini"><thead><tr><th>Receta</th><th>Cómo se hace</th><th>Dato</th></tr></thead><tbody>
+  <tr><td><strong>Galletas hardtack</strong></td><td>400 g de harina + 250 ml de agua + sal. Masa uniforme, hornear a 200 ºC 30 min, dar la vuelta y otros 30 min. Sin aceite, grasa ni miel para que duren años.</td><td>≈400 kcal/100 g</td></tr>
+  <tr><td><strong>Caldo sólido</strong></td><td>Guiso con hueso (colágeno), colar el caldo sin grasa, reducir en sartén hasta gelatina dura y secar 5–7 días. Se corta en cubos y se disuelve en agua caliente.</td><td>Meses al ambiente, años al vacío</td></tr>
+  <tr><td><strong>Vinagre de sidra</strong></td><td>Manzana troceada sin cera en tarro de cristal con agua pura, 1 cucharada de azúcar o miel por manzana y 1 de levadura. Tapar 1–2 semanas, colar y reposar 2–3 semanas.</td><td>Conservante, antiséptico, repelente</td></tr>
+  <tr><td><strong>Pemmican</strong></td><td>Carne seca en polvo mezclada con grasa (y fruta seca). Receta clásica de alta energía.</td><td>600–800 kcal/100 g</td></tr>
+  <tr><td><strong>Sampa (9 ingredientes)</strong></td><td>Harina tostada de cacahuete, maíz, trigo, judía, garbanzo, soja y lenteja con plátano y miel.</td><td>≈350 kcal · 13 g proteína</td></tr>
+  <tr><td><strong>Barritas energéticas</strong></td><td>Miel + crema de cacahuete + avena + cacao + almendras. Prensar y dejar enfriar.</td><td>Ideal para la mochila</td></tr>
+  </tbody></table></div><p>Otros básicos a tener: cacao en polvo, maicena (espesante), avena, café liofilizado, sal, azúcar, miel, leche en polvo, multivitamínico y bicarbonato.</p>`},
+  {id:"almacenar-legumbres", t:"Almacenar legumbres y grano", h:`<p>Recipiente de cristal o plástico duro hermético. Para quitar el oxígeno, antes de cerrar se puede meter una pequeña llama que lo consuma (o usar absorbedores de oxígeno o envasado al vacío).</p><p><strong>Problemas:</strong> roedores, gorgojos e insectos que ponen huevos. Menos oxígeno = menos plagas.</p>`},
+  {id:"cocina-ascuas", t:"Cocina en ascuas", h:`<ul><li>Patata envuelta en papel de aluminio: 30–50 min</li><li>Carne en filete o brocheta: 5 min</li><li>Huevos fritos: 5–10 min</li><li>Lentejas / garbanzos / judías en olla de barro junto a las ascuas: 40 / 40 / 100 min</li></ul>`},
+  {id:"energia-extra", t:"Energía extra: cafeína", h:`<p>Máximo recomendado: <strong>400 mg de cafeína al día</strong> en adultos sanos.</p><div class="mini-wrap"><table class="mini"><thead><tr><th>Fuente</th><th>Cafeína aprox.</th></tr></thead><tbody>
+  <tr><td>Café / café con leche (200 ml)</td><td>80 / 40 mg</td></tr><tr><td>Té negro / verde</td><td>50 / 40 mg</td></tr><tr><td>Té matcha</td><td>60 mg</td></tr><tr><td>Bebida energética (lata)</td><td>80–180 mg</td></tr><tr><td>Refresco de cola</td><td>35–40 mg</td></tr><tr><td>Scho‑ka‑kola (100 g)</td><td>200 mg</td></tr><tr><td>Chocolate negro (100 g)</td><td>50 mg</td></tr><tr><td>Gel energético</td><td>~78 mg</td></tr>
+  </tbody></table></div>`},
+  {id:"huerto", w:true, t:"Huerto de supervivencia", h:`<p>Para autoabastecerse a medio plazo. Calendario orientativo para clima de interior de España:</p><div class="mini-wrap"><table class="mini"><thead><tr><th>Cultivo</th><th>Siembra</th><th>Cosecha</th><th>Rendimiento</th><th>Problemas típicos</th></tr></thead><tbody>
+  <tr><td>Patata</td><td>Mar–Abr</td><td>Oct</td><td>~3 kg/m²</td><td>Mildiu, escarabajo</td></tr>
+  <tr><td>Tomate</td><td>May (semillero antes)</td><td>Ago–Sep</td><td>~3 kg/planta</td><td>Mosca blanca, mildiu, tuta</td></tr>
+  <tr><td>Calabacín</td><td>Abr–Jun</td><td>Jun–Sep</td><td>~5 kg/planta</td><td>Oídio, mosca blanca</td></tr>
+  <tr><td>Calabaza</td><td>Abr–Jun</td><td>Sep–Nov</td><td>~3 ud/planta</td><td>Oídio, pulgón</td></tr>
+  <tr><td>Judía verde</td><td>May</td><td>Ago</td><td>1–3 kg/m²</td><td>Pulgón, roya</td></tr>
+  <tr><td>Lechuga</td><td>Todo el año</td><td>30–90 días</td><td>1–2 kg/m²</td><td>Caracoles, pulgón</td></tr>
+  <tr><td>Cebolla</td><td>Ene–Abr</td><td>Jun–Ago</td><td>2–3 kg/m²</td><td>Mosca de la cebolla</td></tr>
+  <tr><td>Ajo</td><td>Nov–Ene</td><td>Jun–Jul</td><td>~2 kg/m²</td><td>Mosca del ajo, roya</td></tr>
+  <tr><td>Habas</td><td>Oct–Dic</td><td>Mar–May</td><td>~2 kg/m²</td><td>Pulgón negro</td></tr>
+  <tr><td>Pimiento</td><td>Mar–May</td><td>Jul–Oct</td><td>1–3 kg/planta</td><td>Pulgón, oídio</td></tr>
+  <tr><td>Zanahoria</td><td>Feb–Jul</td><td>Jun–Nov</td><td>~3 kg/m²</td><td>Mosca de la zanahoria</td></tr>
+  <tr><td>Fresas</td><td>Oct–Dic (plantón)</td><td>Mar–Jun</td><td>~1 kg/planta</td><td>Botritis, caracoles</td></tr>
+  </tbody></table></div>`},
+  {id:"cereales-legumbres", t:"Cereales y legumbres de secano", h:`<div class="mini-wrap"><table class="mini"><thead><tr><th>Cultivo</th><th>Siembra → cosecha</th><th>kg/ha</th></tr></thead><tbody>
+  <tr><td>Trigo</td><td>Oct–Nov → Jul–Ago</td><td>~3.000</td></tr><tr><td>Cebada</td><td>Oct–Nov → Jun–Jul</td><td>~4.000</td></tr><tr><td>Avena</td><td>Oct–Nov → Jun–Jul</td><td>~3.500</td></tr><tr><td>Maíz (regadío)</td><td>Abr–May → Sep–Oct</td><td>~10.000</td></tr><tr><td>Girasol</td><td>Abr–May → Sep–Oct</td><td>~2.000</td></tr><tr><td>Lenteja</td><td>Nov–Mar → Jun–Ago</td><td>~1.000</td></tr><tr><td>Garbanzo</td><td>Feb–Abr → Jul–Sep</td><td>~1.500</td></tr><tr><td>Alubia</td><td>Abr–May → Sep–Oct</td><td>~1.500</td></tr>
+  </tbody></table></div><p>Las legumbres fijan nitrógeno: necesitan poco abono y mejoran el suelo.</p>`},
+  {id:"frutales", t:"Frutales, frutos secos y otros", h:`<ul><li><strong>Higuera</strong>: resiste sequía, 20–60 kg/árbol</li><li><strong>Manzano / peral</strong>: 15–50 kg/árbol</li><li><strong>Olivo</strong>: 20–50 kg/árbol, riego moderado</li><li><strong>Almendro</strong>: poco riego, 10–30 kg/árbol desde el 3.<sup>er</sup>–5.º año</li><li><strong>Nogal</strong>: 30–100 kg, fructifica tras 5–8 años</li><li><strong>Castaño</strong>: 30–60 kg, suelo ácido y húmedo</li><li><strong>Parra</strong>: 4–10 kg/parra</li><li><strong>Miel</strong>: 10–30 kg por colmena</li><li><strong>Setas</strong>: cardo cultivable (2–4 kg por ciclo); níscalo y boletus silvestres (solo si sabes identificarlos)</li></ul>`}
+],
+climatologia:[
+  {id:"limites-cuerpo", w:true, t:"Límites del cuerpo humano", h:`<div class="mini-wrap"><table class="mini"><thead><tr><th>Situación</th><th>Rango</th><th>Qué pasa</th></tr></thead><tbody>
+  <tr><td><strong>Calor extremo</strong></td><td>50–60 ºC</td><td>Golpe de calor en minutos y deshidratación rápida. Con humedad alta, peligro desde 40 ºC en unos 30 min. La actividad física reduce mucho la tolerancia.</td></tr>
+  <tr><td><strong>Frío</strong></td><td>0 a −10 ºC</td><td>En varias horas: sensación de frío, temblores y prehipotermia.</td></tr>
+  <tr><td><strong>Frío extremo</strong></td><td>&lt; −10 ºC</td><td>En minutos u horas: hipotermia y congelación.</td></tr>
+  <tr><td><strong>Agua fría</strong></td><td>0–15 ºC</td><td>A unos 10 ºC se aguanta 1–2 h; por debajo, hipotermia en ~30 min; a 0–5 ºC, pérdida de calor crítica en ~5 min.</td></tr>
+  </tbody></table></div>`},
+  {id:"ropa-tiers", w:true, t:"Equipo de ropa por niveles", h:`<p>Cuatro niveles de equipamiento, de más barato a más técnico:</p><div class="mini-wrap"><table class="mini"><thead><tr><th>Prenda</th><th>Tier 1 · Básico</th><th>Tier 2 · Militar</th><th>Tier 3 · Táctico</th><th>Térmico (nieve)</th></tr></thead><tbody>
+  <tr><td>Camiseta</td><td>Decathlon Solognac · 10 €</td><td>Ejército · 20 €</td><td>Anticorte nivel 5 · 120 €</td><td>Decathlon Wedze · 14 €</td></tr>
+  <tr><td>Pantalón</td><td>Solognac · 16 €</td><td>Ejército · 20 €</td><td>Táctico · 70 €</td><td>Wedze · 7 €</td></tr>
+  <tr><td>Chaqueta</td><td>Táctica AliExpress · 25 €</td><td>Ejército · 30 €</td><td>Táctica · 90 €</td><td>Wedze esquí · 40 €</td></tr>
+  <tr><td>Botas</td><td>Solognac · 40 €</td><td>Militares · 45 €</td><td>Tácticas · 90 €</td><td>Quechua nieve · 16 €</td></tr>
+  <tr><td>Guantes</td><td>Tipo Mechanix táctil · 10 €</td><td>Mechanix · 20 €</td><td>Anticorte · 30 €</td><td>Forclaz trekking · 8 €</td></tr>
+  <tr><td>Mochila</td><td>50 L AliExpress · 24 €</td><td>Ejército 40 L · 40 €</td><td>5.11 · 100 €</td><td>—</td></tr>
+  <tr><td>Cuello / braga</td><td>Solognac camo · 5 €</td><td>Verdugo · 10 €</td><td>Anticorte · 45 €</td><td>Wedze · 3 €</td></tr>
+  <tr><td>Gorra / gorro</td><td>Solognac camo · 6 €</td><td>Ejército · 12 €</td><td>5.11 · 25 €</td><td>Pasamontañas · 6 €</td></tr>
+  <tr><td>Cinturón, pouch, calcetines</td><td>≈ 12 €</td><td>≈ 30 €</td><td>≈ 111 €</td><td>≈ 6 €</td></tr>
+  <tr class="tot"><td>TOTAL aprox.</td><td>≈ 150 €</td><td>≈ 230 €</td><td>≈ 680 €</td><td>≈ 100 €</td></tr>
+  </tbody></table></div><p>Precios orientativos de referencia; pueden variar.</p>`},
+  {id:"refugio", t:"Refugio", h:`<ul><li><strong>Lona / tarp</strong> para tejado improvisado</li><li><strong>Saco de dormir</strong> (Decathlon, desde ~30 €)</li><li><strong>Tienda "fast"</strong> que se monta en segundos</li><li><strong>Tienda de montar</strong> clásica, más estable con viento</li></ul>`}
+],
+"energia-fuego":[
+  {id:"fuentes-energia", w:true, t:"Fuentes de energía por tamaño", h:`<p>Recordatorio: <strong>P = V · I</strong> (potencia) y <strong>E = V · I · t</strong> (energía).</p><div class="mini-wrap"><table class="mini"><thead><tr><th>Fuente</th><th>Pequeño</th><th>Medio</th><th>Grande</th><th>XL / profesional</th></tr></thead><tbody>
+  <tr><td><strong>Solar</strong></td><td>Plegable 5–10 W · ~15 € (≈10 % de móvil por hora)</td><td>20–40 W (10–20 W reales) · ~30 €</td><td>100 W · ~60 €</td><td>Kit aislado 2 kW + 2 baterías 250 Ah · ~1.700 €</td></tr>
+  <tr><td><strong>Eólica</strong></td><td>Vertical 10 W · ~30 €</td><td>Vertical 100 W (12 V) · ~180 €</td><td>400 W · ~150 €</td><td>Maglev 1.000 W · ~500 €</td></tr>
+  <tr><td><strong>Hidráulica</strong></td><td>10 W de tubería · ~9 €</td><td>Turbina 50–100 W · ~180 €</td><td>Microgenerador 500 W · ~300 €</td><td>—</td></tr>
+  <tr><td><strong>Manual</strong></td><td>Manivela 3–5 W · ~10 €</td><td>Manivela 20 W · ~30 € (≈1 % de móvil cada 8 min)</td><td>Pedales 50–100 W · ~130 €</td><td>Dinamo de bici 3 W · ~10 €</td></tr>
+  <tr><td><strong>Generador</strong></td><td>—</td><td>Gasolina 2,5 kW · ~300 €</td><td>Diésel 4,2 kW · ~1.600 €</td><td>—</td></tr>
+  <tr><td><strong>Almacenamiento</strong></td><td>Powerbank 10 Ah · ~10 €</td><td>Power station 70 Ah (22 W USB) · ~50 €</td><td>Estación 268 Wh (230 V) · ~200 €</td><td>Estación gran capacidad · ~2.800 €</td></tr>
+  </tbody></table></div>`},
+  {id:"coste-watio", t:"Coste por vatio", h:`<div class="mini-wrap"><table class="mini"><thead><tr><th>Tipo</th><th>€ por W</th></tr></thead><tbody>
+  <tr><td>Placa solar rígida</td><td>≈ 0,17 €</td></tr><tr><td>Placa solar flexible</td><td>≈ 0,60 €</td></tr><tr><td>Placa solar portátil</td><td>≈ 1,25 €</td></tr><tr><td>Generador gasolina</td><td>≈ 0,10 €</td></tr><tr><td>Generador diésel</td><td>≈ 0,39 €</td></tr>
+  </tbody></table></div><p>Prueba real: una placa plegable pequeña carga ~10 % de batería de móvil por hora (≈500 mAh/h).</p>`},
+  {id:"otras-fuentes", t:"Otras formas de generar", h:`<ul><li><strong>Hornillo generador de leña</strong> (tipo BioLite CampStove): cocina y carga USB a la vez</li><li><strong>Cogeneración (micro‑CHP)</strong>: electricidad y calor útil a la vez, 1–5 kW</li><li><strong>Pila de hidrógeno</strong>: 1–2 kW, aún muy cara para casa (~15.000 €)</li><li><strong>Termoeléctricos (TEG)</strong>: convierten diferencia de temperatura en electricidad; baja eficiencia</li></ul>`},
+  {id:"encender-fuego", t:"Formas de encender fuego", h:`<ul><li>Pedernal / ferrocerio + rascador</li><li>Mechero de plasma USB, mechero de gasolina tipo zippo, mechero de gas</li><li>Cerillas normales y cerillas de supervivencia</li><li>Pastillas de encendido</li><li>Pistón de fuego, pirita y sílex</li><li>Fricción con palos</li><li>Lupa o espejo con sol</li><li>Pila o batería + lana de acero</li></ul>`},
+  {id:"yesca-combustible", t:"Yesca y combustibles", h:`<p><strong>Yesca:</strong> algodón o discos desmaquillantes, papel higiénico, palitos finos, fibras de madera, pastilla iniciadora.</p><p><strong>Combustibles caseros:</strong> algodón empapado en cera fundida; cera + pastilla de encendido; palillos chinos.</p><p><strong>General:</strong> leña fina, papel de periódico, piñas, leña de encina y carbón.</p><p><strong>Briquetas caseras:</strong> papel mojado (50 %) + hojas secas (25 %) + serrín (25 %), prensado en tubos y secado al sol 1–2 días.</p>`}
+],
+tecnologia:[
+  {id:"equipos-radio", w:true, t:"Equipos de comunicación", h:`<div class="mini-wrap"><table class="mini"><thead><tr><th>Equipo</th><th>Alcance / uso</th><th>Precio aprox.</th></tr></thead><tbody>
+  <tr><td>Radio FM básica</td><td>Solo recibir información</td><td>~10 €</td></tr>
+  <tr><td>Radio FM solar con USB</td><td>Recibir + cargar el móvil</td><td>~25 €</td></tr>
+  <tr><td>Walkie Retevis RT24 (PMR446)</td><td>≈1 km en ciudad, ≈3 km en campo. Sin licencia</td><td>~35 € (pareja)</td></tr>
+  <tr><td>Baofeng UV‑5R</td><td>Hasta ~10 km; batería ~5 h de uso y ~24 h en espera</td><td>~25 €</td></tr>
+  <tr><td>Teléfono satélite</td><td>Cobertura global, sin red móvil</td><td>Alto</td></tr>
+  </tbody></table></div><div class="warn">Para <strong>transmitir</strong> con equipos como el Baofeng fuera de las bandas libres hace falta licencia de radioaficionado. Escuchar sí está permitido.</div>`}
+],
+salud:[
+  {id:"tecnicas-basicas", w:true, t:"Técnicas que salvan vidas", h:`<div class="mini-wrap"><table class="mini"><thead><tr><th>Situación</th><th>Síntomas</th><th>Qué hacer</th></tr></thead><tbody>
+  <tr><td><strong>Atragantamiento</strong></td><td>No puede hablar, toser ni respirar</td><td>5 golpes entre los omóplatos + 5 compresiones abdominales (Heimlich: puño sobre el ombligo, hacia dentro y arriba). Si estás solo, empuja el abdomen contra el respaldo de una silla. Bebés: boca abajo sobre tu antebrazo, 5 golpes en la espalda.</td></tr>
+  <tr><td><strong>Infarto</strong></td><td>Dolor u opresión en el centro del pecho (más de 15 min), sudor frío, mareo, náuseas, hormigueo en el brazo izquierdo. Puede avisar horas antes.</td><td>Llama al 112, siéntalo, tranquilízalo y afloja la ropa.</td></tr>
+  <tr><td><strong>RCP</strong></td><td>No responde y no respira con normalidad</td><td>112 y cabeza hacia atrás. 30 compresiones en el centro del pecho (≈2 por segundo, 5–6 cm de profundidad) + 2 ventilaciones, sin parar hasta que llegue ayuda.</td></tr>
+  </tbody></table></div><div class="warn">Esta tabla es un recordatorio, no sustituye a un curso de primeros auxilios.</div>`},
+  {id:"botiquin-heridas", t:"Botiquín de heridas", h:`<ul><li><strong>Limpieza:</strong> toallitas con alcohol, gel hidroalcohólico, suero fisiológico, jabón</li><li><strong>Curación:</strong> povidona yodada (Betadine), tiritas, tiras de sutura adhesivas, esparadrapo</li></ul>`},
+  {id:"botiquin-avanzado", t:"Botiquín avanzado", h:`<ul><li><strong>Protección:</strong> guantes, mascarillas FFP2, mascarilla para RCP, manta térmica</li><li><strong>Cortes y traumas:</strong> venda elástica, imperdibles, hemostático (Celox o QuikClot), parche torácico (chest seal), vendaje israelí, torniquete</li><li><strong>Dispositivos:</strong> termómetro, tensiómetro, pulsioxímetro</li><li><strong>Extra:</strong> tijeras cortarropa, vendaje triangular, bolsa de frío instantáneo, dispositivo antiatragantamiento, caramelos de azúcar (diabéticos)</li></ul><div class="warn">Hemostáticos, torniquetes y parches torácicos solo son útiles si sabes usarlos: fórmate antes.</div>`},
+  {id:"medicamentos", t:"Medicamentos de venta libre", h:`<p>Un botiquín doméstico suele incluir, por categorías:</p><ul><li><strong>Dolor y fiebre:</strong> paracetamol, ibuprofeno</li><li><strong>Dolor muscular:</strong> crema antiinflamatoria o de árnica</li><li><strong>Resfriado:</strong> antigripal, pastillas para la garganta, spray nasal</li><li><strong>Alergia:</strong> antihistamínico oral y crema para picaduras</li><li><strong>Estómago:</strong> antiácido, antidiarreico, suero oral</li><li><strong>Otros:</strong> crema para quemaduras, aloe vera, colirio, pastillas para el mareo</li></ul><div class="warn">Sigue siempre el prospecto o consulta a tu farmacéutico. Antibióticos, ansiolíticos y otros medicamentos con receta, solo con indicación médica.</div>`}
+],
+otros:[
+  {id:"neceser", t:"Neceser completo", h:`<ul><li><strong>Limpieza:</strong> toallitas, pañuelos, jabón en gel o pastilla, champú en sobre</li><li><strong>Higiene:</strong> desodorante</li><li><strong>Dental:</strong> cepillo plegable, minipasta, colutorio, hilo dental, chicles</li><li><strong>Corte:</strong> cortaúñas, tijeras, pinzas, cuchilla y crema de afeitar</li><li><strong>Piel:</strong> crema hidratante y protector solar FP 30–50</li><li><strong>Otros:</strong> peine, kit de lentillas con estuche y líquido</li></ul>`},
+  {id:"50-articulos", w:true, t:"50 artículos de supervivencia", h:`<ul class="cols">
+  <li>Alcohol</li><li>Latas no perecederas</li><li>Papel de aluminio</li><li>Cuchillos y navajas</li><li>Baterías y powerbanks</li><li>Bicarbonato</li><li>Bici plegable</li><li>Prismáticos</li><li>Protector solar</li><li>Botiquín completo</li>
+  <li>Candados y cadenas</li><li>Caña de pescar</li><li>Velas</li><li>Kit de emergencia</li><li>Combustible</li><li>Utensilios de cocina</li><li>Extintor</li><li>Filtro de agua</li><li>Gafas</li><li>Guantes</li>
+  <li>Herramientas de jardín</li><li>Libros</li><li>Lentillas</li><li>Linternas</li><li>Mapas</li><li>Herramientas</li><li>Medicación</li><li>Mochilas</li><li>Muebles plegables</li><li>Papel higiénico</li>
+  <li>Relojes analógicos</li><li>Ropa resistente</li><li>Sal</li><li>Sábanas y mantas</li><li>Sacos de dormir</li><li>Sacos de arena</li><li>Sistemas solares</li><li>Kit de costura</li><li>Higiene personal</li><li>Cosas de bebés y mascotas</li>
+  <li>Conservas caseras</li><li>Tienda de campaña</li><li>Vajilla reutilizable</li><li>Vehículo todoterreno</li><li>Vinagre</li><li>Filtración de aire</li><li>Calzado y calcetines resistentes</li><li>Radios y comunicaciones</li><li>Metales preciosos</li><li>Otros</li></ul>`},
+  {id:"plagas", t:"Control de plagas", h:`<p><strong>Trampa de cubo para ratones:</strong> un cubo con un globo grande hinchado encima y comida sobre él. Cuando hay ratones en el cubo, se pincha el globo y caen dentro.</p><p>Guarda la comida en recipientes herméticos: es la mejor prevención.</p>`}
+]
+};
+AREAS.forEach(a=>{ if(EXTRA[a.id]) a.subs.push(...EXTRA[a.id]); });
+
+/* ================= UTILIDADES ================= */
+const $ = id => document.getElementById(id);
+const pad = n => String(n).padStart(2,"0");
+const norm = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+const LAST = AREAS.length - 1;
+const LVL = {b:"Básico", m:"Medio", a:"Avanzado"};
+
+/* ================= ÍNDICE LATERAL ================= */
+$("nav").innerHTML = AREAS.map((a,i)=>{
+  const subs = a.subs.map((s,k)=>`<button type="button" class="sub-link" data-go="${a.id}/${s.id}" data-q="${norm(s.t)}">${i}.${k+1} ${s.t}</button>`).join("")
+    + (a.top ? `<button type="button" class="sub-link" data-go="${a.id}/top" data-q="productos top">${i}.${a.subs.length+1} Top productos</button>` : "");
+  return `<details class="nav-area" data-area="${a.id}" data-q="${norm(a.titulo)}">
+    <summary><button type="button" class="area-link" data-go="${a.id}">${i}. ${a.titulo}</button><span class="chev" aria-hidden="true">›</span></summary>
+    ${subs ? `<div class="sub-list">${subs}</div>` : ""}
+  </details>`;
+}).join("");
+
+/* clic en área/subapartado → navega (sin plegar el desplegable) */
+$("nav").addEventListener("click", e=>{
+  const b = e.target.closest("[data-go]");
+  if(!b) return;
+  e.preventDefault();
+  const d = b.closest("details"); if(d) d.open = true;
+  go(b.dataset.go);
+});
+
+/* buscador: filtra áreas y subapartados */
+$("search").addEventListener("input", e=>{
+  const q = norm(e.target.value.trim());
+  let any = false;
+  document.querySelectorAll(".nav-area").forEach(d=>{
+    const areaHit = !q || d.dataset.q.includes(q);
+    let subHit = false;
+    d.querySelectorAll(".sub-link").forEach(s=>{
+      const hit = !q || areaHit || s.dataset.q.includes(q);
+      s.classList.toggle("hide", !hit);
+      if(q && s.dataset.q.includes(q)) subHit = true;
+    });
+    const show = areaHit || subHit;
+    d.classList.toggle("hide", !show);
+    if(q) d.open = subHit;
+    if(show) any = true;
+  });
+  $("searchEmpty").style.display = any ? "none" : "block";
+});
+
+/* ================= BLOQUES ================= */
+const cardsHTML = a => `<div class="sub-grid">${a.subs.map((s,k)=>`
+  <article class="card raised${s.w?" wide":""}" id="${a.id}--${s.id}">
+    <h3>${AREAS.indexOf(a)}.${k+1} ${s.t}</h3>
+    <div class="in">${s.h}</div>
+  </article>`).join("")}</div>`;
+
+const topHTML = a => {
+  const used = [...new Set(a.top.map(p=>p.s))];
+  return `
+  <section class="top-win raised" id="${a.id}--top">
+    <div class="titlebar"><span class="tb-ico"></span>TOP_${a.top.length}_PRODUCTOS_${a.id.toUpperCase().replace(/-/g,"_")}.EXE</div>
+    <div class="filters">
+      <div class="fgroup" data-f="lvl"><span>NIVEL:</span>
+        <button type="button" class="fbtn raised on" data-v="">Todos</button>
+        ${["b","m","a"].map(l=>`<button type="button" class="fbtn raised" data-v="${l}">${LVL[l]}</button>`).join("")}
+      </div>
+      <div class="fgroup" data-f="s"><span>TIENDA:</span>
+        <button type="button" class="fbtn raised on" data-v="">Todas</button>
+        ${used.map(s=>`<button type="button" class="fbtn raised" data-v="${s}">${STORES[s].name}</button>`).join("")}
+      </div>
+    </div>
+    <div class="table-wrap sunken">
+      <table class="top">
+        <thead><tr><th>#</th><th>Producto</th><th>Por qué lo recomendamos</th><th>Nivel</th><th>Tienda</th><th></th></tr></thead>
+        <tbody>${a.top.map((p,k)=>`
+          <tr data-lvl="${p.lvl}" data-s="${p.s}">
+            <td class="rank">${k+1}</td>
+            <td class="pname">${p.n}</td>
+            <td>${p.why}</td>
+            <td><span class="lvl ${p.lvl}">${LVL[p.lvl]}</span></td>
+            <td><span class="store ${STORES[p.s].cls}">${STORES[p.s].name}</span></td>
+            <td><a class="amz ${STORES[p.s].cls}" href="${storeLink(p)}" target="_blank" rel="nofollow sponsored noopener">VER OFERTA ›</a></td>
+          </tr>`).join("")}
+        </tbody>
+      </table>
+    </div>
+    <p class="top-note">Ordenados por prioridad de compra. Empieza por los de nivel Básico. Enlaces de afiliado: si compras a través de ellos, la web recibe una pequeña comisión sin coste extra para ti.</p>
+  </section>`;
+};
+
+/* filtros de la tabla */
+document.addEventListener("click", e=>{
+  const b = e.target.closest(".fbtn"); if(!b) return;
+  const win = b.closest(".top-win");
+  b.parentElement.querySelectorAll(".fbtn").forEach(x=>x.classList.toggle("on", x===b));
+  const f = {}; win.querySelectorAll(".fgroup").forEach(g=>{ f[g.dataset.f] = g.querySelector(".on").dataset.v; });
+  win.querySelectorAll("tbody tr").forEach(r=>{
+    r.classList.toggle("hide", (f.lvl && r.dataset.lvl!==f.lvl) || (f.s && r.dataset.s!==f.s));
+  });
+});
+
+const pagerHTML = i => {
+  const p = AREAS[i-1], n = AREAS[i+1];
+  return `<div class="pager">
+    <button type="button" class="pbtn raised ${p?'':'off'}" data-go="${p?p.id:''}">‹ ${p?`${i-1}. ${p.titulo.toUpperCase()}`:''}</button>
+    <button type="button" class="pbtn raised ${n?'':'off'}" data-go="${n?n.id:''}">${n?`${i+1}. ${n.titulo.toUpperCase()}`:''} ›</button>
+  </div>`;
+};
+
+/* ================= VISTAS ================= */
+function viewPortada(a){
+  return `
+  <div class="hero">
+    <h1>SUPERVIVENC<b>IA</b></h1>
+    <p class="sub">Supervivencia en tiempos de IA</p>
+  </div>
+  <p class="intro">${a.intro}</p>
+  <div class="term sunken">
+    <div><span class="p">C:\\&gt;</span> supervivencia.exe --iniciar</div>
+    <div>Cargando protocolo de preparación... <span class="p">OK</span></div>
+    <h3>&gt; REGLA DE ORO · AUTONOMÍA 72 H</h3>
+    <div class="rule"><div><strong>AGUA</strong>3 L/persona/día</div><div><strong>LUZ</strong>sin red eléctrica</div><div><strong>INFO</strong>radio a pilas</div><div><strong>CALOR</strong>abrigo y capas</div></div>
+    <h3>&gt; ÁREAS DISPONIBLES</h3>
+    ${AREAS.slice(1).map((x,k)=>`<button type="button" class="tline" data-go="${x.id}"><span>[${pad(k+1)}] ${x.titulo.toUpperCase()}</span><span class="dots"></span><span class="go">›</span></button>`).join("")}
+  </div>
+  ${cardsHTML(a)}
+  ${topHTML(a)}
+  ${pagerHTML(0)}`;
+}
+
+function viewArea(a,i){
+  return `
+  <button type="button" class="back raised" data-go="supervivencia">‹ VOLVER AL INICIO</button>
+  <div class="area-head"><span class="area-num">${i}</span><h2>${a.titulo}</h2></div>
+  <p class="intro">${a.intro}</p>
+  ${cardsHTML(a)}
+  ${topHTML(a)}
+  ${pagerHTML(i)}`;
+}
+
+function viewContacto(a,i){
+  return `
+  <button type="button" class="back raised" data-go="supervivencia">‹ VOLVER AL INICIO</button>
+  <div class="area-head"><span class="area-num">${i}</span><h2>${a.titulo}</h2></div>
+  <p class="intro">${a.intro}</p>
+  <form class="form raised" id="cform">
+    <label>Nombre<input class="sunken" name="n" required></label>
+    <label>Email<input class="sunken" type="email" name="e" required></label>
+    <label>Mensaje<textarea class="sunken" name="m" rows="6" required></textarea></label>
+    <button class="amz" type="submit">ENVIAR ›</button>
+  </form>
+  ${pagerHTML(i)}`;
+}
+
+/* ================= NAVEGACIÓN ================= */
+function go(target){ if(target!==undefined && target!=="") location.hash = target; }
+$("body").addEventListener("click", e=>{
+  const b = e.target.closest("[data-go]");
+  if(b && b.dataset.go){ e.preventDefault(); go(b.dataset.go); }
+});
+
+let currentArea = null;
+function route(){
+  const [aid, sid] = location.hash.slice(1).split("/");
+  let i = AREAS.findIndex(a=>a.id===aid); if(i<0) i = 0;
+  const a = AREAS[i];
+
+  if(currentArea !== a.id){
+    $("body").innerHTML = a.portada ? viewPortada(a) : a.contacto ? viewContacto(a,i) : viewArea(a,i);
+    currentArea = a.id;
+    $("winTitle").textContent = a.id.toUpperCase().replace(/-/g,"_") + ".EXE";
+    $("statusArea").textContent = `ÁREA ${pad(i)}/${pad(LAST)}`;
+    document.title = (i===0 ? "SupervivencIA · Supervivencia en tiempos de IA" : `${a.titulo} · SupervivencIA`);
+    const f = $("cform");
+    if(f) f.onsubmit = ev=>{
+      ev.preventDefault();
+      const body = `Nombre: ${f.n.value}\nEmail: ${f.e.value}\n\n${f.m.value}`;
+      location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Contacto SupervivencIA")}&body=${encodeURIComponent(body)}`;
+    };
+  }
+
+  /* índice: abrir área actual y marcar lo activo */
+  document.querySelectorAll(".nav-area").forEach(d=>{ if(d.dataset.area===a.id) d.open = true; });
+  document.querySelectorAll("#nav [data-go]").forEach(el=>{
+    const cur = sid ? el.dataset.go===`${a.id}/${sid}` : el.dataset.go===a.id;
+    el.classList.toggle("is-current", cur);
+  });
+
+  /* scroll */
+  const el = sid && document.getElementById(`${a.id}--${sid}`);
+  if(el){
+    el.scrollIntoView({behavior:"smooth", block:"start"});
+    el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
+  } else window.scrollTo(0,0);
+}
+
+/* ================= MÓVIL ================= */
+const side = $("side"), ov = $("overlay");
+function toggle(open){ side.classList.toggle("open",open); ov.classList.toggle("show",open); }
+$("menuBtn").onclick = () => toggle(!side.classList.contains("open"));
+ov.onclick = () => toggle(false);
+$("homeBtn").onclick = () => go("supervivencia");
+
+window.addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>
