@@ -230,7 +230,7 @@ table.top tr:nth-child(even) td{background:#f3f3ea}
       <div class="big">SUPERVIVENC<b>IA</b></div>
       <small>Supervivencia en tiempos de IA</small>
     </div>
-    <div class="ver">v1.30 (29.09.2026)</div>
+    <div class="ver">v1.31 (29.09.2026)</div>
     <div class="hitcounter">VISITAS: <span class="digits" id="hitcount">------</span></div>
   </div>
 </aside>
@@ -760,15 +760,25 @@ const AREAS = [
     <p>Desde el 1 de enero de 2026 es <strong>obligatoria</strong> en toda España para señalizar una avería o accidente, sustituyendo a los triángulos. Debe estar <strong>homologada y conectada</strong> (Bluetooth/GPS) para ser válida.</p>
     <h4>Vida en el coche</h4>
     <p>Si necesitas pasar tiempo o dormir en el coche: parasoles/cortinillas para intimidad y frío, saco de dormir, powerbank y algo de comida no perecedera en la guantera. Deja siempre una rendija de ventilación y nunca duermas con el motor encendido en espacio cerrado (riesgo de intoxicación por monóxido de carbono).</p>`},
-    {id:"otros-transporte", w:true, t:"Otros transporte", h:`<p>Cuando el coche no es una opción (atasco total, sin combustible, avería), estas son las alternativas y lo que puedes cargar en cada una.</p>
+    {id:"otros-transporte", w:true, t:"Transporte Otros", h:`<p>Cuando el coche no es una opción (atasco total, sin combustible, avería), estas son las alternativas y lo que puedes cargar en cada una.</p>
     <div class="mini-wrap"><table class="mini"><thead><tr><th>Medio</th><th>Qué puedes cargar</th><th>A favor</th><th>En contra</th></tr></thead><tbody>
     <tr><td><strong>Moto de combustión</strong></td><td>Mochila + baúl trasero pequeño (15–30 L)</td><td>Filtra atascos entre carriles, repostaje rápido (5 min), buena autonomía (200–400 km)</td><td>Poca protección ante caídas o mal tiempo, ruidosa, necesita gasolina disponible</td></tr>
     <tr><td><strong>Moto eléctrica</strong></td><td>Mochila + baúl pequeño</td><td>Silenciosa, mantenimiento mínimo, se recarga en cualquier enchufe de casa</td><td>Autonomía baja (60–150 km), recarga lenta (horas, no minutos), inútil sin electricidad</td></tr>
     <tr><td><strong>Bicicleta</strong></td><td>Alforjas + remolque ligero (20–40 L)</td><td>No depende de combustible ni electricidad, filtra atascos, silenciosa, fácil de mantener</td><td>Carga limitada, cansa en distancias largas, lenta cuesta arriba o con viento</td></tr>
     <tr><td><strong>Bicicleta eléctrica</strong></td><td>Alforjas + remolque ligero</td><td>Menos esfuerzo que la convencional, mismas ventajas de filtrar tráfico</td><td>Autonomía de batería limitada (40–100 km), más pesada si se queda sin batería</td></tr>
+    <tr><td><strong>Caravana / furgoneta camperizada</strong></td><td>Todo lo que quepa: agua, comida, cama, cocina propia</td><td>Vivienda y transporte en uno; autonomía de días o semanas sin depender de hotel ni refugio</td><td>Lenta y grande para atascos, calles estrechas o desvíos; consumo de combustible alto; necesita dónde aparcar y pernoctar</td></tr>
     <tr><td><strong>A pie</strong></td><td>Solo lo que quepa en la mochila</td><td>Nunca falla, no depende de nada externo, acceso a cualquier terreno</td><td>Muy lento (~4–5 km/h), agota rápido con peso, expuesto al clima</td></tr>
     </tbody></table></div>
-    <div class="warn">Para cualquier moto o bici de evacuación: calzado cerrado y cómodo, casco si es posible, y ropa de abrigo/impermeable siempre en la mochila. Ten prevista una ruta a pie como último recurso.</div>`},
+    <div class="warn">Para cualquier moto o bici de evacuación: calzado cerrado y cómodo, casco si es posible, y ropa de abrigo/impermeable siempre en la mochila. Ten prevista una ruta a pie como último recurso.</div>
+    <h4>Caravanas y furgonetas camperizadas</h4>
+    <p>Son el extremo opuesto a la bici o ir a pie: no buscan filtrar atascos, sino llevarte la casa contigo. Útiles sobre todo para una evacuación planificada con tiempo, no para escapar de un colapso repentino de tráfico.</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Tipo</th><th>Qué ofrece</th></tr></thead><tbody>
+    <tr><td>Furgoneta camperizada (autocaravana tipo panel)</td><td>Más ágil y fácil de aparcar que una caravana; cocina, cama y almacenaje integrados</td></tr>
+    <tr><td>Caravana remolcada</td><td>Más espacio y confort por el mismo dinero, pero necesitas un coche con enganche y carné adecuado; se puede desenganchar y dejar en un sitio seguro</td></tr>
+    <tr><td>Autocaravana perfilada/capuchina</td><td>Máximo espacio habitable (litera superior, baño completo), pero la más grande y pesada de conducir y aparcar</td></tr>
+    </tbody></table></div>
+    <p><strong>Qué llevar siempre operativo:</strong> depósito de agua limpia lleno, batería auxiliar o placa solar para no depender del motor, bombona de gas para cocinar, y un WC químico o portátil si no tiene baño integrado.</p>
+    <div class="warn">En España, pernoctar libremente con una autocaravana fuera de zonas habilitadas está restringido en muchos municipios y puede ser sancionable; infórmate de las áreas de autocaravanas y campings de tu ruta antes de salir.</div>`},
     {id:"mapas-logistica", w:true, t:"Mapas y logística", h:`<h4>Mapas analógicos (papel)</h4>
     <p>No dependen de batería, señal ni GPS: siguen funcionando aunque caigan las redes. Consigue un mapa de carreteras de tu zona y, si sales al monte, uno topográfico del <strong>Instituto Geográfico Nacional (IGN)</strong>, con curvas de nivel. Guarda siempre uno en el coche y otro en la mochila.</p>
     <h4>Mapas digitales</h4>
@@ -1424,10 +1434,10 @@ AREAS.forEach(a=>{ if(EXTRA[a.id]) a.subs.push(...EXTRA[a.id]); });
   if(!el) return;
   const already = sessionStorage.getItem("sv_hit_done");
   const endpoint = already
-    ? "https://api.counterapi.dev/v1/supervivencia-ia/visitas"
-    : "https://api.counterapi.dev/v1/supervivencia-ia/visitas/up";
+    ? "https://countapi.mileshilliard.com/api/v1/get/supervivencia-ia.visitas"
+    : "https://countapi.mileshilliard.com/api/v1/hit/supervivencia-ia.visitas";
   fetch(endpoint).then(r=>r.json()).then(d=>{
-    const n = (d && (d.count ?? d.value)) || 0;
+    const n = (d && (d.value ?? d.count)) || 0;
     el.textContent = String(n).padStart(6,"0");
     sessionStorage.setItem("sv_hit_done","1");
   }).catch(()=>{ el.textContent = "000000"; });
@@ -1439,6 +1449,22 @@ const pad = n => String(n).padStart(2,"0");
 const norm = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 const LAST = AREAS.length - 1;
 const LVL = {b:"Básico", m:"Medio", a:"Avanzado"};
+
+/* ================= ÍNDICE DE BÚSQUEDA (títulos + contenido de los artículos) ================= */
+const stripHtml = h => norm(String(h||"").replace(/<[^>]+>/g," ").replace(/&[a-z]+;/gi," ").replace(/\s+/g," ").trim());
+const SEARCH_INDEX = {}; // data-go -> texto normalizado buscable
+AREAS.forEach(a=>{
+  a.subs.forEach(s=>{
+    SEARCH_INDEX[`${a.id}/${s.id}`] = norm(s.t) + " " + stripHtml(s.h);
+  });
+  if(a.top){
+    SEARCH_INDEX[`${a.id}/top`] = "productos top " + a.top.map(p=>norm(p.n)+" "+norm(p.why||"")).join(" ");
+  }
+});
+const matchesQuery = (text, q) => {
+  if(!q) return true;
+  return q.split(/\s+/).filter(Boolean).every(term => text.includes(term));
+};
 
 /* ================= ÍNDICE LATERAL ================= */
 $("nav").innerHTML = AREAS.map((a,i)=>{
@@ -1459,19 +1485,21 @@ $("nav").addEventListener("click", e=>{
   go(b.dataset.go);
 });
 
-/* buscador: filtra áreas y subapartados */
+/* buscador inteligente: busca en títulos de área/apartado Y en el texto de los artículos (contenido completo) */
 $("search").addEventListener("input", e=>{
   const q = norm(e.target.value.trim());
   let any = false;
   document.querySelectorAll(".nav-area").forEach(d=>{
-    const areaHit = !q || d.dataset.q.includes(q);
+    const areaTitleHit = !q || matchesQuery(d.dataset.q, q);
     let subHit = false;
     d.querySelectorAll(".sub-link").forEach(s=>{
-      const hit = !q || areaHit || s.dataset.q.includes(q);
+      const go = s.dataset.go;
+      const fullText = SEARCH_INDEX[go] || s.dataset.q;
+      const hit = !q || areaTitleHit || matchesQuery(s.dataset.q, q) || matchesQuery(fullText, q);
       s.classList.toggle("hide", !hit);
-      if(q && s.dataset.q.includes(q)) subHit = true;
+      if(q && hit) subHit = true;
     });
-    const show = areaHit || subHit;
+    const show = areaTitleHit || subHit;
     d.classList.toggle("hide", !show);
     if(q) d.open = subHit;
     if(show) any = true;
