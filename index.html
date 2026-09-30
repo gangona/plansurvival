@@ -102,7 +102,7 @@ button{font:inherit}
 @keyframes iaLaser{0%,100%{opacity:1;filter:brightness(1)}50%{opacity:.92;filter:brightness(1.12)}}
 
 /* ================= ESCENA ANIMADA PORTADA (vista aérea) ================= */
-.scene-wrap{margin:0 auto 22px;max-width:640px}
+.scene-wrap{margin:0 auto 22px;max-width:1100px}
 .scene-view{position:relative;background:#0a0e08;overflow:hidden;border-top:1px solid #000;line-height:0}
 .scene-view svg{display:block;width:100%;height:auto;image-rendering:pixelated;image-rendering:crisp-edges}
 .scene-view::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0px,rgba(0,0,0,.28) 1px,transparent 2px,transparent 3px);mix-blend-mode:multiply;opacity:.4}
@@ -263,7 +263,7 @@ table.top tr:nth-child(even) td{background:#f3f3ea}
       <div class="big">SUPERVIVENC<b>IA</b></div>
       <small>Supervivencia en tiempos de IA</small>
     </div>
-    <div class="ver">v1.66 (30.09.2026)</div>
+    <div class="ver">v1.68 (01.10.2026)</div>
     <div class="hitcounter">VISITAS: <span class="digits" id="hitcount">------</span></div>
   </div>
 </aside>
@@ -406,7 +406,7 @@ const AREAS = [
     <div class="warn">Sin comida se puede aguantar semanas si hay agua; sin agua, el límite es de días. Por eso el agua es siempre la prioridad número uno.</div>
     <h4>Despensa: qué comprar y cómo almacenarla</h4><p>Lo ideal es una despensa de cosas que ya coméis y vais rotando: lo primero que entra es lo primero que sale.</p><ul><li>Conservas de pescado, legumbres y verdura</li><li>Arroz, pasta y copos de avena</li><li>Frutos secos, barritas y chocolate</li><li>Leche UHT o en polvo</li><li>Abrelatas manual</li></ul>
     <ul><li><strong>Latas de plato 420 g</strong> (~1,5 €): fabada, cocido, lentejas, albóndigas, garbanzos con espinacas, callos</li><li><strong>Comida deshidratada</strong> (5–10 €, Decathlon): arroz con lentejas, muesli, sopa de pollo</li></ul>
-    <p><strong>Los 12 básicos para 1 mes</strong> (1 persona), para ir comprando poco a poco:</p>
+    <p><strong>Los 9 básicos para 1 mes</strong> (1 persona), para ir comprando poco a poco:</p>
     <div class="mini-wrap"><table class="mini"><thead><tr><th>Producto</th><th>Cantidad</th></tr></thead><tbody>
     <tr><td>Arroz</td><td>4 kg</td></tr>
     <tr><td>Pasta</td><td>4 kg</td></tr>
@@ -596,7 +596,7 @@ const AREAS = [
     <h4>Planificar el huerto: cantidades, camas y rotación</h4>
     <ul><li><strong>Cuánto plantar</strong>: calcula el consumo semanal de la familia de cada hortaliza y multiplícalo por las semanas de conservación/temporada que quieras cubrir — es más útil que plantar "a ojo"</li><li><strong>Camas elevadas o anchas</strong> (sin apenas pasillos) rinden hasta 4 veces más que las hileras tradicionales en el mismo espacio; ancho práctico máximo 90-120 cm para poder trabajar desde ambos lados sin pisar la tierra</li><li><strong>Rotación de cultivos</strong>: tras un cultivo "exigente" (crucíferas, maíz, tomate, calabaza/pepino) siembra uno "ligero" (raíces, cebolla, ajo, pimiento) y luego un "constructor de suelo" (judía, guisante, trébol) que fija nitrógeno; la patata nunca debe seguir a crucíferas</li><li><strong>pH del suelo</strong>: la mayoría de hortalizas van bien entre 6 y 7; cal o ceniza de madera lo suben, turba o azufre lo bajan (arándanos y patata prefieren suelo más ácido)</li><li><strong>Fertilizante orgánico de calendario</strong>: en otoño aporta fósforo (harina de hueso), en primavera nitrógeno (harina de sangre, estiércol compostado) y potasio (ceniza de madera) — los orgánicos actúan despacio, así que se aplican de forma preventiva, no cuando ya se ven síntomas de carencia</li></ul>
     <h4>Plagas y enfermedades: control orgánico</h4>
-    <ul><li><strong>Prevención</strong>: suelo sano, limpiar restos de plantas, rotar cultivos, variedades resistentes; collares de cartón alrededor del tallo contra gusanos cortadores en trasplantes recién puestos</li><li><strong>Cubiertas de tela</strong> (tipo Reemay) sobre los cultivos jóvenes: barrera física contra pulguillas, escarabajos y moscas sin usar ningún producto</li><li><strong>Insectos de cuerpo blando</strong> (pulgón, mosca blanca): chorro de agua a presión, jabón potásico insecticida, o trampas amarillas pegajosas</li><li><strong>Babosas</strong>: trampa de cerveza a ras de suelo, revisada cada noche</li><li><strong>Insecticidas orgánicos de último recurso</strong>: Bt/Dipel (solo afecta a orugas), tierra de diatomeas (para plagas de cuerpo dur), piretro natural</li><li><strong>Hongos</strong>: azufre (mildiu, oídio) o cobre (más agresivo, usar solo si el azufre no basta), reaplicando cada 7-10 días o tras lluvia; las plantas enfermas se queman, nunca se compostan</li><li><strong>Animales</strong>: malla de gallinero enterrada en la base contra conejos/liebres, doblada 90° hacia fuera contra topillos/marmotas; un perro suele ser el mejor disuasorio general; casas nido para pájaros/murciélagos insectívoros ayudan como control biológico gratuito</li></ul>
+    <ul><li><strong>Prevención</strong>: suelo sano, limpiar restos de plantas, rotar cultivos, variedades resistentes; collares de cartón alrededor del tallo contra gusanos cortadores en trasplantes recién puestos</li><li><strong>Cubiertas de tela</strong> (tipo Reemay) sobre los cultivos jóvenes: barrera física contra pulguillas, escarabajos y moscas sin usar ningún producto</li><li><strong>Insectos de cuerpo blando</strong> (pulgón, mosca blanca): chorro de agua a presión, jabón potásico insecticida, o trampas amarillas pegajosas</li><li><strong>Babosas</strong>: trampa de cerveza a ras de suelo, revisada cada noche</li><li><strong>Insecticidas orgánicos de último recurso</strong>: Bt/Dipel (solo afecta a orugas), tierra de diatomeas (para plagas de cuerpo duro), piretro natural</li><li><strong>Hongos</strong>: azufre (mildiu, oídio) o cobre (más agresivo, usar solo si el azufre no basta), reaplicando cada 7-10 días o tras lluvia; las plantas enfermas se queman, nunca se compostan</li><li><strong>Animales</strong>: malla de gallinero enterrada en la base contra conejos/liebres, doblada 90° hacia fuera contra topillos/marmotas; un perro suele ser el mejor disuasorio general; casas nido para pájaros/murciélagos insectívoros ayudan como control biológico gratuito</li></ul>
     <h4>Alargar la temporada: cajón frío, túnel e invernadero solar</h4>
     <ul><li><strong>Cajón frío (cold frame)</strong>: caja sin calefacción con cubierta transparente inclinada hacia el sur; se calienta solo con el sol y hay que ventilarlo en días soleados para que no se recocine dentro</li><li><strong>Cama caliente</strong>: igual pero con una fuente de calor bajo la tierra (estiércol fresco, cable calefactor, o garrafas de agua caliente)</li><li><strong>Túnel de aro</strong> (arcos de PVC + plástico de invernadero): da 1-2 °C de protección; combinado con una manta térmica de cultivo suspendida por dentro, hasta 3-4 °C más</li><li><strong>Invernadero solar</strong>: solo la pared sur va acristalada (doble capa), las otras tres van aisladas y pintadas de blanco por dentro; con masa térmica (bidones de agua) que libera calor por la noche y una manta aislante que se echa sobre el cristal al anochecer, se puede cultivar buena parte del invierno sin calefacción activa</li><li>Ante una helada inesperada de última hora, regar las plantas con agua antes de que salga el sol ayuda a que descongelen más despacio y sin dañar el tejido</li></ul>
     <h4>Guardar tus propias semillas</h4>
@@ -657,7 +657,7 @@ const AREAS = [
     <div class="mini-wrap"><table class="mini"><thead><tr><th>Tipo</th><th>Coste aprox.</th><th>Cuándo usarlo</th><th>Notas</th></tr></thead><tbody>
     <tr><td><strong>Refugio de ramas y hojas</strong></td><td>Gratis</td><td>Emergencia en el monte, pocas horas</td><td>Estructura en A o tipi con ramas, cubierta de hojas y musgo; aísla poco del frío del suelo</td></tr>
     <tr><td><strong>Refugio de tierra (zanja cubierta)</strong></td><td>Gratis</td><td>1–2 noches, terreno disponible</td><td>Zanja poco profunda cubierta con ramas y tierra; buen aislamiento térmico, requiere tiempo y esfuerzo</td></tr>
-    <tr><td><strong>Iglú de nieve</strong></td><td>Gratis</td><td>Nieve abundante y compacta</td><td>Aísla muy bien (el hielo retiene el calor interior); técnica que requiere práctica</td></tr>
+    <tr><td><strong>Iglú de nieve</strong></td><td>Gratis</td><td>Nieve abundante y compacta</td><td>Aísla muy bien (la nieve compactada atrapa el aire y retiene el calor interior); técnica que requiere práctica</td></tr>
     <tr><td><strong>Cabaña de troncos</strong></td><td>Gratis (con herramientas: hacha, sierra)</td><td>Estancia de varios días en el mismo punto</td><td>Más tiempo de construcción, pero mucho más resistente al viento y la lluvia</td></tr>
     <tr><td><strong>Tienda de campaña barata</strong></td><td>20–40 €</td><td>Acampada ligera, buen tiempo</td><td>Tejidos finos, poca resistencia a viento fuerte o nieve</td></tr>
     <tr><td><strong>Tienda de gama media</strong></td><td>80–150 €</td><td>Uso frecuente, varias estaciones</td><td>Mejor costura e impermeabilidad, doble capa</td></tr>
@@ -864,7 +864,7 @@ const AREAS = [
     <p>Desde el 1 de enero de 2026 es <strong>obligatoria</strong> en toda España para señalizar una avería o accidente, sustituyendo a los triángulos. Debe estar <strong>homologada y conectada</strong> (Bluetooth/GPS) para ser válida.</p>
     <h4>Vida en el coche</h4>
     <p>Si necesitas pasar tiempo o dormir en el coche: parasoles/cortinillas para intimidad y frío, saco de dormir, powerbank y algo de comida no perecedera en la guantera. Deja siempre una rendija de ventilación y nunca duermas con el motor encendido en espacio cerrado (riesgo de intoxicación por monóxido de carbono).</p>`},
-    {id:"otros-transporte", w:true, t:"Transporte Otros", h:`<p>Cuando el coche no es una opción (atasco total, sin combustible, avería), estas son las alternativas y lo que puedes cargar en cada una.</p>
+    {id:"otros-transporte", w:true, t:"Otros transportes", h:`<p>Cuando el coche no es una opción (atasco total, sin combustible, avería), estas son las alternativas y lo que puedes cargar en cada una.</p>
     <div class="mini-wrap"><table class="mini"><thead><tr><th>Medio</th><th>Qué puedes cargar</th><th>A favor</th><th>En contra</th></tr></thead><tbody>
     <tr><td><strong>Moto de combustión</strong></td><td>Mochila + baúl trasero pequeño (15–30 L)</td><td>Filtra atascos entre carriles, repostaje rápido (5 min), buena autonomía (200–400 km)</td><td>Poca protección ante caídas o mal tiempo, ruidosa, necesita gasolina disponible</td></tr>
     <tr><td><strong>Moto eléctrica</strong></td><td>Mochila + baúl pequeño</td><td>Silenciosa, mantenimiento mínimo, se recarga en cualquier enchufe de casa</td><td>Autonomía baja (60–150 km), recarga lenta (horas, no minutos), inútil sin electricidad</td></tr>
@@ -890,7 +890,7 @@ const AREAS = [
     <ul><li><strong>Google Maps</strong> (descarga de zona sin conexión)</li><li><strong>OsmAnd / Maps.me</strong>: mapas offline basados en OpenStreetMap, muy completos y gratuitos</li><li><strong>GPS dedicado</strong> (Garmin y similares): no depende del móvil ni de su batería</li></ul>
     <h4>Cómo leer un mapa</h4>
     <div class="mini-wrap"><table class="mini"><thead><tr><th>Elemento</th><th>Para qué sirve</th></tr></thead><tbody>
-    <tr><td>Escala (p. ej. 1:25.000)</td><td>1 cm del mapa equivale a esa distancia real; a más detalle, escala más pequeña (1:25.000 &gt; 1:50.000)</td></tr>
+    <tr><td>Escala (p. ej. 1:25.000)</td><td>1 cm del mapa equivale a esa distancia real; a más detalle, escala más grande (1:25.000 &gt; 1:50.000)</td></tr>
     <tr><td>Curvas de nivel</td><td>Unen puntos a la misma altitud; cuanto más juntas, más pendiente</td></tr>
     <tr><td>Leyenda</td><td>Explica los símbolos: ríos, carreteras, bosques, edificios, refugios</td></tr>
     <tr><td>Coordenadas UTM / lat-long</td><td>Ubican un punto exacto; imprescindibles para pedir ayuda o marcar un punto de encuentro</td></tr>
@@ -934,7 +934,7 @@ const AREAS = [
     <h4>Orientación en la naturaleza (sin brújula ni GPS)</h4>
     <p>Si te quedas sin brújula, sin batería o sin cobertura, la naturaleza da varias pistas para saber dónde está el norte. Ninguna es perfecta por sí sola: combina dos o tres métodos para confirmar el rumbo.</p>
     <div class="mini-wrap"><table class="mini"><thead><tr><th>Método</th><th>Cómo se hace</th><th>Fiabilidad</th></tr></thead><tbody>
-    <tr><td><strong>Palo y sombra</strong></td><td>Clava un palo vertical en el suelo y marca el extremo de su sombra. Espera 15–20 min y marca de nuevo dónde cae la sombra. La línea entre las dos marcas va aproximadamente de oeste (primera marca) a este (segunda marca); una línea perpendicular a esa marca el norte-sur</td><td>Alta, funciona en cualquier día soleado</td></tr>
+    <tr><td><strong>Palo y sombra</strong></td><td>Clava un palo vertical en el suelo y marca el extremo de su sombra. Espera 15–20 min y marca de nuevo dónde cae la sombra. La línea entre las dos marcas va aproximadamente de oeste (primera marca) a este (segunda marca); una línea perpendicular a esa línea marca el norte-sur</td><td>Alta, funciona en cualquier día soleado</td></tr>
     <tr><td><strong>Reloj analógico y sol</strong></td><td>Apunta la aguja horaria hacia el sol; la bisectriz entre esa aguja y las 12 marca el sur (hemisferio norte). En horario de verano, usa la 1 en vez de las 12</td><td>Media-alta, necesita reloj de agujas y sol visible</td></tr>
     <tr><td><strong>Estrella Polar</strong></td><td>De noche, localiza la Osa Mayor y prolonga la línea de sus dos estrellas finales (las del "cazo") unas 5 veces esa distancia: llegas a la Estrella Polar, que señala el norte casi exacto</td><td>Muy alta, la mejor referencia nocturna en el hemisferio norte</td></tr>
     <tr><td><strong>Cruz del Sur</strong></td><td>En el hemisferio sur (sin Estrella Polar visible), prolonga el eje largo de la Cruz del Sur unas 4,5 veces su longitud hacia el horizonte: ese punto indica el sur</td><td>Alta, referencia nocturna equivalente en el hemisferio sur</td></tr>
@@ -959,7 +959,7 @@ const AREAS = [
     <tr><td><strong>Cerillas normales</strong></td><td>Cotidiano</td><td>Fricción química en la caja; se estropean con la humedad</td></tr>
     <tr><td><strong>Mechero de gas</strong> (tipo Bic)</td><td>Cotidiano</td><td>Una chispa de piedra enciende el gas butano; falla con viento fuerte o frío extremo</td></tr>
     <tr><td><strong>Mechero tipo Zippo</strong> (gasolina)</td><td>Cotidiano</td><td>Mecha empapada en gasolina; más resistente al viento que el de gas, pero el combustible se evapora con el tiempo</td></tr>
-    <tr><td><strong>Cerillas de tormenta</strong></td><td>Resistente</td><td>Impermeabilizadas y con mezcla especial: arden incluso con viento y lluvia, y no se apagan bajo el agua unos segundos</td></tr>
+    <tr><td><strong>Cerillas de tormenta</strong></td><td>Resistente</td><td>Impermeabilizadas y con mezcla especial: arden incluso con viento y lluvia, y siguen encendidas aunque se sumerjan en agua unos segundos</td></tr>
     <tr><td><strong>Gasolina u otro combustible líquido + chispa</strong></td><td>Avanzado</td><td>Acelera el encendido de leña húmeda o verde; aumenta mucho el riesgo de llamarada y quemadura, usar con muchísima precaución y nunca sobre brasas ya encendidas</td></tr>
     <tr><td><strong>Pastillas de encendido</strong> (hexamina)</td><td>Práctico</td><td>Combustión lenta, controlada y sin llama alta; ideal para hornillos y para iniciar leña húmeda</td></tr>
     <tr><td><strong>Mechero de plasma / arco eléctrico USB</strong></td><td>Sofisticado</td><td>Un arco eléctrico entre dos electrodos enciende la yesca; resistente al viento, sin llama ni combustible, se recarga por USB</td></tr>
@@ -970,7 +970,7 @@ const AREAS = [
     <p><strong>General:</strong> leña fina, papel de periódico, piñas, leña de encina y carbón.</p>
     <p><strong>Briquetas caseras:</strong> papel mojado (50 %) + hojas secas (25 %) + serrín (25 %), prensado en tubos y secado al sol 1–2 días.</p>
     <div class="warn">Extintor en casa y nunca fuego, braseros ni generadores en interiores sin ventilación: riesgo de intoxicación por monóxido de carbono.</div>`},
-    {id:"electricidad-baterias", w:true, t:"Electricidad y Baterías", h:`<h4>Teoría básica</h4>
+    {id:"electricidad-baterias", w:true, t:"Electricidad y baterías", h:`<h4>Teoría básica</h4>
     <p><strong>P = V · I</strong> (potencia, en vatios) y <strong>E = V · I · t</strong> (energía, en vatios-hora). La capacidad de una batería se mide en <strong>Ah</strong> (amperios-hora) o en <strong>Wh</strong> (vatios-hora = V × Ah); cuantos más Wh, más dispositivos y más tiempo puede alimentar.</p>
     <h4>Formas de generar electricidad</h4>
     <div class="mini-wrap"><table class="mini"><thead><tr><th>Método</th><th>Cómo funciona</th><th>A favor</th><th>Limitaciones</th></tr></thead><tbody>
@@ -989,7 +989,7 @@ const AREAS = [
     <tr><td><strong>Solar</strong></td><td>Plegable 5–10 W · ~15 € (≈10 % de móvil por hora)</td><td>20–40 W (10–20 W reales) · ~30 €</td><td>100 W · ~60 €</td><td>Kit aislado 2 kW + 2 baterías 250 Ah · ~1.700 €</td></tr>
     <tr><td><strong>Eólica</strong></td><td>Vertical 10 W · ~30 €</td><td>Vertical 100 W (12 V) · ~180 €</td><td>400 W · ~150 €</td><td>Maglev 1.000 W · ~500 €</td></tr>
     <tr><td><strong>Hidráulica</strong></td><td>10 W de tubería · ~9 €</td><td>Turbina 50–100 W · ~180 €</td><td>Microgenerador 500 W · ~300 €</td><td>—</td></tr>
-    <tr><td><strong>Manual</strong></td><td>Manivela 3–5 W · ~10 €</td><td>Manivela 20 W · ~30 € (≈1 % de móvil cada 8 min)</td><td>Pedales 50–100 W · ~130 €</td><td>Dinamo de bici 3 W · ~10 €</td></tr>
+    <tr><td><strong>Manual</strong></td><td>Manivela 3–5 W · ~10 €</td><td>Manivela 20 W · ~30 € (≈1 % de móvil cada 8 min)</td><td>Pedales 50–100 W · ~130 €</td><td>—</td></tr>
     <tr><td><strong>Generador</strong></td><td>—</td><td>Gasolina 2,5 kW · ~300 €</td><td>Diésel 4,2 kW · ~1.600 €</td><td>—</td></tr>
     <tr><td><strong>Almacenamiento</strong></td><td>Powerbank 10 Ah · ~10 €</td><td>Power station 70 Ah (22 W USB) · ~50 €</td><td>Estación 268 Wh (230 V) · ~200 €</td><td>Estación gran capacidad · ~2.800 €</td></tr>
     </tbody></table></div>
@@ -997,7 +997,7 @@ const AREAS = [
     <div class="mini-wrap"><table class="mini"><thead><tr><th>Tipo</th><th>€ por W</th></tr></thead><tbody>
     <tr><td>Placa solar rígida</td><td>≈ 0,17 €</td></tr><tr><td>Placa solar flexible</td><td>≈ 0,60 €</td></tr><tr><td>Placa solar portátil</td><td>≈ 1,25 €</td></tr><tr><td>Generador gasolina</td><td>≈ 0,10 €</td></tr><tr><td>Generador diésel</td><td>≈ 0,39 €</td></tr>
     </tbody></table></div><p>Prueba real: una placa plegable pequeña carga ~10 % de batería de móvil por hora (≈500 mAh/h).</p>
-    <p><strong>Otros equipos útiles:</strong> estación portátil solar compacta 88 W (88,8 Wh, 6 Ah a 14,8 V) · ~130 €, para cargar todo en uno sin depender de varias piezas sueltas. Como referencia de escala, un aerogenerador industrial (ej. Gamesa G128) puede llegar a 5 MW: un millón de veces más que el molino portátil de esta tabla.</p>
+    <p><strong>Otros equipos útiles:</strong> estación portátil solar compacta 88 W (88,8 Wh, 6 Ah a 14,8 V) · ~130 €, para cargar todo en uno sin depender de varias piezas sueltas. Como referencia de escala, un aerogenerador industrial (ej. Gamesa G128) puede llegar a 5 MW: unas 5.000 veces más que el modelo doméstico más potente de esta tabla (Maglev 1.000 W).</p>
     <h4>Qué hacer en un apagón</h4>
     <ul><li>Desenchufa los aparatos sensibles para evitar picos al volver la luz</li><li>Abre la nevera lo mínimo: aguanta unas 4 horas fría</li><li>Ahorra batería del móvil: modo avión y brillo bajo</li><li>Escucha la radio para recibir información oficial</li></ul>
     <h4>Tipos de batería</h4>
@@ -1030,7 +1030,7 @@ const AREAS = [
     <ul><li><strong>Regulador de carga obligatorio</strong> entre panel y batería: tipo <strong>PWM</strong> (barato, sencillo) o <strong>MPPT</strong> (más caro, hasta un 20-30% más de rendimiento, sobre todo con temperaturas frías o paneles de mayor voltaje que la batería)</li><li><strong>Orientación</strong>: sur, con un ángulo similar a la latitud del lugar</li><li><strong>Cálculo rápido de un sistema</strong>: 1) suma el consumo diario en Wh de todo lo que quieras alimentar; 2) divide entre las horas de sol pico de tu zona para saber los W de panel necesarios; 3) añade un 20-30% de margen por pérdidas; 4) para la batería, divide el consumo diario en Wh entre el voltaje del banco y entre el % de descarga máxima que te permitas, multiplicado por los días de autonomía que quieras sin sol</li></ul>
     <h4>Eólica doméstica</h4><p>Requiere mantenimiento mecánico frecuente y una torre bien anclada (las palas deben quedar varios metros por encima de cualquier obstáculo en 100 m alrededor); con el precio actual del solar, casi siempre compensa más ampliar paneles que instalar un aerogenerador, salvo en fincas muy ventosas. Necesita toma de tierra y pararrayos por el riesgo de la torre metálica.</p>
     <h4>Almacenamiento de combustible</h4><p>Guardar en bidones herméticos, a la sombra: <strong>rojo para gasolina, amarillo para diésel</strong> (código de color estándar para no confundirlos). Bien almacenado y protegido de la luz, el combustible aguanta entre 1 y 3 años; usa siempre un embudo con filtro para eliminar agua y suciedad al repostar, y aditivo anticongelante en climas fríos.</p>`},
-    {id:"accesorios-electricidad", w:true, t:"Accesorios Electricidad", h:`<h4>Luz: linternas y faroles</h4>
+    {id:"accesorios-electricidad", w:true, t:"Accesorios de electricidad", h:`<h4>Luz: linternas y faroles</h4>
     <p>Mejor LED que velas: mismo o más brillo, sin riesgo de incendio ni de agotar el oxígeno de la habitación.</p>
     <div class="mini-wrap"><table class="mini"><thead><tr><th>Tipo</th><th>Ventaja</th><th>Autonomía típica</th></tr></thead><tbody>
     <tr><td>Linterna frontal</td><td>Manos libres, imprescindible para trabajar de noche</td><td>10–50 h según brillo (lúmenes)</td></tr>
@@ -1153,7 +1153,7 @@ const AREAS = [
     <p>Un curso de primeros auxilios y RCP de unas horas vale más que el mejor botiquín. Cruz Roja y muchos ayuntamientos los organizan con regularidad.</p>`},
     {id:"botiquin", w:true, t:"Botiquín", h:`<h4>Botiquín por niveles</h4>
     <div class="mini-wrap"><table class="mini"><thead><tr><th>Categoría</th><th>Básico</th><th>Medio</th><th>Profesional</th></tr></thead><tbody>
-    <tr><td><strong>Herramientas</strong></td><td>Tijeras simples, pinzas, tijeras cortarropa</td><td>Termómetro digital, imperdibles, kit de puntos de sutura</td><td>Tensiómetro, pulsioxímetro (con VO2), RCP portátil, linterna de exploración</td></tr>
+    <tr><td><strong>Herramientas</strong></td><td>Tijeras simples, pinzas, tijeras cortarropa</td><td>Termómetro digital, imperdibles, kit de puntos de sutura</td><td>Tensiómetro, pulsioxímetro (con SpO2), RCP portátil, linterna de exploración</td></tr>
     <tr><td><strong>Vendas y gasas</strong></td><td>Tiritas surtidas, gasas estériles, esparadrapo</td><td>Venda elástica, vendaje triangular, venda de fisio</td><td>Vendaje israelí, gasas hemostáticas (Celox / QuikClot)</td></tr>
     <tr><td><strong>Antisépticos y limpieza</strong></td><td>Povidona yodada (Betadine), suero fisiológico, toallitas alcohol</td><td>Gel hidroalcohólico, jabón</td><td>Clorhexidina</td></tr>
     <tr><td><strong>Protección</strong></td><td>Guantes de látex o nitrilo, mascarilla FFP1/2</td><td>Mascarilla para RCP, manta térmica</td><td>Bata desechable</td></tr>
@@ -1333,8 +1333,8 @@ const AREAS = [
     <h4>Tipos de arma</h4>
     <div class="mini-wrap"><table class="mini"><thead><tr><th>Tipo</th><th>Descripción</th></tr></thead><tbody>
     <tr><td>Arma corta</td><td>Pistola o revólver; requiere licencia F</td></tr>
-    <tr><td>Arma larga rayada</td><td>Rifle o carabina; caza mayor, licencia E</td></tr>
-    <tr><td>Escopeta (cañón liso)</td><td>Caza menor y tiro, licencia D o E según el caso</td></tr>
+    <tr><td>Arma larga rayada</td><td>Rifle o carabina; caza mayor, licencia D</td></tr>
+    <tr><td>Escopeta (cañón liso)</td><td>Caza menor y tiro, licencia E</td></tr>
     <tr><td>Arma de aire/gas comprimido</td><td>Carabinas y pistolas de baja potencia (&lt; 24,2 julios); régimen más flexible</td></tr>
     </tbody></table></div>
     <h4>Calibres más comunes</h4>
@@ -1365,7 +1365,7 @@ const AREAS = [
     <h4>Copias físicas</h4>
     <ul><li>Fotocopias de DNI, pasaportes, seguros y escrituras, plastificadas si es posible</li><li>Todo en una bolsa estanca, junto a la mochila de emergencia</li><li>Llaves de repuesto de casa y del coche</li></ul>
     <h4>Dinero en efectivo</h4>
-    <p>Sin luz no hay datáfono ni cajero. Mantén un colchón de efectivo accesible en billetes pequeños (más fáciles de usar y de cambiar). Como referencia, un fondo de emergencia razonable ronda al menos <strong>1.000 €</strong>, y quien pueda permitírselo puede repartir una reserva similar entre distintas divisas fuertes (<strong>dólar estadounidense</strong> o <strong>franco suizo</strong>), para no depender de una sola moneda si esta se devalúa con fuerza.</p>
+    <p>Sin luz no hay datáfono ni cajero. Mantén un colchón de efectivo accesible en billetes pequeños (más fáciles de usar y de cambiar). Como referencia, un fondo de emergencia razonable es de al menos <strong>1.000 €</strong>, y quien pueda permitírselo puede repartir una reserva similar entre distintas divisas fuertes (<strong>dólar estadounidense</strong> o <strong>franco suizo</strong>), para no depender de una sola moneda si esta se devalúa con fuerza.</p>
     <h4>Monedas de plata</h4>
     <p>La plata física es una forma clásica de guardar valor fuera del sistema bancario, divisible en pequeñas cantidades para un posible trueque:</p>
     <ul><li><strong>Bullion</strong>: moneda de inversión moderna, de pureza y peso certificados (ej. Maple Leaf, Philharmoniker), fácil de valorar por su peso exacto</li><li><strong>Junk silver</strong>: moneda de circulación antigua con alto contenido en plata (ej. duros españoles anteriores a 1982), más barata de entrada y también reconocible</li></ul>
