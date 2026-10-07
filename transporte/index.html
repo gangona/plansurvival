@@ -111,6 +111,17 @@ a.pbtn,a.back{display:inline-block;text-decoration:none}
 @keyframes iaLaser{0%,100%{opacity:1;filter:brightness(1)}50%{opacity:.92;filter:brightness(1.12)}}
 
 /* ================= ESCENA ANIMADA PORTADA (vista aérea) ================= */
+.hotspots{position:absolute;inset:0;z-index:2}
+.hs{position:absolute;display:block;outline:none;border:1px dashed transparent;transition:border-color .15s,background .15s}
+.hs span{position:absolute;left:50%;bottom:100%;transform:translate(-50%,-4px);background:#0a0e08;color:#c8f07a;border:1px solid #8fb466;font-family:var(--f-mono);font-size:12px;line-height:1.2;padding:4px 7px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .12s;z-index:3}
+.hs:hover,.hs:focus-visible{border-color:#c8f07a;background:rgba(200,240,122,.14);box-shadow:0 0 8px rgba(200,240,122,.5)}
+.hs:hover span,.hs:focus-visible span{opacity:1}
+.hs.hs-b span{bottom:auto;top:auto;bottom:6px}
+.hs.hs-l span{left:0;transform:translate(0,-4px)}
+.hs.hs-r span{left:auto;right:0;transform:translate(0,-4px)}
+.hs-hint{font-family:var(--f-mono);font-size:12px;margin:6px 2px 0;color:#3a3a30;line-height:1.3}
+@media(hover:none){.hs::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px 0 0 -3px;background:#c8f07a;border-radius:50%;box-shadow:0 0 6px #c8f07a;animation:hsPulse 2s ease-in-out infinite}.hs.hs-b::after{display:none}}
+@keyframes hsPulse{0%,100%{opacity:.25}50%{opacity:1}}
 .scene-wrap{margin:0 auto 22px;max-width:1100px}
 .scene-view{position:relative;background:#0a0e08;overflow:hidden;border-top:1px solid #000;line-height:0}
 .scene-view svg,.scene-view img{display:block;width:100%;height:auto;image-rendering:pixelated;image-rendering:crisp-edges}
@@ -314,7 +325,7 @@ table.top tr.grp td{background:var(--ol-dark,#2b3d1c);color:#e8e2c8;font-family:
     <div class="sub-list"><a class="sub-link" href="../tecnologia/#radio-walkies" data-go="tecnologia/radio-walkies" data-q="radio y walkies">6.1 Radio y Walkies</a><a class="sub-link" href="../tecnologia/#gps-moviles" data-go="tecnologia/gps-moviles" data-q="gps y moviles">6.2 GPS y Móviles</a><a class="sub-link" href="../tecnologia/#otros-tecnologia" data-go="tecnologia/otros-tecnologia" data-q="otros: ia y recursos offline">6.3 Otros: IA y recursos offline</a><a class="sub-link" href="../tecnologia/#datos-ciberseguridad" data-go="tecnologia/datos-ciberseguridad" data-q="datos y ciberseguridad">6.4 Datos y Ciberseguridad</a><a class="sub-link" href="../tecnologia/#top" data-go="tecnologia/top" data-q="productos top">6.5 Top productos</a></div>
   </details><details class="nav-area" data-area="salud" data-q="salud y primeros auxilios">
     <summary><a class="area-link" href="../salud/" data-go="salud">7. Salud y Primeros Auxilios</a><span class="chev" aria-hidden="true">›</span></summary>
-    <div class="sub-list"><a class="sub-link" href="../salud/#primeros-auxilios" data-go="salud/primeros-auxilios" data-q="primeros auxilios">7.1 Primeros Auxilios</a><a class="sub-link" href="../salud/#botiquin" data-go="salud/botiquin" data-q="botiquin">7.2 Botiquín</a><a class="sub-link" href="../salud/#naturaleza" data-go="salud/naturaleza" data-q="naturaleza">7.3 Naturaleza</a><a class="sub-link" href="../salud/#top" data-go="salud/top" data-q="productos top">7.4 Top productos</a></div>
+    <div class="sub-list"><a class="sub-link" href="../salud/#primeros-auxilios" data-go="salud/primeros-auxilios" data-q="primeros auxilios">7.1 Primeros Auxilios</a><a class="sub-link" href="../salud/#botiquin" data-go="salud/botiquin" data-q="botiquin">7.2 Botiquín</a><a class="sub-link" href="../salud/#naturaleza" data-go="salud/naturaleza" data-q="naturaleza">7.3 Naturaleza</a><a class="sub-link" href="../salud/#nutricion" data-go="salud/nutricion" data-q="nutricion">7.4 Nutrición</a><a class="sub-link" href="../salud/#musculacion-mantenimiento" data-go="salud/musculacion-mantenimiento" data-q="musculacion y mantenimiento del cuerpo">7.5 Musculación y mantenimiento del cuerpo</a><a class="sub-link" href="../salud/#top" data-go="salud/top" data-q="productos top">7.6 Top productos</a></div>
   </details><details class="nav-area" data-area="defensa" data-q="tecnicas de defensa y ataque">
     <summary><a class="area-link" href="../defensa/" data-go="defensa">8. Técnicas de Defensa y Ataque</a><span class="chev" aria-hidden="true">›</span></summary>
     <div class="sub-list"><a class="sub-link" href="../defensa/#defensa-personal" data-go="defensa/defensa-personal" data-q="defensa personal">8.1 Defensa Personal</a><a class="sub-link" href="../defensa/#armas-fuego" data-go="defensa/armas-fuego" data-q="armas de fuego">8.2 Armas de Fuego</a><a class="sub-link" href="../defensa/#defensa-avanzada" data-go="defensa/defensa-avanzada" data-q="defensa avanzada">8.3 Defensa Avanzada</a><a class="sub-link" href="../defensa/#top" data-go="defensa/top" data-q="productos top">8.4 Top productos</a></div>
@@ -333,14 +344,14 @@ table.top tr.grp td{background:var(--ol-dark,#2b3d1c);color:#e8e2c8;font-family:
       <div class="big">SUPERVIVENC<b>IA</b></div>
       <small>Supervivencia en tiempos de IA</small>
     </div>
-    <div class="ver">v2.25 (06.10.2026)</div>
+    <div class="ver">v2.26 (07.10.2026)</div>
     <div class="hitcounter">VISITAS: <span class="digits" id="hitcount">------</span></div>
   </div>
 </aside>
 
 <!-- ================= VENTANA ================= -->
 <main class="window raised">
-  <div class="titlebar"><span class="tb-ico"></span><span id="winTitle">SUPERVIVENCIA.EXE</span><span class="tb-ver" id="tbVer" title="Versión de la web">v2.25</span>
+  <div class="titlebar"><span class="tb-ico"></span><span id="winTitle">SUPERVIVENCIA.EXE</span><span class="tb-ver" id="tbVer" title="Versión de la web">v2.26</span>
     <div class="tb-btns"><b class="raised">_</b><b class="raised">□</b><b class="raised">×</b></div>
   </div>
   <div class="body" id="body">
@@ -1067,7 +1078,9 @@ const AREAS = [
   subs:[
     {id:"primeros-auxilios", w:true, t:"Primeros Auxilios", h:""},
     {id:"botiquin", w:true, t:"Botiquín", h:""},
-    {id:"naturaleza", w:true, t:"Naturaleza", h:""}
+    {id:"naturaleza", w:true, t:"Naturaleza", h:""},
+    {id:"nutricion", w:true, t:"Nutrición", h:""},
+    {id:"musculacion-mantenimiento", w:true, t:"Musculación y mantenimiento del cuerpo", h:""}
   ]},
 
 { id:"defensa", titulo:"Técnicas de Defensa y Ataque",
@@ -1630,7 +1643,9 @@ function viewPortada(a){
   <div class="scene-wrap">
     <div class="scene-view">
       <img src="${ROOT}img/portada.svg" width="200" height="250" alt="Escena de granja pixelada al atardecer azul con montañas nevadas, cabaña de madera con paneles solares, molino de viento, huerto, hoguera, un superviviente armado con su perro y un robot ayudante" fetchpriority="high">
+      <nav class="hotspots" aria-label="Explora la granja"><a class="hs hs-b" href="${url("climatologia")}" data-go="climatologia" style="left:0.00%;top:0.00%;width:100.00%;height:40.00%" aria-label="Cielo y montañas · Climatología"><span>Cielo y montañas · Climatología</span></a><a class="hs" href="${url("construccion")}" data-go="construccion" style="left:35.00%;top:42.00%;width:30.50%;height:26.80%" aria-label="Casa · Construcción y gremios"><span>Casa · Construcción y gremios</span></a><a class="hs hs-r" href="${url("agua-comida", "agricultura-emergencia")}" data-go="agua-comida/agricultura-emergencia" style="left:80.00%;top:54.40%;width:11.50%;height:12.00%" aria-label="Frutales · Agricultura"><span>Frutales · Agricultura</span></a><a class="hs hs-l" href="${url("agua-comida", "agricultura-emergencia")}" data-go="agua-comida/agricultura-emergencia" style="left:3.50%;top:70.00%;width:8.00%;height:8.80%" aria-label="Frutales · Agricultura"><span>Frutales · Agricultura</span></a><a class="hs hs-r" href="${url("agua-comida", "agricultura-emergencia")}" data-go="agua-comida/agricultura-emergencia" style="left:62.00%;top:71.20%;width:31.50%;height:18.80%" aria-label="Huerto · Agricultura de emergencia"><span>Huerto · Agricultura de emergencia</span></a><a class="hs hs-r" href="${url("tecnologia", "otros-tecnologia")}" data-go="tecnologia/otros-tecnologia" style="left:78.50%;top:76.00%;width:12.00%;height:12.40%" aria-label="Robot · IA y recursos offline"><span>Robot · IA y recursos offline</span></a><a class="hs" href="${url("salud")}" data-go="salud" style="left:28.50%;top:78.80%;width:11.00%;height:12.00%" aria-label="Superviviente · Salud"><span>Superviviente · Salud</span></a><a class="hs" href="${url("defensa", "defensa-personal")}" data-go="defensa/defensa-personal" style="left:38.50%;top:83.60%;width:10.50%;height:7.20%" aria-label="Perro guardián · Defensa"><span>Perro guardián · Defensa</span></a><a class="hs" href="${url("energia-fuego", "electricidad-baterias")}" data-go="energia-fuego/electricidad-baterias" style="left:41.00%;top:47.60%;width:19.50%;height:6.00%" aria-label="Paneles solares · Electricidad"><span>Paneles solares · Electricidad</span></a><a class="hs" href="${url("tecnologia", "radio-walkies")}" data-go="tecnologia/radio-walkies" style="left:42.00%;top:31.20%;width:11.50%;height:16.40%" aria-label="Antena · Comunicaciones"><span>Antena · Comunicaciones</span></a><a class="hs" href="${url("defensa", "defensa-avanzada")}" data-go="defensa/defensa-avanzada" style="left:53.00%;top:43.60%;width:7.00%;height:4.40%" aria-label="Dron · Seguridad avanzada"><span>Dron · Seguridad avanzada</span></a><a class="hs" href="${url("energia-fuego", "electricidad-baterias")}" data-go="energia-fuego/electricidad-baterias" style="left:26.50%;top:42.40%;width:12.00%;height:14.00%" aria-label="Molino eólico · Energía"><span>Molino eólico · Energía</span></a><a class="hs hs-l" href="${url("transporte", "coche-preparado")}" data-go="transporte/coche-preparado" style="left:9.00%;top:52.80%;width:21.00%;height:8.80%" aria-label="Camioneta · Transporte"><span>Camioneta · Transporte</span></a><a class="hs" href="${url("energia-fuego", "fuego")}" data-go="energia-fuego/fuego" style="left:12.00%;top:76.80%;width:14.00%;height:12.40%" aria-label="Hoguera · Fuego"><span>Hoguera · Fuego</span></a><a class="hs" href="${url("agua-comida", "agua")}" data-go="agua-comida/agua" style="left:68.50%;top:49.20%;width:8.00%;height:11.20%" aria-label="Depósito · Agua"><span>Depósito · Agua</span></a><a class="hs" href="${url("energia-fuego", "fuego")}" data-go="energia-fuego/fuego" style="left:65.00%;top:60.40%;width:13.50%;height:7.60%" aria-label="Leña · Fuego"><span>Leña · Fuego</span></a><a class="hs" href="${url("climatologia", "refugio")}" data-go="climatologia/refugio" style="left:28.00%;top:66.00%;width:14.50%;height:13.20%" aria-label="Búnker · Refugios"><span>Búnker · Refugios</span></a><a class="hs hs-b" href="${url("construccion", "seguridad-hogar")}" data-go="construccion/seguridad-hogar" style="left:0.00%;top:90.40%;width:100.00%;height:8.00%" aria-label="Valla · Seguridad del hogar"><span>Valla · Seguridad del hogar</span></a><a class="hs hs-l" href="${url("construccion", "seguridad-hogar")}" data-go="construccion/seguridad-hogar" style="left:5.00%;top:44.80%;width:7.00%;height:4.00%" aria-label="Cámara · Seguridad"><span>Cámara · Seguridad</span></a><a class="hs hs-r" href="${url("construccion", "seguridad-hogar")}" data-go="construccion/seguridad-hogar" style="left:89.00%;top:44.80%;width:6.00%;height:4.00%" aria-label="Cámara · Seguridad"><span>Cámara · Seguridad</span></a></nav>
     </div>
+    <p class="hs-hint">▸ Pasa el ratón (o toca) por el dibujo para ir a cada área</p>
   </div>
   <p class="intro">${a.intro}</p>
   ${cardsHTML(a)}`;
