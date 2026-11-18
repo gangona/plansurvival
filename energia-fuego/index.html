@@ -344,14 +344,14 @@ table.top tr.grp td{background:var(--ol-dark,#2b3d1c);color:#e8e2c8;font-family:
       <div class="big">SUPERVIVENC<b>IA</b></div>
       <small>Supervivencia en tiempos de IA</small>
     </div>
-    <div class="ver">v2.26 (07.10.2026)</div>
+    <div class="ver">v2.31 (18.11.2026)</div>
     <div class="hitcounter">VISITAS: <span class="digits" id="hitcount">------</span></div>
   </div>
 </aside>
 
 <!-- ================= VENTANA ================= -->
 <main class="window raised">
-  <div class="titlebar"><span class="tb-ico"></span><span id="winTitle">SUPERVIVENCIA.EXE</span><span class="tb-ver" id="tbVer" title="Versión de la web">v2.26</span>
+  <div class="titlebar"><span class="tb-ico"></span><span id="winTitle">SUPERVIVENCIA.EXE</span><span class="tb-ver" id="tbVer" title="Versión de la web">v2.31</span>
     <div class="tb-btns"><b class="raised">_</b><b class="raised">□</b><b class="raised">×</b></div>
   </div>
   <div class="body" id="body">
@@ -485,6 +485,25 @@ table.top tr.grp td{background:var(--ol-dark,#2b3d1c);color:#e8e2c8;font-family:
     <tr><td><strong>Alcalina</strong></td><td>Media, no recargable</td><td>Un solo uso</td><td>Reserva de almacén: se autodescarga muy poco</td></tr>
     </tbody></table></div>
     <p>Los ciclos dependen de la profundidad de descarga, la temperatura y la calidad. <strong>Batería de arranque ≠ batería de ciclo profundo:</strong> la de coche da mucha corriente unos segundos y se estropea si la descargas a fondo una y otra vez; para solar usa siempre ciclo profundo.</p>
+    <h4>Autodescarga: la carga que se pierde sin usar</h4>
+    <p>Toda batería pierde carga poco a poco aunque no esté conectada a nada: es la <strong>autodescarga pasiva</strong>, una reacción química interna lenta. En una reserva de emergencia importa mucho, porque la batería que guardaste llena hace un año puede estar <strong>medio vacía o dañada</strong> justo el día del apagón.</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Tipo</th><th>Pérdida aproximada (a ~20 °C)</th><th>Cómo guardarla</th></tr></thead><tbody>
+    <tr><td><strong>Plomo-ácido inundada</strong></td><td>~4–6 % al mes</td><td>Siempre cargada: si se queda medio vacía se <strong>sulfata</strong> y pierde capacidad para siempre. Recarga cada 1–3 meses o usa un mantenedor</td></tr>
+    <tr><td><strong>AGM / gel</strong></td><td>~1–3 % al mes</td><td>Cargada y recargada cada 3–6 meses</td></tr>
+    <tr><td><strong>Ion-litio</strong> (powerbanks, móviles)</td><td>~2–3 % al mes, más lo que gaste su electrónica</td><td>Al <strong>40–60 %</strong> y en sitio fresco; no llena ni vacía del todo durante meses</td></tr>
+    <tr><td><strong>LiFePO4</strong> ★</td><td>~1–3 % al mes, más el consumo del BMS</td><td>Al 50–70 %, revisándola cada 3–6 meses. Si baja demasiado, el BMS puede bloquearla</td></tr>
+    <tr><td><strong>NiMH estándar</strong></td><td>~15–30 % el primer mes</td><td>Mala opción para almacenar: cárgalas justo antes de usarlas</td></tr>
+    <tr><td><strong>NiMH de baja autodescarga</strong> (LSD, tipo Eneloop) ★</td><td>Conservan en torno al 70–85 % tras un año</td><td>La recargable ideal para la reserva de pilas</td></tr>
+    <tr><td><strong>Alcalina</strong></td><td>~2–3 % al año</td><td>5–10 años en su blíster; fuera de los aparatos para evitar fugas</td></tr>
+    <tr><td><strong>Litio primario</strong> (AA/AAA de litio, CR123A, botón)</td><td>~1 % al año</td><td>10–20 años; la mejor pila «de cajón», también en frío</td></tr>
+    </tbody></table></div>
+    <div class="mini-wrap"><table class="mini two"><thead><tr><th>Regla</th><th>Por qué</th></tr></thead><tbody>
+    <tr><td><strong>Fresco, seco y sin sol</strong></td><td>El calor acelera la autodescarga: como regla orientativa, cada 10 °C más la pérdida se duplica aproximadamente. Un trastero fresco es mejor que un garaje que se recalienta en verano (no hace falta nevera)</td></tr>
+    <tr><td><strong>Calendario de revisión</strong></td><td>Apunta la fecha de la última carga en cada batería o estación. Revisa y recarga cada 3 meses (plomo) o cada 6 (litio), por ejemplo al cambiar la hora</td></tr>
+    <tr><td><strong>Ojo al consumo «fantasma»</strong></td><td>Un coche parado gasta su batería mucho más rápido que la propia autodescarga, por la alarma y la centralita. En paradas largas usa un mantenedor o desconecta el borne negativo</td></tr>
+    <tr><td><strong>Nunca a cero</strong></td><td>Una de litio que se queda totalmente vacía meses puede no volver a cargar, y una de plomo descargada se congela antes en invierno</td></tr>
+    <tr><td><strong>Rota la reserva</strong></td><td>Usa las pilas más antiguas en el día a día y repón con nuevas: así la reserva siempre está al día</td></tr>
+    </tbody></table></div>
     <h4>Tipos y especificaciones de pilas</h4>
     <p>Una alcalina da 1,5 V y una NiMH recargable 1,2 V. Son intercambiables en la mayoría de aparatos, pero en algunos se nota en el brillo o el volumen, o el aparato marca «batería baja» antes.</p>
     <div class="mini-wrap"><table class="mini"><thead><tr><th>Formato</th><th>Voltaje</th><th>Capacidad típica</th><th>Recargable</th><th>Uso habitual</th></tr></thead><tbody>
@@ -557,11 +576,18 @@ table.top tr.grp td{background:var(--ol-dark,#2b3d1c);color:#e8e2c8;font-family:
     <tr><td><strong>Multímetro</strong> ★</td><td>Medir voltaje, polaridad y continuidad</td><td>Comprueba el estado real de una batería, si un fusible está fundido o si un cable está cortado antes de conectar nada sensible</td></tr>
     <tr><td><strong>Monitor de batería</strong> (shunt)</td><td>Saber el % real de carga de un banco</td><td>Más fiable que fiarse solo del voltaje</td></tr>
     </tbody></table></div>
-    <div class="warn">Nunca cortocircuites los bornes de una batería: una de coche o de LiFePO4 puede soltar cientos de amperios, fundir una llave y provocar quemaduras o un incendio. Trabaja con anillos, relojes y pulseras quitados.</div></div>
+    <div class="warn">Nunca cortocircuites los bornes de una batería: una de coche o de LiFePO4 puede soltar cientos de amperios, fundir una llave y provocar quemaduras o un incendio. Trabaja con anillos, relojes y pulseras quitados.</div>
+    <h4>Protección frente a pulsos electromagnéticos (EMP)</h4>
+    <p>Un <strong>pulso electromagnético</strong> (por una tormenta solar extrema o un arma nuclear a gran altura) induciría corrientes capaces de dañar la electrónica. Es un riesgo <strong>poco probable pero de gran impacto</strong>, así que su protección es un nivel avanzado: primero asegura agua, comida, luz y botiquín.</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Medida</th><th>Qué protege</th><th>Ojo</th></tr></thead><tbody>
+    <tr><td><strong>Bolsa o caja Faraday</strong></td><td>Equipos guardados y <strong>desconectados</strong>: radio de repuesto, móvil viejo, pendrive con documentos, inversor</td><td>Solo protege lo que está dentro y cerrado; prueba que funciona metiendo un móvil y llamándolo</td></tr>
+    <tr><td><strong>Bolsa Faraday para generador</strong> (ej. Mission Darkness Dry Shield Revelation)</td><td>Un generador o estación de energía entera: 76 × 61 × 56 cm, estanca y plegable</td><td>Cara (~600 $). El generador solo está protegido mientras está guardado</td></tr>
+    <tr><td><strong>Protector para el cuadro</strong> (ej. EMP Shield, versión europea monofásica 230–240 V)</td><td>La instalación de la casa frente a picos de tensión, rayos y, según el fabricante, pulsos EMP</td><td>Funciona como un protector de sobretensiones; la protección EMP no está verificada de forma independiente. Lo debe instalar un <strong>electricista autorizado</strong></td></tr>
+    </tbody></table></div></div>
   </article></div>
   
   <section class="top-win raised" id="energia-fuego--top">
-    <div class="titlebar"><span class="tb-ico"></span>TOP_30_PRODUCTOS_ENERGIA_FUEGO.EXE</div>
+    <div class="titlebar"><span class="tb-ico"></span>TOP_33_PRODUCTOS_ENERGIA_FUEGO.EXE</div>
     <div class="filters">
       <div class="fgroup" data-f="lvl"><span>NIVEL:</span>
         <button type="button" class="fbtn raised on" data-v="">Todos</button>
@@ -816,6 +842,30 @@ table.top tr.grp td{background:var(--ol-dark,#2b3d1c);color:#e8e2c8;font-family:
             <td><span class="store st-amz">Amazon</span></td>
             <td><span class="amz-off" title="Enlaces de producto desactivados temporalmente"><i class="dot-red"></i>Enlace inhab. temporalmente</span></td>
           </tr>
+          <tr data-lvl="a" data-s="amazon">
+            <td class="rank">31</td>
+            <td class="pname">Bolsa Faraday para generador (Mission Darkness Dry Shield)</td>
+            <td>Guarda un generador o estación de energía estanco y protegido frente a pulsos electromagnéticos.</td>
+            <td><span class="lvl a">Avanzado</span></td>
+            <td><span class="store st-amz">Amazon</span></td>
+            <td><span class="amz-off" title="Enlaces de producto desactivados temporalmente"><i class="dot-red"></i>Enlace inhab. temporalmente</span></td>
+          </tr>
+          <tr data-lvl="a" data-s="amazon">
+            <td class="rank">32</td>
+            <td class="pname">Protector EMP / sobretensiones para el cuadro (EMP Shield EU)</td>
+            <td>Protege la instalación de la casa de rayos y picos de tensión; instalación por electricista autorizado.</td>
+            <td><span class="lvl a">Avanzado</span></td>
+            <td><span class="store st-amz">Amazon</span></td>
+            <td><span class="amz-off" title="Enlaces de producto desactivados temporalmente"><i class="dot-red"></i>Enlace inhab. temporalmente</span></td>
+          </tr>
+          <tr data-lvl="b" data-s="amazon">
+            <td class="rank">33</td>
+            <td class="pname">Barras de luz química (cyalume)</td>
+            <td>Hasta 12 h de luz sin pilas ni chispa: seguras si hay olor a gas y útiles para señalizar.</td>
+            <td><span class="lvl b">Básico</span></td>
+            <td><span class="store st-amz">Amazon</span></td>
+            <td><span class="amz-off" title="Enlaces de producto desactivados temporalmente"><i class="dot-red"></i>Enlace inhab. temporalmente</span></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -1016,6 +1066,25 @@ const AREAS = [
     <tr><td><strong>Alcalina</strong></td><td>Media, no recargable</td><td>Un solo uso</td><td>Reserva de almacén: se autodescarga muy poco</td></tr>
     </tbody></table></div>
     <p>Los ciclos dependen de la profundidad de descarga, la temperatura y la calidad. <strong>Batería de arranque ≠ batería de ciclo profundo:</strong> la de coche da mucha corriente unos segundos y se estropea si la descargas a fondo una y otra vez; para solar usa siempre ciclo profundo.</p>
+    <h4>Autodescarga: la carga que se pierde sin usar</h4>
+    <p>Toda batería pierde carga poco a poco aunque no esté conectada a nada: es la <strong>autodescarga pasiva</strong>, una reacción química interna lenta. En una reserva de emergencia importa mucho, porque la batería que guardaste llena hace un año puede estar <strong>medio vacía o dañada</strong> justo el día del apagón.</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Tipo</th><th>Pérdida aproximada (a ~20 °C)</th><th>Cómo guardarla</th></tr></thead><tbody>
+    <tr><td><strong>Plomo-ácido inundada</strong></td><td>~4–6 % al mes</td><td>Siempre cargada: si se queda medio vacía se <strong>sulfata</strong> y pierde capacidad para siempre. Recarga cada 1–3 meses o usa un mantenedor</td></tr>
+    <tr><td><strong>AGM / gel</strong></td><td>~1–3 % al mes</td><td>Cargada y recargada cada 3–6 meses</td></tr>
+    <tr><td><strong>Ion-litio</strong> (powerbanks, móviles)</td><td>~2–3 % al mes, más lo que gaste su electrónica</td><td>Al <strong>40–60 %</strong> y en sitio fresco; no llena ni vacía del todo durante meses</td></tr>
+    <tr><td><strong>LiFePO4</strong> ★</td><td>~1–3 % al mes, más el consumo del BMS</td><td>Al 50–70 %, revisándola cada 3–6 meses. Si baja demasiado, el BMS puede bloquearla</td></tr>
+    <tr><td><strong>NiMH estándar</strong></td><td>~15–30 % el primer mes</td><td>Mala opción para almacenar: cárgalas justo antes de usarlas</td></tr>
+    <tr><td><strong>NiMH de baja autodescarga</strong> (LSD, tipo Eneloop) ★</td><td>Conservan en torno al 70–85 % tras un año</td><td>La recargable ideal para la reserva de pilas</td></tr>
+    <tr><td><strong>Alcalina</strong></td><td>~2–3 % al año</td><td>5–10 años en su blíster; fuera de los aparatos para evitar fugas</td></tr>
+    <tr><td><strong>Litio primario</strong> (AA/AAA de litio, CR123A, botón)</td><td>~1 % al año</td><td>10–20 años; la mejor pila «de cajón», también en frío</td></tr>
+    </tbody></table></div>
+    <div class="mini-wrap"><table class="mini two"><thead><tr><th>Regla</th><th>Por qué</th></tr></thead><tbody>
+    <tr><td><strong>Fresco, seco y sin sol</strong></td><td>El calor acelera la autodescarga: como regla orientativa, cada 10 °C más la pérdida se duplica aproximadamente. Un trastero fresco es mejor que un garaje que se recalienta en verano (no hace falta nevera)</td></tr>
+    <tr><td><strong>Calendario de revisión</strong></td><td>Apunta la fecha de la última carga en cada batería o estación. Revisa y recarga cada 3 meses (plomo) o cada 6 (litio), por ejemplo al cambiar la hora</td></tr>
+    <tr><td><strong>Ojo al consumo «fantasma»</strong></td><td>Un coche parado gasta su batería mucho más rápido que la propia autodescarga, por la alarma y la centralita. En paradas largas usa un mantenedor o desconecta el borne negativo</td></tr>
+    <tr><td><strong>Nunca a cero</strong></td><td>Una de litio que se queda totalmente vacía meses puede no volver a cargar, y una de plomo descargada se congela antes en invierno</td></tr>
+    <tr><td><strong>Rota la reserva</strong></td><td>Usa las pilas más antiguas en el día a día y repón con nuevas: así la reserva siempre está al día</td></tr>
+    </tbody></table></div>
     <h4>Tipos y especificaciones de pilas</h4>
     <p>Una alcalina da 1,5 V y una NiMH recargable 1,2 V. Son intercambiables en la mayoría de aparatos, pero en algunos se nota en el brillo o el volumen, o el aparato marca «batería baja» antes.</p>
     <div class="mini-wrap"><table class="mini"><thead><tr><th>Formato</th><th>Voltaje</th><th>Capacidad típica</th><th>Recargable</th><th>Uso habitual</th></tr></thead><tbody>
@@ -1085,7 +1154,14 @@ const AREAS = [
     <tr><td><strong>Multímetro</strong> ★</td><td>Medir voltaje, polaridad y continuidad</td><td>Comprueba el estado real de una batería, si un fusible está fundido o si un cable está cortado antes de conectar nada sensible</td></tr>
     <tr><td><strong>Monitor de batería</strong> (shunt)</td><td>Saber el % real de carga de un banco</td><td>Más fiable que fiarse solo del voltaje</td></tr>
     </tbody></table></div>
-    <div class="warn">Nunca cortocircuites los bornes de una batería: una de coche o de LiFePO4 puede soltar cientos de amperios, fundir una llave y provocar quemaduras o un incendio. Trabaja con anillos, relojes y pulseras quitados.</div>`}
+    <div class="warn">Nunca cortocircuites los bornes de una batería: una de coche o de LiFePO4 puede soltar cientos de amperios, fundir una llave y provocar quemaduras o un incendio. Trabaja con anillos, relojes y pulseras quitados.</div>
+    <h4>Protección frente a pulsos electromagnéticos (EMP)</h4>
+    <p>Un <strong>pulso electromagnético</strong> (por una tormenta solar extrema o un arma nuclear a gran altura) induciría corrientes capaces de dañar la electrónica. Es un riesgo <strong>poco probable pero de gran impacto</strong>, así que su protección es un nivel avanzado: primero asegura agua, comida, luz y botiquín.</p>
+    <div class="mini-wrap"><table class="mini"><thead><tr><th>Medida</th><th>Qué protege</th><th>Ojo</th></tr></thead><tbody>
+    <tr><td><strong>Bolsa o caja Faraday</strong></td><td>Equipos guardados y <strong>desconectados</strong>: radio de repuesto, móvil viejo, pendrive con documentos, inversor</td><td>Solo protege lo que está dentro y cerrado; prueba que funciona metiendo un móvil y llamándolo</td></tr>
+    <tr><td><strong>Bolsa Faraday para generador</strong> (ej. Mission Darkness Dry Shield Revelation)</td><td>Un generador o estación de energía entera: 76 × 61 × 56 cm, estanca y plegable</td><td>Cara (~600 $). El generador solo está protegido mientras está guardado</td></tr>
+    <tr><td><strong>Protector para el cuadro</strong> (ej. EMP Shield, versión europea monofásica 230–240 V)</td><td>La instalación de la casa frente a picos de tensión, rayos y, según el fabricante, pulsos EMP</td><td>Funciona como un protector de sobretensiones; la protección EMP no está verificada de forma independiente. Lo debe instalar un <strong>electricista autorizado</strong></td></tr>
+    </tbody></table></div>`}
   ]},
 
 { id:"tecnologia", titulo:"Tecnología y Comunicaciones",
@@ -1191,6 +1267,8 @@ const TOP = {
   ["Semillas de variedades tradicionales","De polinización abierta: puedes guardar tu propia semilla cada año.","b","amazon","semillas huerto variedades tradicionales","agricultura-emergencia"],
   ["Kit de riego por goteo","Ahorra un 30–50 % de agua y tiempo en el huerto.","m","leroy","kit riego goteo huerto","agricultura-emergencia"],
   ["Manta térmica de cultivo","Protege de heladas ligeras y de insectos.","b","leroy","manta termica cultivo","agricultura-emergencia"],
+  ["Ósmosis inversa portátil off-grid (Crystal Quest R.O.VER)", "Potabiliza agua de ríos y lagos con panel solar, batería y bomba: unos 750 L/día. ~25 kg; desecha la mitad o más del agua y no está pensada para agua de mar.", "a", "amazon", "osmosis inversa portatil", "agua"],
+  ["Cubiertos de campo (spork o juego metálico con funda)", "Comer de latas y bolsas sin depender de nada desechable; el titanio no pesa casi nada.", "b", "decathlon", "cubiertos camping", "comida"]
 ],
 climatologia:[
   ["Manta térmica de emergencia","Pesa casi nada y reduce mucho la pérdida de calor corporal.","b","decathlon","manta termica emergencia","calor-frio"],
@@ -1222,7 +1300,11 @@ climatologia:[
   ["Lona tipo tarp 3×3 m","Refugio rápido contra lluvia y viento en muchas configuraciones.","m","decathlon","tarp lona","refugio"],
   ["Tienda de campaña de 3 estaciones","Refugio rápido y fiable, mucho mejor que improvisar.","m","decathlon","tienda campaña 3 estaciones","refugio"],
   ["Saco vivac impermeable","Protege el saco de agua, nieve y viento sin necesidad de tienda.","m","decathlon","funda vivac","refugio"],
-  ["Tienda de 4 estaciones / expedición","Aguanta nieve y viento fuerte de montaña.","a","","","refugio"]
+  ["Tienda de 4 estaciones / expedición","Aguanta nieve y viento fuerte de montaña.","a","","","refugio"],
+  ["Saco de emergencia térmico (bivy aluminizado)", "Como una manta térmica pero cerrada: conserva mucho mejor el calor y pesa unos 100–200 g.", "b", "amazon", "saco emergencia termico", "calor-frio"],
+  ["Poncho-tarp militar", "Chubasquero que se abre en lona para montar un refugio rápido; dos piezas en una.", "m", "amazon", "poncho tarp militar", "refugio"],
+  ["Catre o camastro plegable", "Te separa del suelo frío y húmedo en un refugio o una evacuación larga.", "m", "decathlon", "catre plegable camping", "refugio"],
+  ["Pañuelo shemagh", "Protege del sol, el frío y el polvo; prefiltra agua turbia antes de potabilizarla.", "b", "amazon", "shemagh", "ropa-tiers"]
 ],
 herramientas:[
   ["Multiherramienta (tipo Leatherman / Victorinox)","Alicates, cortacables, cuchilla, sierra y destornilladores en el bolsillo.","b","amazon","multiherramienta leatherman","herramientas-manuales"],
@@ -1254,7 +1336,13 @@ herramientas:[
   ["Surtido de tornillos, tacos y arandelas (M4–M8)","Fijaciones en madera, pared y metal.","m","leroy","surtido tornillos tacos","accesorios-otros"],
   ["Cinchas con trinquete","Asegurar cargas en coche, baca o remolque.","m","leroy","cincha trinquete","accesorios-otros"],
   ["Caja de herramientas rígida","Todo ordenado, seco y listo para llevar.","m","leroy","caja de herramientas","accesorios-otros"],
-  ["Sierra de cadena de bolsillo","Cortar troncos gruesos a dos manos con muy poco peso.","a","amazon","sierra cadena bolsillo","accesorios-otros"]
+  ["Sierra de cadena de bolsillo","Cortar troncos gruesos a dos manos con muy poco peso.","a","amazon","sierra cadena bolsillo","accesorios-otros"],
+  ["Pala táctica plegable multifunción", "Pala, pico, hacha, sierra y cuchilla en una sola herramienta de mochila. Más versátil que robusta: para cavar mucho, una pala de verdad.", "a", "amazon", "pala tactica plegable multifuncion", "herramientas-manuales"],
+  ["Bomba de sifón manual (combustible y agua)", "Trasvasa gasolina, gasoil o agua sin chupar del tubo. Usa una para combustible y otra distinta para agua potable.", "a", "amazon", "bomba sifon manual combustible", "accesorios-otros"],
+  ["Cuchillo de hoja fija (tipo Mora o Glock FM78)", "Más robusto que una navaja para leña, cuerdas y tareas de campo. Llévalo solo cuando haya un motivo justificado (campo, trabajo).", "b", "amazon", "cuchillo hoja fija mora", "herramientas-manuales"],
+  ["Afilador portátil de diamante o carburo", "Un filo cuidado corta mejor y es más seguro: cabe en el bolsillo y sirve para cuchillo, hacha y tijeras.", "b", "amazon", "afilador portatil diamante", "herramientas-manuales"],
+  ["Cuerda semiestática 10–11 mm (30 m)", "Izar cargas, asegurar una lona o un árbol y hacer de tendedero de emergencia. Descolgarse con ella solo con formación.", "m", "decathlon", "cuerda semiestatica", "accesorios-otros"],
+  ["Llave multiusos de armarios y grifos", "Cuadradillos y triángulos para abrir registros, armarios de contadores y grifos de jardín de tu propia vivienda.", "b", "amazon", "llave multiusos armarios cuadradillo", "accesorios-otros"]
 ],
 transporte:[
   ["Mochila de evacuación 40 L","Para dejar el coche y seguir a pie con agua, comida, luz y botiquín.","m","decathlon","mochila 40 litros trekking","general"],
@@ -1318,7 +1406,10 @@ transporte:[
   ["Multímetro digital","Mide voltaje, polaridad, fusibles y estado real de baterías.","m","amazon","multimetro digital","accesorios-electricidad"],
   ["Conectores Anderson + fusibles","Une paneles y baterías de forma segura y protegida.","m","amazon","conectores anderson fusible","accesorios-electricidad"],
   ["Regulador de carga MPPT","Protege la batería y saca más energía al panel.","a","amazon","regulador mppt","accesorios-electricidad"],
-  ["Inversor de onda senoidal pura 1.000 W","Convierte 12 V en 230 V aptos para electrónica.","a","amazon","inversor onda pura 1000w","accesorios-electricidad"]
+  ["Inversor de onda senoidal pura 1.000 W","Convierte 12 V en 230 V aptos para electrónica.","a","amazon","inversor onda pura 1000w","accesorios-electricidad"],
+  ["Bolsa Faraday para generador (Mission Darkness Dry Shield)", "Guarda un generador o estación de energía estanco y protegido frente a pulsos electromagnéticos.", "a", "amazon", "mission darkness faraday", "accesorios-electricidad"],
+  ["Protector EMP / sobretensiones para el cuadro (EMP Shield EU)", "Protege la instalación de la casa de rayos y picos de tensión; instalación por electricista autorizado.", "a", "amazon", "emp shield", "accesorios-electricidad"],
+  ["Barras de luz química (cyalume)", "Hasta 12 h de luz sin pilas ni chispa: seguras si hay olor a gas y útiles para señalizar.", "b", "amazon", "barras luz quimica", "accesorios-electricidad"]
 ],
 tecnologia:[
   ["Radio AM/FM a pilas","Información oficial en un apagón; semanas con un juego de pilas.","b","amazon","radio portatil pilas am fm","radio-walkies"],
@@ -1350,7 +1441,10 @@ tecnologia:[
   ["Memoria USB cifrada","Tus documentos siempre contigo y seguros.","m","amazon","memoria usb cifrada","datos-ciberseguridad"],
   ["Disco SSD externo","Copia de seguridad 3-2-1 fuera del ordenador.","m","amazon","ssd externo 1tb","datos-ciberseguridad"],
   ["Llave de seguridad FIDO2","Protege tus cuentas aunque te roben la contraseña.","m","amazon","yubikey","datos-ciberseguridad"],
-  ["Bolsa Faraday","Aísla móvil o llaves del coche de señales y rastreo.","a","amazon","bolsa faraday","datos-ciberseguridad"]
+  ["Bolsa Faraday","Aísla móvil o llaves del coche de señales y rastreo.","a","amazon","bolsa faraday","datos-ciberseguridad"],
+  ["TYT MD-UV390 (DMR, IP67)", "Walkie bibanda analógico y digital DMR, sumergible y robusto. Escuchar es libre; transmitir exige licencia de radioaficionado.", "a", "amazon", "tyt md-uv390", "radio-walkies"],
+  ["Xiegu X6200 (transceptor HF portátil)", "Onda corta con batería integrada: contactos a cientos o miles de km sin repetidores ni internet. Requiere licencia.", "a", "amazon", "xiegu x6200", "radio-walkies"],
+  ["Antena HF portátil JPC-12", "Vertical plegable de 7 a 52 MHz que se monta en minutos: convierte una radio HF en estación de campo.", "a", "amazon", "antena jpc-12", "radio-walkies"]
 ],
 salud:[
   ["Manual de primeros auxilios en papel","Funciona sin batería, cobertura ni internet.","b","amazon","manual primeros auxilios","primeros-auxilios"],
@@ -1382,7 +1476,8 @@ salud:[
   ["Parche torácico con válvula","Sella heridas abiertas de tórax. Requiere formación.","a","amazon","chest seal parche toracico","botiquin"],
   ["Pastillero semanal hermético","Medicación personal organizada y protegida.","b","amazon","pastillero semanal","botiquin"],
   ["Sales de rehidratación oral","Lo más útil ante diarrea, vómitos o calor extremo.","b","amazon","sales rehidratacion oral","naturaleza"],
-  ["Guía de plantas y setas de España","Identificar antes de comer: evita confusiones mortales.","m","amazon","guia plantas setas españa","naturaleza"]
+  ["Guía de plantas y setas de España","Identificar antes de comer: evita confusiones mortales.","m","amazon","guia plantas setas españa","naturaleza"],
+  ["Mochila de primera intervención completa (Scherber First Responder)", "Botiquín profesional con material de trauma, inmovilización y control de hemorragias. Solo rinde con formación: haz antes un curso de primeros auxilios o SVB.", "a", "amazon", "scherber first responder bag", "botiquin"]
 ],
 defensa:[
   ["Alarma personal 130 dB","Sirena al tirar de la anilla: pide ayuda sin enfrentarte.","b","amazon","alarma personal defensa","defensa-personal"],
@@ -1446,7 +1541,10 @@ construccion:[
   ["Convertidor DC-DC 12 V a USB-C PD 100 W","Alimenta la Starlink Mini desde una batería sin inversor.","m","amazon","convertidor 12v usb c pd 100w","otros-construccion"],
   ["SAI de 1.000 VA","Router, alarma y cámaras encendidos en un corte.","m","amazon","sai 1000va","otros-construccion"],
   ["Protector de sobretensiones para cuadro","Protege equipos de rayos y picos de tensión. Lo instala un electricista.","m","leroy","protector sobretensiones cuadro electrico","otros-construccion"],
-  ["Cámara 4G con panel solar","Vigila linderos sin luz ni wifi.","m","amazon","camara 4g solar","otros-construccion"]
+  ["Cámara 4G con panel solar","Vigila linderos sin luz ni wifi.","m","amazon","camara 4g solar","otros-construccion"],
+  ["Alarma perimetral inalámbrica (alcance ~800 m)", "Sensores de movimiento en el camino o la valla que avisan a un receptor en casa: sabes que alguien se acerca antes de que llegue.", "a", "amazon", "alarma perimetral inalambrica exterior", "seguridad-hogar"],
+  ["Bloqueador de puertas portátil", "Refuerza en segundos una puerta que abre hacia dentro (casa, hotel); sin obras.", "b", "amazon", "bloqueador puerta portatil", "seguridad-hogar"],
+  ["Alarma de anilla para cable trampa (tripwire)", "Al tensar el cable, una sirena avisa de que alguien cruza un paso o una valla. Sin cartuchos ni pirotecnia.", "b", "amazon", "alarma tripwire sirena", "seguridad-hogar"]
 ],
 otros:[
   ["Bolsa estanca para documentos","Papeles y móvil a salvo del agua.","b","decathlon","bolsa estanca"],
@@ -1463,7 +1561,8 @@ otros:[
   ["Bolsas de compresión","Más ropa en menos espacio.","b","decathlon","bolsa compresion"],
   ["Cinta reflectante","Hacerte visible de noche.","b","leroy","cinta reflectante"],
   ["Libreta impermeable y lápiz","Notas que no se borran con agua.","b","amazon","libreta impermeable"],
-  ["Mochila infantil de emergencia","Cada niño con su propio pequeño kit.","m","decathlon","mochila niño"]
+  ["Mochila infantil de emergencia","Cada niño con su propio pequeño kit.","m","decathlon","mochila niño"],
+  ["Libreta impermeable y lápiz", "Anotar contactos, rutas, dosis y horas aunque llueva y sin batería.", "b", "amazon", "libreta impermeable", "otros-varios"]
 ]
 };
 AREAS.forEach(a=>{ if(TOP[a.id]) a.top = TOP[a.id].map(([n,why,lvl,s,q,g])=> q.startsWith("http") ? {n,why,lvl,s,url:q,g} : {n,why,lvl,s,q,g}); });
